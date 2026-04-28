@@ -229,34 +229,67 @@
   .fail-title { font-weight: 600; font-size: 15px; color: var(--text-dark); margin-bottom: 4px; }
   .fail-why { font-size: 14px; color: var(--text-light); line-height: 1.6; }
 
-  /* AUTHOR */
-  .author-card {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 40px;
-    display: flex;
-    gap: 28px;
-    align-items: flex-start;
-    border: 1px solid rgba(11,31,58,0.08);
-    margin: 40px 0;
+  /* ── MENTOR ── */
+  .mentor {
+    background: var(--cream);
+    padding: 80px 24px;
   }
-  .author-avatar {
-    width: 80px;
-    height: 80px;
+  .mentor-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .mentor-header {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .mentor-photo {
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--sky), var(--navy));
-    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--navy-light), var(--navy));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    color: var(--white);
-    font-weight: 700;
+    font-size: 36px;
+    flex-shrink: 0;
+    border: 3px solid var(--gold);
   }
-  .author-name { font-weight: 700; font-size: 17px; margin-bottom: 4px; }
-  .author-title { font-size: 13px; color: var(--text-light); margin-bottom: 12px; }
-  .author-bio { font-size: 15px; line-height: 1.75; color: var(--text-mid); }
+  .mentor-name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .mentor-title { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; }
+  .mentor-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: rgba(201,168,76,0.12);
+    color: #8B6914;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+  .mentor-story { font-size: 16px; color: var(--text-body); line-height: 1.75; }
+  .mentor-story p { margin-bottom: 16px; }
+  .mentor-story p:last-child { margin-bottom: 0; }
+  .mentor-story strong { color: var(--navy); font-weight: 600; }
+  .mentor-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .mentor-stat { text-align: center; }
+  .mentor-stat-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--navy); }
+  .mentor-stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
 
   /* SYSTEM */
   .system-intro {
@@ -444,10 +477,26 @@
     display: block;
   }
 
+
+
   .footnote { font-size: 15px; color: var(--text-light); margin-top: 12px; }
+
+  
+  /* ── FOOTER ── */
+  footer {
+    background: #080F17;
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.25);
+  }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
 </style>
 </head>
 <body>
+
+
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
@@ -568,7 +617,7 @@ Just a clear method your brain actually responds to.
 
 <div class="section">
   
-  <div class="h2" style="margin-top: 30px;">Why Everything You've Tried Has <em>Failed</em> You</div>
+  <div class="h2" style="margin-top: 30px;">Everything You've Tried Has Treated <em>Symptoms</em> Not the Root Cause</div>
   <div class="divider" style="margin-left: 0;"></div>
 
   <ul class="fails-list">
@@ -605,24 +654,71 @@ Just a clear method your brain actually responds to.
   <p class="lead" style="margin-top: 24px;"><strong>The 21-Day Anxiety Sleep Reset System doesn't just tell you how to sleep. It teaches your mind and body to remember how to rest again.</strong></p>
 </div>
 
+<section class="mentor">
+ 
 <div style="padding: 0 20px 60px; max-width: 720px; margin: 0 auto;">
   <span class="eyebrow">Meet Your Mentor</span>
   <div class="author-card">
-    
-    <div class="author-avatar">
-      <img src="Authority.png" alt="Komal Thakur" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
-    </div>
-    
-    <div>
-      <div class="author-name">Komal Thakur</div>
-      <div class="author-title">Ex-Corporate Professional → Sleep & Anxiety Coach · Delhi NCR</div>
-      <div class="author-bio">
-        I used to wake up at 2AM every night, heart racing, mind overthinking, Just Like Everyone I tried Melatonin And Meditation Apps But None Gave Permanent Solution. Then I realized it wasn’t a sleep problem, my nervous system didn’t feel safe at night, and fixing that changed everything. I built this system to share exactly what finally worked.
+
+  <div class="mentor-card">
+    <div class="mentor-header">
+      
+      <!-- UPDATED PHOTO -->
+      <div class="mentor-photo">
+        <img src="Authority.png" alt="Komal Thakur">
+      </div>
+
+      <div>
+        <div class="mentor-name">Komal Thakur</div>
+        <div class="mentor-title">Ex-Corporate Professional → Sleep & Anxiety Coach · Delhi NCR</div>
+        <div class="mentor-badges">
+        </div>
       </div>
     </div>
 
+    <div class="mentor-story">
+      <p>For two years, I woke up at 2 AM every single night — heart racing, mind already replaying everything I'd said wrong at work, worrying about tomorrow's meetings, wondering why I couldn't just be normal and sleep.</p>
+
+      <p>I tried everything. Melatonin. Headspace. No phone after 9 PM. Ashwagandha. I even bought blue light glasses. <strong>Nothing gave me a permanent solution.</strong> Most things helped for two days, then the pattern returned.</p>
+
+      <p>What finally changed things wasn't another habit or supplement. It was understanding that <strong>my nervous system didn't feel safe at night</strong> — and until I fixed that wiring, no amount of chamomile tea was going to help.</p>
+
+      <p>I spent 18 months studying sleep neuroscience, working with a coach, and refining what actually worked for someone with an overactive, achievement-oriented, worry-prone Indian brain. This system is everything I wish had existed. I've now used it to help over 600 people across India sleep through the night — for good.</p>
+    </div>
+
+    <div class="mentor-stats">
+      <div class="mentor-stat">
+        <div class="mentor-stat-num">450+</div>
+        <div class="mentor-stat-label">Indians Helped</div>
+      </div>
+      <div class="mentor-stat">
+        <div class="mentor-stat-num">12 mo</div>
+        <div class="mentor-stat-label">Research & Testing</div>
+      </div>
+      <div class="mentor-stat">
+        <div class="mentor-stat-num">4.5★</div>
+        <div class="mentor-stat-label">Average Rating</div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- ADD THIS CSS -->
+<style>
+.mentor-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mentor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
 
 <!-- SYSTEM INTRO -->
 <div class="system-intro">
@@ -630,21 +726,21 @@ Just a clear method your brain actually responds to.
     <span class="eyebrow" style="color: var(--gold);">Introducing</span>
     <div class="h2">The 21-Day Anxiety Sleep Reset System™</div>
     <div class="divider"></div>
-    <p class="lead">This is not another "sleep better" ebook. It’s a Day-by-day blueprint to Rewire Your Mind for Lifetime Sleep, Without Any Pills, Apps or Complex Routines,  built around a specific method: The 3-Step Brain Shutdown Process™</p>
+    <p class="lead">This is not another <strong style="color:white;">"sleep better" ebook. </strong>It’s a Day-by-day blueprint to Rewire Your Mind for Lifetime Sleep, Without Any Pills, Apps or Complex Routines,  built around a specific method: built around the <strong style="color:white;">3-Step Brain Shutdown Process™</strong></p>
    
     <div class="phases">
       <div class="phase-card">
-        <div class="phase-num">Phase 01</div>
+        <div class="phase-num">Phase 01 · Days 1–7</div>
         <div class="phase-title">Calm Your Body</div>
         <div class="phase-desc">Drop the stress hormones that keep your heart alert and your muscles tense at night. Your body needs to feel physically safe before your mind will follow.</div>
       </div>
       <div class="phase-card">
-        <div class="phase-num">Phase 02</div>
+        <div class="phase-num">Phase 02 · Days 8–14</div>
         <div class="phase-title">Empty Your Mind</div>
         <div class="phase-desc">Stop the thought loop. Not by suppressing thoughts — by completing them. A specific technique that drains the mental queue before your head hits the pillow.</div>
       </div>
       <div class="phase-card">
-        <div class="phase-num">Phase 03</div>
+        <div class="phase-num">Phase 03 · Days 15–21</div>
         <div class="phase-title">Train a Sleep Trigger</div>
         <div class="phase-desc">Teach your brain a reliable "off switch." By Day 14, your body will begin to automatically associate your bedtime routine with deep, safe sleep.</div>
       </div>
@@ -713,12 +809,11 @@ Just a clear method your brain actually responds to.
       <div class="price-save-tag">INTRODUCTORY PRICE — First 500 Buyers Only</div>
 
       <ul class="includes">
-        <li>Complete 21-Day Anxiety Sleep Reset System™,  Value: ₹1,999</li>
-        <li>Printable 30 Days Sleep Accountability Tracker, Value: ₹499</li>
-        <li>Bonus: The 2AM Emergency Shutdown protocol, Value: ₹999</li>
-        <li>Guided Night Audio Walkthroughs, Value: ₹499</li>
+        <li>Complete 21-Day Anxiety Sleep Reset System™:  Value: ₹1,999</li>
+        <li>Printable 30 Days Sleep Accountability Tracker: Value: ₹499</li>
+        <li>Bonus: The 2AM Emergency Shutdown protocol: Value: ₹999</li>
+        <li>Guided Night Audio Walkthroughs: Value: ₹499</li>
       </ul>
-
       <!-- CTA BUTTON WITH REDIRECT -->
       <a 
         class="cta-btn" 
@@ -730,7 +825,7 @@ Just a clear method your brain actually responds to.
       </a>
 
       <div class="urgency-line">
-        ⏳ 450 of 500 introductory spots claimed. Price increases to ₹2,999 after.
+        Total Value: ₹3,996 — Yours Today for ₹799
       </div>
     </div>
 
@@ -769,14 +864,14 @@ Just a clear method your brain actually responds to.
         <span class="testi-result">✓ Falling asleep within 20 mins by Week 2</span>
       </div>
       <div class="testi-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars">★★★★</div>
         <p class="testi-text">The 2AM Emergency Shutdown alone was worth the price. I've used it 4 times already on nights when anxiety hit out of nowhere. Works every time.</p>
         <div class="testi-author">Priya R.</div>
         <div class="testi-meta">Teacher · Bengaluru</div>
         <span class="testi-result">✓ Anxiety under control within 7 minutes</span>
       </div>
       <div class="testi-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars">★★★★</div>
         <p class="testi-text">My husband noticed before I did. He said I stopped tossing around by the second week. I feel like I've gotten my mornings back — I actually wake up before my alarm now.</p>
         <div class="testi-author">Kavitha N.</div>
         <div class="testi-meta">Marketing Manager · Hyderabad</div>
@@ -843,7 +938,6 @@ Just a clear method your brain actually responds to.
   </div>
 </div>
 
-
 <!-- FINAL CTA -->
 <div class="final-cta">
   <div class="final-cta-inner">
@@ -856,5 +950,11 @@ Just a clear method your brain actually responds to.
     <p class="footnote">Instant download · 30-day money-back guarantee · Join 450+ Indians already sleeping better</p>
   </div>
 </div>
+
+<footer>
+  <p>© 2026 MindVeda · 21-Day Anxiety Sleep Reset System™ · Delhi NCR, India</p>
+  <p style="margin-top: 8px;"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Refund Policy</a> &nbsp;·&nbsp; <a href="#">Contact</a></p>
+  <p style="margin-top: 12px; font-size: 11px; max-width: 500px; margin-left: auto; margin-right: auto;">This system is for educational purposes. It is not a substitute for medical advice. If you suspect a clinical sleep disorder, please consult a physician.</p>
+</footer>
 </body>
 </html>
