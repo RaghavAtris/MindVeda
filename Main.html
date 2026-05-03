@@ -64,16 +64,26 @@
 .testi-meta {
   color: #777;
 }
+
 .phases {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
 }
 
 .phase-image {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.phase-image img {
+  display: block !important;
+  width: 90% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  height: auto !important;
+  border-radius: 16px;
 }
 
 .phase-image img {
@@ -356,18 +366,26 @@
   .system-intro .h2 { color: var(--white); }
   .system-intro .h2 em { color: var(--gold-light); }
   .system-intro .lead { color: rgba(255,255,255,0.7); }
+  
+.phases {
+  display: block; /* remove grid */
+  width: 100%;
+}
 
-  .phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
-  .phase-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 24px 20px;
-  }
-  .phase-num { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 600; }
-  .phase-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-  .phase-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.65; }
+.phase-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
+.phase-image img {
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 16px;
+}
   /* CHAPTERS */
   .chapters { margin: 40px 0; }
   .chapter {
@@ -1082,7 +1100,6 @@
     <p class="footnote">Instant download · 30-day money-back guarantee · Join 450+ Indians already sleeping better</p>
   </div>
 </div>
-
 
 <footer>
   <p>© 2026 MindVeda · 21-Day Anxiety Sleep Reset System™ · Delhi NCR, India</p>
