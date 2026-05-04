@@ -43,8 +43,93 @@
   color: #0B1F3A !important;
 }
 
+/* SECTION WRAPPER */
+.results-section {
+  padding: 60px 20px;
+  background-color: #f8f6f2;
+  text-align: center;
+}
+
+/* SMALL TOP LABEL */
+.section-tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #4a6fa5;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* MAIN HEADING */
+.section-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #1a2a44;
+  margin-bottom: 30px;
+}
+
+.section-title span {
+  color: #4a6fa5;
+  font-style: italic;
+}
+
+/* RESULTS LIST CONTAINER (like FAQ width + alignment) */
 .results-list {
+  max-width: 720px;
+  margin: 0 auto;
   text-align: left;
+}
+
+/* REMOVE DEFAULT BULLETS */
+.results-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* EACH ITEM = FAQ STYLE CARD */
+.results-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2d3748;
+
+  padding: 16px 18px;
+  margin-bottom: 12px;
+
+  background: #ffffff;
+  border-radius: 8px;
+
+  border: 1px solid #e6e8eb;
+  transition: all 0.2s ease;
+}
+
+/* HOVER EFFECT (subtle premium feel) */
+.results-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+/* CHECK ICON */
+.results-list .check {
+  color: #4a6fa5;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .results-list li {
+    font-size: 16px;
+    padding: 14px;
+  }
 }
 
   .testi-author {
@@ -802,7 +887,7 @@
 
   <div class="feature-card">
     <div class="icon">🧠</div>
-    <div class="eyebrow">NIGHTLY RITUAL</div>
+    <div class="eyebrow">WHAT YOU DO BEFORE BED</div>
     <h3>The 3-Step Brain Shutdown Process™</h3>
     <p>The 20 Minute Step-by-Step Process</p>
     <!--<span class="tag">Builds automatic sleep</span>-->
@@ -810,7 +895,7 @@
 
   <div class="feature-card">
     <div class="icon">⚡</div>
-    <div class="eyebrow">EMERGENCY RESCUE</div>
+    <div class="eyebrow">WHEN YOU WAKE UP AT 2AM</div>
     <h3>The 2AM Shutdown Protocol</h3>
     <p>For the nights anxiety takes over completely, A special 7 Minutes breathing + audio that physically forces your nervous system to calm down.</p>
     <!--<span class="tag">Works mid-panic</span>-->
@@ -818,7 +903,7 @@
 
   <div class="feature-card">
     <div class="icon">📋</div>
-    <div class="eyebrow">ZERO DECISION FATIGUE</div>
+    <div class="eyebrow">JUST TICK, NO THINKING </div>
     <h3>30-Day Sleep Accountability Tracker</h3>
     <p>Every process is already printed and sequenced. You tick and move on, No thinking. No planning. Just follow and sleep.</p>
     <!--<span class="tag">Printable · Simple</span>-->
@@ -826,7 +911,7 @@
 
   <div class="feature-card full">
     <div class="icon">🎧</div>
-    <div class="eyebrow">HANDS-FREE GUIDANCE</div>
+    <div class="eyebrow">JUST PRESS PLAY</div>
     <h3>Night Audio Walkthroughs</h3>
     <p>Just press play and lie down. The audio guides your brain through the process so you don't have to think about anything.</p>
     <!--<span class="tag">No screen needed</span>-->
@@ -1128,7 +1213,7 @@
  <!-- RESULTS -->
 <div class="section">
   <span class="eyebrow">After 21 Days</span>
-  <div class="h2">What happens in <em>21 Days</em></div>
+  <div class="h2">What Changes In<em> 21 Days</em></div>
   <div class="divider" style="margin-left: 0;"></div>
 
   <ul class="results-list">
