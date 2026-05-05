@@ -71,72 +71,74 @@
   color: #4a6fa5;
   font-style: italic;
 }
-
-/* RESULTS LIST CONTAINER (like FAQ width + alignment) */
-.results-list {
+/* CONTAINER */
+.steps {
   max-width: 720px;
   margin: 0 auto;
-  text-align: left;
-}
-
-/* REMOVE DEFAULT BULLETS */
-.results-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* EACH ITEM = FAQ STYLE CARD */
-.results-list li {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* CARD STYLE */
+.step-card {
+  display: flex;
+  gap: 16px;
   align-items: flex-start;
-  gap: 10px;
 
-  font-size: 18px;
-  line-height: 1.6;
-  color: #2d3748;
-
-  padding: 16px 18px;
-  margin-bottom: 12px;
+  padding: 20px;
 
   background: #ffffff;
-  border-radius: 8px;
-
   border: 1px solid #e6e8eb;
-  transition: all 0.2s ease;
+  border-radius: 10px;
+
+  transition: all 0.25s ease;
 }
 
-/* HOVER EFFECT (subtle premium feel) */
-.results-list li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+/* HOVER = PREMIUM FEEL */
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
 
-/* CHECK ICON */
-.results-list .check {
+/* NUMBER */
+.step-number {
+  font-size: 22px;
+  font-weight: 700;
   color: #4a6fa5;
-  font-weight: bold;
+  min-width: 28px;
+}
+
+/* TITLE */
+.step-card h3 {
+  margin: 0 0 6px 0;
   font-size: 18px;
-  margin-top: 2px;
-}
-
-/* MOBILE OPTIMIZATION */
-@media (max-width: 600px) {
-  .section-title {
-    font-size: 28px;
-  }
-
-  .results-list li {
-    font-size: 16px;
-    padding: 14px;
-  }
-}
-
-  .testi-author {
-  color: #111;
   font-weight: 600;
+  color: #111;
 }
 
+/* TEXT */
+.step-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .step-card {
+    padding: 16px;
+  }
+
+  .step-card h3 {
+    font-size: 16px;
+  }
+
+  .step-card p {
+    font-size: 14px;
+  }
+}
 /* Prevent inheritance issues */
 .testi-card {
   color: #444;
@@ -1143,6 +1145,41 @@
 </div>
 
 
+
+<div class="section">
+  <span class="eyebrow">After 21 Days</span>
+  <div class="h2">Here’s What Happens <em>Next</em></div>
+  <div class="divider" style="margin-left: 0;"></div>
+
+  <div class="steps">
+
+    <div class="step-card">
+      <div class="step-number">1.</div>
+      <div>
+        <h3>Get Instant Access</h3>
+        <p>Your head hits the pillow… and your body knows what to do. No more waiting. No more forcing.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">2.</div>
+      <div>
+        <h3>You Start Tonight</h3>
+        <p>You fall asleep within minutes instead of fighting your mind for hours or waking up at 2AM.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-number">3.</div>
+      <div>
+        <h3>Wake Up Like a Different Person</h3>
+        <p>Clear head. Better mood. Sharper focus. More energy. Your days finally feel in your control.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <section class="mentor">
  <div style="padding: 0 20px 60px; max-width: 720px; margin: 0 auto;">
   <span class="eyebrow">Meet Your Mentor</span>
@@ -1177,7 +1214,7 @@
     <div class="mentor-stats">
       <div class="mentor-stat">
         <div class="mentor-stat-num">450+</div>
-        <div class="mentor-stat-label">Indians Helped in First 3 Months</div>
+        <div class="mentor-stat-label">Helped in First 3 Months</div>
       </div>
       <div class="mentor-stat">
         <div class="mentor-stat-num">12 mo</div>
@@ -1210,20 +1247,6 @@
 
 
 
- <!-- RESULTS -->
-<div class="section">
-  <span class="eyebrow">After 21 Days</span>
-  <div class="h2">Here’s Exactly What <em>Happens Next</em></div>
-  <div class="divider" style="margin-left: 0;"></div>
-
-  <ul class="results-list">
-    <li><span class="check">✓</span><strong>You stop lying there waiting for sleep, Your head hits the pillow… and your body knows what to do.</strong></li>
-    <li><span class="check">✓</span><strong>You fall asleep within minutes instead of fighting your thoughts for hours.</strong></li>
-    <li><span class="check">✓</span><strong>Those 2AM wake ups stop turning into 1–2 hour overthinking sessions.</strong></li>
-    <li><span class="check">✓</span><strong>You wake up feeling clear, fresh not heavy, not drained. and Your days feel different, better mood, better focus, better confidence.</strong></li>
-  </ul>
-</div>
-
 <!-- FAQs -->
 <div class="section">
   <span class="eyebrow">Questions</span>
@@ -1251,6 +1274,8 @@
     <div class="faq-a">Then you pay nothing. Our 30-day money-back guarantee is unconditional. Email us, I will refund your every single rupee.</div>
   </div>
 </div>
+
+
 
 <!-- FINAL CTA -->
 <div class="final-cta">
