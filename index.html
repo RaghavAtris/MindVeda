@@ -431,6 +431,68 @@
   .mentor-stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
 
+@media (max-width: 768px) {
+
+  .mentor {
+    padding: 40px 16px;
+  }
+
+  .mentor-card {
+    padding: 24px 18px;
+    border-radius: 12px;
+  }
+
+  .mentor-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .mentor-photo {
+    width: 72px;
+    height: 72px;
+    font-size: 28px;
+  }
+
+  .mentor-name {
+    font-size: 22px;
+  }
+
+  .mentor-title {
+    font-size: 13px;
+  }
+
+  .mentor-story {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .mentor-story p {
+    margin-bottom: 14px;
+  }
+
+  /* 👇 THIS FIXES YOUR MAIN PROBLEM */
+  .mentor-story {
+    max-width: 100%;
+  }
+
+  /* Stats fix */
+  .mentor-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+
+  .mentor-stat-num {
+    font-size: 22px;
+  }
+
+  .mentor-stat-label {
+    font-size: 12px;
+  }
+}
   /* SYSTEM */
   .system-intro {
     background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
@@ -1283,6 +1345,7 @@
   </div>
 </div>
 
+
 <!-- FINAL CTA -->
 <div class="final-cta">
   <div class="final-cta-inner">
@@ -1295,6 +1358,8 @@
     <p class="footnote">Instant download · Works from Day 1 · 30-Day money-back guarantee</p>
   </div>
 </div>
+
+
 
 <footer>
   <p>© 2026 MindVeda · 21-Day Anxiety Sleep Reset System™ · Delhi NCR, India</p>
