@@ -43,7 +43,10 @@
 .mentor-story strong {
   color: #0B1F3A !important;
 }
-
+.mentor-story {
+  max-width: 520px;
+  margin: 0 auto;
+}
 /* SECTION WRAPPER */
 .results-section {
   padding: 60px 20px;
@@ -183,7 +186,7 @@
   .hero {
     background: var(--navy);
     color: var(--white);
-    padding: 80px 20px 90px;
+    padding: 40px 20px 90px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -205,7 +208,7 @@
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 600;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
   .hero h1 {
     font-family: 'Playfair Display', serif;
@@ -227,6 +230,12 @@
     line-height: 1.7;
     font-weight: 300;
   }
+  
+  .hero {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
   .cta-btn {
     display: inline-block;
     background: var(--gold);
@@ -259,6 +268,26 @@
     margin-bottom: 28px;
     font-size: 15px;
   }
+  
+  @media (max-width: 600px) {
+  .price-badge {
+    flex-direction: column; /* stack = clean */
+    gap: 6px;
+  }
+
+  .price-save {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .price-now {
+    font-size: 22px;
+  }
+
+  .price-old {
+    font-size: 14px;
+  }
+}
   .price-now { font-size: 26px; font-weight: 700; color: var(--gold-light); }
   .price-old { text-decoration: line-through; color: rgba(255,255,255,0.35); font-size: 16px; }
   .price-save { background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; letter-spacing: 0.04em; }
@@ -275,7 +304,16 @@
     padding: 32px 36px;
     border-radius: 0 8px 8px 0;
     margin-bottom: 32px;
+    font-size: 15.5px;
+  line-height: 1.6;   /* was ~1.85 → too airy */
+  margin-bottom: 10px; /* reduce vertical gaps */
   }
+
+  .story-scene p em {
+  display: block;
+  margin: 6px 0;
+}
+  
   .time-stamp {
     font-family: 'Playfair Display', serif;
     font-size: 42px;
@@ -1305,12 +1343,12 @@
 
     <div class="mentor-story">
       <p><strong> For almost 2 years, every night followed the same pattern, I went to bed exhausted, and the moment my head hit the pillow, my mind would switch on.</strong></p>
-
-      <p>The breaking point was August 2024, I had an office presentation next morning, I went to bed at 11 PM, By 2:30 AM, I was still awake. Lying there thinking, <strong>“Why can’t I sleep even when I’m exhausted?” </strong>By 3 AM, I took half a melatonin just to knock myself out. And that’s when I realised,  I had lost the ability to do something that’s supposed to be automatic.</p>
-
-      <p>After that, <strong>I tried everything. Meditation. Night routines. No phone after 10 PM, supplements, but none gave a permanent solution. </strong>What finally changed everything wasn't a new technique, <strong> It was one realisation: my body didn't feel safe enough to sleep.</strong></p>
-
-      <p>I spent the next 12 months studying sleep neuroscience, nervous system regulation, until I understood exactly what was happening. <strong> What began as my personal fix turned into a system that’s now, helped 450+ Indians overcome overthinking driven sleep issues.</strong></p>
+      <p>The breaking point was August 2024, I had an office presentation next morning, I went to bed at 11 PM, By 2:30 AM, I was still awake.</p>
+      <p> Lying there thinking, <strong>“Why can’t I sleep even when I’m exhausted?” </strong>By 3 AM, I took half a melatonin just to knock myself out. And that’s when I realised,  I had lost the ability to do something that’s supposed to be automatic.</p>
+      <p>After that, <strong>I tried everything. Meditation. Night routines. No phone after 10 PM, supplements, but none gave a permanent solution.</p>
+      <p></strong>What finally changed everything wasn't a new technique, <strong> It was one realisation: my body didn't feel safe enough to sleep.</strong></p>
+      <p>I spent the next 12 months studying sleep neuroscience, nervous system regulation, until I understood exactly what was happening.</p>
+      <p><strong> What began as my personal fix turned into a system that’s now, helped 450+ Indians overcome overthinking driven sleep issues.</strong></p>
     </div>
 
     <div class="mentor-stats">
@@ -1389,6 +1427,8 @@
     <p class="footnote">Instant download · Works from Day 1 · 30-Day money-back guarantee</p>
   </div>
 </div>
+
+
 
 
 <footer>
