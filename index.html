@@ -482,14 +482,74 @@ body {
   .reframe-block blockquote em { color: var(--gold-light); font-style: normal; }
 
   /* FAILS */
-  .fails-list { list-style: none; margin: 28px 0; }
-  .fails-list li {
-    display: flex;
+ /* FAIL CARDS */
+.fails-grid {
+  max-width: 720px;
+  margin: 32px auto 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fail-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  padding: 24px;
+
+  background: #ffffff;
+  border: 1px solid #e6e8eb;
+  border-radius: 14px;
+
+  transition: all 0.25s ease;
+}
+
+.fail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.fail-number {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fail-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.fail-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  .fail-card {
+    padding: 18px;
     gap: 14px;
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(11,31,58,0.08);
-    align-items: flex-start;
   }
+
+  .fail-card h3 {
+    font-size: 16px;
+  }
+
+  .fail-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+}
   .fail-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
   .fail-title { font-weight: 600; font-size: 15px; color: var(--text-dark); margin-bottom: 4px; }
   .fail-why { font-size: 14px; color: var(--text-light); line-height: 1.6; }
@@ -1139,31 +1199,42 @@ body {
   
   <div class="h2" style="margin-top: 30px;">Why Nothing Else Worked <em>And Why This Will</em></div>
   <div class="divider" style="margin-left: 0;"></div>
+<div class="fails-grid">
 
-  <ul class="fails-list">
-    <li>
-      <span class="fail-icon">💊</span>
-      <div>
-        <div class="fail-title">Sleeping pills</div>
-        <div class="fail-why">They don’t fix sleep, they suppress your nervous system temporarily. The moment you stop, the anxiety comes harder.</div>
-      </div>
-    </li>
-    <li>
-      <span class="fail-icon">📱</span>
-      <div>
-        <div class="fail-title">Meditation apps</div>
-        <div class="fail-why">When your mind is already racing, "just breathe and observe your thoughts" doesn't calm you down. It gives you something new to fail at. Now you're anxious about relaxing.</div>
-      </div>
-    </li>
-    <li>
-      <span class="fail-icon">🛋️</span>
-      <div>
-        <div class="fail-title">Therapy</div>
-        <div class="fail-why">Therapy is good, but for anxiety driven sleep, results take months of weekly sessions. At ₹1,500–2,000 a session, that's ₹6,000–8,000 a month, when all you want is your mind to switch off tonight.</div>
-      </div>
-    </li>
-  </ul>
+  <div class="fail-card">
+    <div class="fail-number">💊</div>
+    <div>
+      <h3>Sleeping pills</h3>
+      <p>
+        They don’t fix sleep, they suppress your nervous system temporarily.
+        The moment you stop, the anxiety comes harder.
+      </p>
+    </div>
+  </div>
 
+  <div class="fail-card">
+    <div class="fail-number">📱</div>
+    <div>
+      <h3>Meditation apps</h3>
+      <p>
+        When your mind is already racing, “just breathe and observe your thoughts”
+        doesn’t calm you down. It gives you something new to fail at.
+      </p>
+    </div>
+  </div>
+
+  <div class="fail-card">
+    <div class="fail-number">🛋️</div>
+    <div>
+      <h3>Therapy</h3>
+      <p>
+        Therapy is good, but for anxiety-driven sleep, results take months.
+        When all you want is your mind to switch off tonight.
+      </p>
+    </div>
+  </div>
+
+</div>
   <p class="lead" style="margin-top: 24px;"><strong>That’s why nothing worked. Your brain has stopped feeling safe at night and this system reverses that in just 21 days.</strong></p>
 </div>
 
@@ -1523,7 +1594,6 @@ body {
         <p>Follow religiously for 21 days and wake up with Clear mind, Better mood, Sharper focus. More energy. Your days finally feel in your control.</p>
       </div>
     </div>
-
   </div>
 </div>
 
