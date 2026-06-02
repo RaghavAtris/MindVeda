@@ -1166,21 +1166,257 @@ body {
 }
 </style>
 
-<!-- STORY SECTION -->
-<div class="section">
-  <span class="eyebrow">Does this sound like you?</span>
+<
 
-  <div class="story-scene">
-    <div class="time-stamp">It's 2:00 AM.</div>
-    <p>Your body is exhausted, But your brain isn’t.</p>
-    <p>You turn the pillow over. Change sides again. Try counting breaths. Try forcing your eyes shut. But nothing works. Because your brain won’t stop.</p>
-    <p><em><strong>"What if I mess up tomorrow?"</strong><br><strong>"Did I reply to that mail correct or not?"</strong><br><strong>"Why can’t I just sleep?"</strong></em></p>
-     <p>So you grab your phone.</p>
-    <span class="scroll-text"><strong>Scroll. Scroll. Scroll.</strong></span>
-    <p>1 hour gone. Then another and somewhere around 3 AM, your body doesn't fall asleep, it gives up. Not rest. Just exhaustion.</p>
-    <!--<p><strong>And the worst part? You didn't choose this, your brain just learned bedtime bedtime = stress. And it needs to unlearn that.</strong></p>-->
+<!-- TESTIMONIAL SECTION -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+
+.testimonial-section{
+  background: var(--white);
+  padding: 50px 16px;
+}
+
+/* reduce top spacing */
+.testimonial-slider-wrap{
+  max-width: 680px;
+  margin: 28px auto 0;
+  position: relative;
+}
+
+/* CARD */
+.testimonial-card{
+  background:#fff;
+  border:1px solid #ececec;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(0,0,0,0.04);
+}
+
+/* IMAGE */
+.testimonial-card img{
+  width:100%;
+  display:block;
+}
+
+/* BIGGER ARROWS */
+.swiper-button-next,
+.swiper-button-prev{
+
+  width:52px !important;
+  height:52px !important;
+
+  color:#1e293b !important;
+
+  top:50% !important;
+  transform:translateY(-50%) !important;
+
+}
+
+/* bigger icon */
+.swiper-button-next:after,
+.swiper-button-prev:after{
+  font-size:28px !important;
+  font-weight:700;
+}
+
+/* move arrows slightly outward */
+.swiper-button-prev{
+  left:-6px !important;
+}
+
+.swiper-button-next{
+  right:-6px !important;
+}
+
+/* cleaner dots */
+.swiper-pagination{
+  position:relative !important;
+  bottom:0 !important;
+
+  margin-top:18px !important;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:20;
+}
+
+/* remove ugly top tiny arrow */
+.swiper-button-prev{
+  top:50% !important;
+}
+
+/* prevent dots overlapping big testimonials */
+.swiper{
+  padding-bottom:50px;
+}
+
+/* card spacing */
+.testimonial-card{
+  margin-bottom:10px;
+}
+.swiper-pagination-bullet{
+  width:8px;
+  height:8px;
+  background:#c7c7c7 !important;
+  opacity:1;
+}
+
+.swiper-pagination-bullet-active{
+  background:#1e293b !important;
+  width:9px;
+  height:9px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .testimonial-section{
+    padding:40px 14px;
+  }
+
+  .testimonial-slider-wrap{
+    margin-top:20px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev{
+
+    width:42px !important;
+    height:42px !important;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after{
+    font-size:22px !important;
+  }
+
+}
+</style>
+
+<div class="testimonial-section">
+
+  <div class="section-wide" style="padding:0;">
+
+    <span class="eyebrow testimonial-heading">
+      REAL PEOPLE. REAL RESULTS.
+    </span>
+
+    <div class="h2 testimonial-heading">
+      What Happened After <em>21 Days</em>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="testimonial-slider-wrap">
+
+      <div class="swiper testimonialSwiper">
+
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="1.webp">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="2.webp">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="3.webp">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="4.webp">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="5.webp">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="6.webp">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="7.webp">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="8.webp">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <img src="9.webp">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <div class="swiper-pagination"></div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+new Swiper(".testimonialSwiper", {
+
+  loop:true,
+
+  autoplay:{
+    delay:2500,
+    disableOnInteraction:false,
+  },
+
+  navigation:{
+    nextEl:".swiper-button-next",
+    prevEl:".swiper-button-prev",
+  },
+
+  pagination:{
+    el:".swiper-pagination",
+    clickable:true,
+  },
+
+  slidesPerView:1,
+  centeredSlides:true,
+  spaceBetween:20,
+
+});
+
+</script>
 
 
 <!-- REFRAME -->
@@ -1383,136 +1619,6 @@ body {
 }
 </style>
 
-<!-- TESTIMONIALS -->
-
-<div style="background: var(--white); padding: 80px 20px;">
-  <div class="section-wide" style="padding: 0;">
-    <span class="eyebrow" style="display: block; text-align: center;">Real People. Real Results.</span>
-    <div class="h2" style="text-align: center;">What Happened After <em>21 Days</em></div>
-    <div class="divider"></div>
-
-    <div class="testi-grid">
-      
-      <!-- 1 -->
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-           <img src="1.webp" class="testi-text-img" alt="testimonial text" loading="lazy">
-        <div class="testi-user">
-          <img src="1A.webp">
-          <div>
-            <div class="testi-author">Neha Sharma</div>
-            <div class="testi-meta">Software Engineer · Pune</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2 -->
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-       <img src="2.webp" class="testi-text-img" alt="testimonial text" loading="lazy">
-        <div class="testi-user">
-          <img src="2A.webp">
-          <div>
-            <div class="testi-author">Aditya Jaiswal</div>
-            <div class="testi-meta">Chartered Accountant · Delhi</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-       <img src="3.webp" class="testi-text-img" alt="testimonial text" loading="lazy">
-        <div class="testi-user">
-          <img src="3A.webp">
-          <div>
-            <div class="testi-author">Priya Singh</div>
-            <div class="testi-meta">HR · Bengaluru</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <img src="4.webp" class="testi-text-img" alt="testimonial text" loading="lazy">
-        <div class="testi-user">
-          <img src="4A.webp">
-          <div>
-            <div class="testi-author">Kavitha Nagpal</div>
-            <div class="testi-meta">Marketing Manager · Hyderabad</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="testi-card">
-        <div class="stars">★★★★</div>
-        <img src="5.webp" class="testi-text-img" alt="testimonial text" loading="lazy">
-        <div class="testi-user">
-          <img src="5A.webp">
-          <div>
-            <div class="testi-author">Ankur Verma</div>
-            <div class="testi-meta">Architect · Mumbai</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <img src="6.webp" class="testi-text-img" alt="testimonial text" loading="lazy">
-        <div class="testi-user">
-          <img src="6A.jpg">
-          <div>
-            <div class="testi-author">Mukul Kumar</div>
-            <div class="testi-meta">Consultant · Jaipur</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NEW 7 -->
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <img src="7.webp" class="testi-text-img" alt="testimonial text" loading="lazy">
-        <div class="testi-user">
-          <img src="7A.webp">
-          <div>
-            <div class="testi-author">Megha Patel</div>
-            <div class="testi-meta">Data Analyst · Gurgaon</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NEW 8 -->
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <img src="8.webp" class="testi-text-img" alt="testimonial text" loading="lazy">
-        <div class="testi-user">
-          <img src="8A.webp">
-          <div>
-            <div class="testi-author">Paras Mishra</div>
-            <div class="testi-meta"> Agency Owner · Mumbai</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NEW 9 -->
-      <div class="testi-card">
-        <div class="stars">★★★★</div>
-       <img src="9.webp" class="testi-text-img" alt="testimonial text" loading="lazy">
-        <div class="testi-user">
-          <img src="9A.webp">
-          <div>
-            <div class="testi-author">Tushar Khanna</div>
-            <div class="testi-meta">Sales Executive · Noida</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <section class="mentor">
  <div style="padding: 0 20px 60px; max-width: 720px; margin: 0 auto;">
@@ -1659,7 +1765,6 @@ body {
     <p class="footnote">Instant download · Works from Day 1 · 30-Day money-back guarantee</p>
   </div>
 </div>
-
 
 <footer>
   <p>© 2026 MindVeda · 21-Day Anxiety Sleep Reset System™ · Delhi NCR, India</p>
