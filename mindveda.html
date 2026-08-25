@@ -14,19 +14,19 @@
 
   <!-- Modern geometric font -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <style>
 
     :root{
-      --ink:#12142B;
-      --ink2:#1B1E3D;
-      --ink3:#262a52;
+      --ink:#0D0F12;
+      --ink2:#16191E;
+      --ink3:#1A1D24;
       --marigold:#E8A33D;
       --marigold-deep:#C9821F;
       --dusk:#D9776B;
-      --paper:#FFFFFF;
+      --paper:#F9F6F0;
       --paper-dim:#FFFFFF;
       --text-dark:#211D30;
       --text-soft:#5B5670;
@@ -115,6 +115,10 @@
     }
 
 
+    /* ---------- ANNOUNCEMENT BAR ---------- */
+
+    
+
     /* ---------- NAV ---------- */
 
     nav{
@@ -132,7 +136,7 @@
     .nav-inner{
       max-width:1180px;
       margin:0 auto;
-      padding:18px 32px;
+      padding:17px 32px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -159,7 +163,7 @@
     }
 
     .nav-links{
-      display:flex;
+      display:none;
       align-items:center;
       gap:34px;
     }
@@ -247,13 +251,7 @@
     }
 
     .nav-cta{
-      display:none;
-    }
-
-    @media (min-width:860px){
-      .nav-cta{
-        display:inline-flex;
-      }
+      display:inline-flex;
     }
 
     .menu-btn{
@@ -268,6 +266,12 @@
     @media (max-width:859px){
       .nav-links{
         display:none;
+      }
+
+      .nav-cta{
+        display:inline-flex;
+        padding:10px 16px;
+        font-size:13px;
       }
 
       .menu-btn{
@@ -331,7 +335,7 @@
       position:relative;
       z-index:1;
 
-      padding:120px 0 210px;
+      padding:160px 0 210px;
 
       transform:translate(-250px,-55px);
     }
@@ -368,7 +372,7 @@
       .hero-grid{
         min-height:820px;
         grid-template-columns:1fr;
-        padding:120px 0 190px;
+        padding:150px 0 190px;
         transform:none;
       }
 
@@ -385,7 +389,7 @@
       font-family:'IBM Plex Mono',monospace;
       font-size:12px;
 
-      margin-bottom:30px;
+      margin-bottom:26px;
     }
 
     .eyebrow .dot{
@@ -397,29 +401,32 @@
     }
 
     .hero h1{
-      max-width:700px;
+      max-width:760px;
 
-      font-size:clamp(52px,6vw,82px);
+      font-family:'Playfair Display', Georgia, serif;
+      font-size:clamp(50px,6vw,82px);
+      font-weight:500;
+      color:#F9F6F0;
 
-      color:var(--paper);
-
-      line-height:.98;
-      letter-spacing:-.045em;
+      line-height:1.08;
+      letter-spacing:-.028em;
+      text-wrap:balance;
     }
 
     .hero h1 em{
-      font-style:normal;
-      color:var(--paper);
-      font-weight:800;
+      font-family:'Playfair Display', Georgia, serif;
+      font-style:italic;
+      color:#F9F6F0;
+      font-weight:500;
     }
 
     .hero p.lede{
-      margin-top:34px;
+      margin-top:30px;
 
       font-size:18px;
-      line-height:1.6;
+      line-height:1.7;
 
-      color:rgba(247,242,230,.78);
+      color:rgba(249,246,240,.76);
 
       max-width:540px;
     }
@@ -429,7 +436,7 @@
       align-items:center;
       gap:16px;
 
-      margin-top:42px;
+      margin-top:38px;
 
       flex-wrap:wrap;
     }
@@ -498,7 +505,7 @@
 
       flex:none;
 
-      color:#6B9CFF;
+      color:#E8A33D;
     }
 
     .trust-icon svg{
@@ -579,11 +586,12 @@
 
       .hero-grid{
         min-height:850px;
-        padding:110px 0 270px;
+        padding:145px 0 270px;
       }
 
       .hero h1{
-        font-size:clamp(46px,14vw,66px);
+        font-size:clamp(44px,13vw,64px);
+        line-height:1.08;
       }
 
       .hero p.lede{
@@ -631,6 +639,18 @@
     }
 
 
+    @media (max-width:640px){
+      .announcement-bar{
+        height:34px;
+        font-size:10px;
+        padding:0 12px;
+      }
+
+      nav{
+        top:34px;
+      }
+    }
+
     /* ---------- SECTION GENERIC ---------- */
 
     section{
@@ -673,6 +693,50 @@
       line-height:1.6;
     }
 
+
+    /* ---------- PREMIUM CONTENT CARDS ---------- */
+
+    .why-premium{
+      background:#0D0F12;
+      color:#F9F6F0;
+    }
+
+    .why-premium .kicker{
+      color:#E8A33D;
+    }
+
+    .why-premium h2,
+    .why-premium h3{
+      color:#F9F6F0;
+    }
+
+    .why-premium .why-list{
+      gap:14px;
+    }
+
+    .why-premium .why-item{
+      padding:20px;
+      background:#1A1D24;
+      border:1px solid rgba(249,246,240,.08);
+      border-radius:18px;
+      box-shadow:0 14px 35px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.025);
+      transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .why-premium .why-item:hover{
+      transform:translateY(-2px);
+      border-color:rgba(232,163,61,.22);
+      box-shadow:0 18px 40px rgba(0,0,0,.28);
+    }
+
+    .why-premium .why-item .ico{
+      background:#242832;
+      border:1px solid rgba(232,163,61,.18);
+    }
+
+    .why-premium .why-item p{
+      color:rgba(249,246,240,.62);
+    }
 
     /* ---------- WHY ---------- */
 
@@ -1316,6 +1380,25 @@
     }
 
 
+    /* ---------- PREMIUM HERO TYPE ---------- */
+
+    .hero .reveal{
+      max-width:780px;
+    }
+
+    .hero h1 br{
+      display:block;
+    }
+
+    .hero-actions .btn{
+      min-height:52px;
+      padding:14px 26px;
+    }
+
+    .trustbar-inner{
+      background:#15181E;
+    }
+
     /* ---------- FOOTER ---------- */
 
     footer{
@@ -1460,6 +1543,7 @@
 
 <body>
 
+  
 
   <nav>
 
@@ -1487,25 +1571,7 @@
       </a>
 
 
-      <div class="nav-links">
 
-        <a href="#why">
-          The Problem
-        </a>
-
-        <a href="#how">
-          The Solution
-        </a>
-
-        <a href="#reviews">
-          How it Works
-        </a>
-
-        <a href="#help">
-          Testimonials
-        </a>
-
-      </div>
 
 
       <a href="#start" class="btn btn-marigold nav-cta">
@@ -1547,7 +1613,7 @@
 
           <span class="dot"></span>
 
-          Trusted by 500+ Indians
+          Helped 500+ Indian professionals
 
 
         </span>
@@ -1645,7 +1711,7 @@
             </strong>
 
             <span>
-              Indians Helped
+              Indians Professionals Helped
             </span>
 
           </div>
@@ -1660,29 +1726,11 @@
 
           <div class="trust-icon">
 
-            <svg viewBox="0 0 48 48" fill="none">
-
-              <path
-                d="M15 34h18M19 38h10M24 30V18"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
-
-              <path
-                d="M18 18h12l5-6-5-3-4 4h-7l-4 5 3 3z"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linejoin="round"
-              />
-
-              <path
-                d="M14 39h20"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
-
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M24 40V8" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+              <path d="M24 12c-3-5-10-4-12 1-5-1-8 4-5 8-4 3-2 9 3 10-1 5 4 8 8 6 2 4 8 3 10 0" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 12c3-5 10-4 12 1 5-1 8 4 5 8 4 3 2 9-3 10 1 5-4 8-8 6-2 4-8 3-10 0" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 17l5 3M34 17l-5 3M12 26h6M36 26h-6" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
             </svg>
 
           </div>
@@ -1778,7 +1826,7 @@
             </strong>
 
             <span>
-              Love it or get your money back
+              Sleep or get your money back
             </span>
 
           </div>
@@ -1921,11 +1969,11 @@
       <div class="root-copy reveal">
 
         <span class="kicker">
-          Root, not symptom
+          The Root Cause
         </span>
 
         <h2>
-          Insomnia is rarely the actual problem
+          Insomnia is not the root problem
         </h2>
 
         <p>
@@ -1936,9 +1984,7 @@
           MindVeda's screening maps which of these is driving your nights, and your 21-night program is weighted toward that root — not a one-size-fits-all sleep hygiene checklist.
         </p>
 
-        <a href="#start" class="btn btn-dark">
-          Take the free screening
-        </a>
+       
 
       </div>
 
@@ -1948,7 +1994,7 @@
   </section>
 
 
-  <section id="why">
+  <section id="why" class="why-premium">
 
     <div class="wrap why">
 
@@ -2838,13 +2884,12 @@
       }
     );
 
-
-    
     document
       .querySelectorAll('.reveal')
       .forEach((el) => io.observe(el));
 
   </script>
+
 
 </body>
 </html>
