@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Modern geometric font -->
+  <!-- MindVeda typography -->
   <link
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
     rel="stylesheet">
@@ -50,20 +50,137 @@
       background:var(--paper);
       color:var(--text-dark);
       -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
-    h1,h2,h3,.display{
-      font-family:'Manrope', sans-serif;
-      font-weight:800;
+    /*
+      ==========================================
+      MINDVEDA TYPOGRAPHY SYSTEM
+      ==========================================
+    */
+
+    /*
+      Editorial / emotional display type
+      Use Playfair Display for:
+      - Hero headlines
+      - Major section headings
+      - Large statement text
+      - Emotional / reflective copy
+    */
+    h1,
+    h2,
+    h3,
+    .display{
+      font-family:'Playfair Display', Georgia, serif;
+      font-weight:500;
       letter-spacing:-0.035em;
-      line-height:1.05;
+      line-height:0.98;
     }
 
+    /*
+      Body / interface type
+      Use Manrope for:
+      - Paragraphs
+      - Navigation
+      - Buttons
+      - Labels
+      - Forms
+      - Supporting text
+    */
+    body,
+    p,
+    li,
+    button,
+    input,
+    textarea,
+    select{
+      font-family:'Manrope', sans-serif;
+    }
+
+    /*
+      Small uppercase labels
+    */
     .mono{
       font-family:'Manrope', sans-serif;
-      font-weight:600;
-      letter-spacing:0.04em;
+      font-weight:700;
+      font-size:0.72rem;
+      line-height:1.2;
+      letter-spacing:0.12em;
       text-transform:uppercase;
+    }
+
+    /*
+      Optional typography utility classes
+    */
+
+    .eyebrow{
+      font-family:'Manrope', sans-serif;
+      font-size:0.75rem;
+      font-weight:700;
+      line-height:1.2;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+    }
+
+    .display-xl{
+      font-family:'Playfair Display', Georgia, serif;
+      font-size:clamp(4rem, 8vw, 8rem);
+      font-weight:500;
+      line-height:0.92;
+      letter-spacing:-0.045em;
+    }
+
+    .display-lg{
+      font-family:'Playfair Display', Georgia, serif;
+      font-size:clamp(3rem, 6vw, 6rem);
+      font-weight:500;
+      line-height:0.95;
+      letter-spacing:-0.04em;
+    }
+
+    .display-md{
+      font-family:'Playfair Display', Georgia, serif;
+      font-size:clamp(2.5rem, 4.5vw, 4.5rem);
+      font-weight:500;
+      line-height:0.98;
+      letter-spacing:-0.035em;
+    }
+
+    .display-sm{
+      font-family:'Playfair Display', Georgia, serif;
+      font-size:clamp(2rem, 3.5vw, 3.25rem);
+      font-weight:500;
+      line-height:1;
+      letter-spacing:-0.03em;
+    }
+
+    .body-lg{
+      font-family:'Manrope', sans-serif;
+      font-size:clamp(1.05rem, 1.5vw, 1.3rem);
+      font-weight:400;
+      line-height:1.7;
+      letter-spacing:-0.01em;
+    }
+
+    .body-md{
+      font-family:'Manrope', sans-serif;
+      font-size:1rem;
+      font-weight:400;
+      line-height:1.65;
+    }
+
+    .body-sm{
+      font-family:'Manrope', sans-serif;
+      font-size:0.875rem;
+      font-weight:400;
+      line-height:1.6;
+    }
+
+    .button-text{
+      font-family:'Manrope', sans-serif;
+      font-size:0.85rem;
+      font-weight:700;
+      letter-spacing:0.02em;
     }
 
     a{
@@ -83,8 +200,25 @@
     }
 
     @media (max-width:640px){
+
       .wrap{
         padding:0 20px;
+      }
+
+      .display-xl{
+        font-size:clamp(3.2rem, 15vw, 5rem);
+      }
+
+      .display-lg{
+        font-size:clamp(2.8rem, 13vw, 4.5rem);
+      }
+
+      .display-md{
+        font-size:clamp(2.4rem, 11vw, 3.5rem);
+      }
+
+      .display-sm{
+        font-size:clamp(2rem, 9vw, 2.8rem);
       }
     }
 
@@ -2852,4 +2986,5 @@
 
   </script>
 </body>
+
 </html>
