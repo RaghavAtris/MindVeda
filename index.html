@@ -1,2873 +1,950 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>MindVeda</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-
-    :root {
-      --ink: #0D0F12;
-      --ink2: #16191E;
-      --ink3: #1A1D24;
-
-      --marigold: #E8A33D;
-      --marigold-deep: #C9821F;
-
-      --dusk: #D9776B;
-
-      --paper: #FFFFFF;
-      --paper-dim: #FFFFFF;
-
-      --text-dark: #211D30;
-      --text-soft: #5B5670;
-
-      --sage: #8FA07E;
-
-      --line: rgba(18,20,43,0.10);
-      --line-light: rgba(247,242,230,0.14);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Manrope', sans-serif;
-      background: var(--paper);
-      color: var(--text-dark);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    h1,
-    h2,
-    h3,
-    .display,
-    .display-xl,
-    .display-lg,
-    .display-md,
-    .display-sm {
-      font-family: 'Manrope', sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      line-height: 0.98;
-    }
-
-    body,
-    p,
-    li,
-    button,
-    input,
-    textarea,
-    select {
-      font-family: 'Manrope', sans-serif;
-    }
-
-    .mono {
-      font-family: 'Manrope', sans-serif;
-      font-weight: 700;
-      font-size: 0.72rem;
-      line-height: 1.2;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .display-xl {
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(3.5rem, 6.5vw, 6.5rem);
-      font-weight: 500;
-      line-height: 0.94;
-      letter-spacing: -0.045em;
-    }
-
-    .display-lg {
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(3rem, 5.5vw, 5.5rem);
-      font-weight: 500;
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    .display-md {
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(2.5rem, 4.3vw, 4.25rem);
-      font-weight: 500;
-      line-height: 0.98;
-      letter-spacing: -0.035em;
-    }
-
-    .display-sm {
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(2rem, 3.3vw, 3rem);
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-
-    .body-lg {
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(1.05rem, 1.5vw, 1.3rem);
-      font-weight: 400;
-      line-height: 1.7;
-      letter-spacing: -0.01em;
-    }
-
-    .body-md {
-      font-family: 'Manrope', sans-serif;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.65;
-    }
-
-    .body-sm {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.875rem;
-      font-weight: 400;
-      line-height: 1.6;
-    }
-
-    .button-text {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .wrap {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-
-    @media (max-width: 640px) {
-
-      .wrap {
-        padding: 0 20px;
-      }
-
-      .display-xl {
-        font-size: clamp(3.2rem, 15vw, 5rem);
-      }
-
-      .display-lg {
-        font-size: clamp(2.8rem, 13vw, 4.5rem);
-      }
-
-      .display-md {
-        font-size: clamp(2.4rem, 11vw, 3.5rem);
-      }
-
-      .display-sm {
-        font-size: clamp(2rem, 9vw, 2.8rem);
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition:
-        opacity .7s ease,
-        transform .7s ease;
-    }
-
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-
-      html {
-        scroll-behavior: auto;
-      }
-    }
-
-   nav{
-  position:sticky;
-  top:0;
-  z-index:50;
-
-  background:#0D0F12;
-
-  border-bottom:1px solid rgba(247,242,230,0.08);
-
-  box-shadow:0 4px 20px rgba(0,0,0,0.18);
-}
-
-.nav-inner{
-  max-width:1180px;
-  margin:0 auto;
-  padding:18px 32px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:var(--paper);
-}
-
-.logo-mark{
-  width:26px;
-  height:26px;
-  flex:none;
-}
-
-.logo-word{
-  font-family:'Manrope', sans-serif;
-  font-weight:600;
-  font-size:20px;
-  letter-spacing:-0.01em;
-  color:var(--paper);
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:34px;
-}
-
-.nav-links a{
-  color:rgba(247,242,230,0.72);
-  font-size:14.5px;
-  font-weight:500;
-  transition:color .2s ease;
-}
-
-.nav-links a:hover{
-  color:var(--paper);
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-
-  padding:13px 26px;
-  border-radius:100px;
-
-  font-weight:600;
-  font-size:14.5px;
-
-  border:none;
-  cursor:pointer;
-
-  transition:
-    transform .18s ease,
-    box-shadow .18s ease,
-    background .18s ease;
-
-  white-space:nowrap;
-}
-
-.btn-marigold{
-  background:var(--marigold);
-  color:#241505;
-}
-
-.btn-marigold:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(232,163,61,0.35);
-}
-
-.btn-ghost{
-  background:transparent;
-  color:var(--paper);
-  border:1px solid rgba(247,242,230,0.3);
-}
-
-.btn-ghost:hover{
-  border-color:rgba(247,242,230,0.6);
-}
-
-.btn-dark{
-  background:var(--ink);
-  color:var(--paper);
-}
-
-.btn-dark:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(18,20,43,0.25);
-}
-
-.btn-wa{
-  background:#25D366;
-  color:#0b3b20;
-}
-
-.btn-wa:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(37,211,102,0.35);
-}
-
-.nav-cta{
-  display:none;
-}
-
-@media (min-width:860px){
-  .nav-cta{
-    display:inline-flex;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+<title>MindVeda | 21 Days Anxiety Sleep Reset System™</title>
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;700&display=swap"></noscript>
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-XZS6RQMHQP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XZS6RQMHQP');
+</script>
+
+<script type="text/javascript">
+  window.addEventListener('load', function(){
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wpe2cz6100");
+  });
+</script>
+
+<script>
+  window.addEventListener('load', function(){
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2178528262970356');
+    fbq('track', 'PageView');
+  });
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2178528262970356&ev=PageView&noscript=1"
+/></noscript>
+
+<style>
+  :root {
+    --navy: #183459;
+    --blue: #1A4A8A;
+    --sky: #2E7DD1;
+    --gold: #C9A84C;
+    --gold-light: #F0D080;
+    --cream: #FDF8F0;
+    --white: #FFFFFF;
+    --text-dark: #0B1F3A;
+    --text-mid: #3A4A5C;
+    --text-light: #6B7A8D;
+    --red: #C0392B;
+    --green: #1A7A4A;
   }
-}
 
-.menu-btn{
-  display:none;
-  color:var(--paper);
-  background:none;
-  border:none;
-  font-size:22px;
-}
+  @font-face { font-family: 'DM Sans'; font-display: swap; }
+  @font-face { font-family: 'Playfair Display'; font-display: swap; }
 
-@media (max-width:859px){
-  .nav-links{
-    display:none;
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    max-width: 100%;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
   }
-}
 
-    .menu-btn {
-      display: none;
-      color: var(--paper);
-      background: none;
-      border: none;
-      font-size: 22px;
-    }
-
-    @media (max-width: 859px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-
-      background:
-        radial-gradient(
-          ellipse at 18% -10%,
-          rgba(232,163,61,0.16),
-          transparent 55%
-        ),
-
-        radial-gradient(
-          ellipse at 90% 10%,
-          rgba(217,119,107,0.14),
-          transparent 50%
-        ),
-
-        var(--ink);
-
-      color: var(--paper);
-
-      padding: 84px 0 96px;
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background-image:
-        radial-gradient(
-          rgba(247,242,230,0.5) 1px,
-          transparent 1px
-        );
-
-      background-size: 3px 3px;
-
-      opacity: 0.05;
-
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-
-      gap: 56px;
-
-      align-items: center;
-
-      position: relative;
-      z-index: 1;
-    }
-
-    @media (max-width: 940px) {
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 52px;
-      }
-    }
-
-    .hero .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-
-      color: var(--marigold);
-
-      font-size: 12px;
-
-      margin-bottom: 22px;
-    }
-
-    .eyebrow .dot {
-      width: 6px;
-      height: 6px;
-
-      border-radius: 50%;
-
-      background: var(--marigold);
-    }
-
-    .hero h1 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: clamp(42px, 5vw, 68px);
-
-      color: var(--paper);
-
-      font-weight: 500;
-
-      line-height: 0.98;
-
-      letter-spacing: -0.045em;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--marigold);
-      font-weight: 500;
-    }
-
-    .hero p.lede {
-      margin-top: 22px;
-
-      font-size: 18px;
-      line-height: 1.65;
-
-      color: rgba(247,242,230,0.78);
-
-      max-width: 520px;
-
-      letter-spacing: -0.01em;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-
-      gap: 18px;
-
-      margin-top: 34px;
-
-      flex-wrap: wrap;
-    }
-
-    .hero-actions .note {
-      font-size: 13.5px;
-      color: rgba(247,242,230,0.55);
-    }
-
-    .hero-trust {
-      display: flex;
-
-      gap: 28px;
-
-      margin-top: 52px;
-
-      flex-wrap: wrap;
-
-      padding-top: 28px;
-
-      border-top: 1px solid var(--line-light);
-    }
-
-    .hero-trust div {
-      max-width: 150px;
-    }
-
-    .hero-trust .num {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 26px;
-
-      color: var(--marigold);
-
-      font-weight: 600;
-    }
-
-    .hero-trust .lbl {
-      font-size: 12.5px;
-
-      color: rgba(247,242,230,0.58);
-
-      margin-top: 2px;
-
-      line-height: 1.4;
-    }
-
-    .phone-stage {
-      position: relative;
-
-      display: flex;
-
-      justify-content: center;
-    }
-
-    .phone {
-      width: min(340px, 100%);
-
-      background: #0b0d1e;
-
-      border-radius: 38px;
-
-      border: 8px solid #05060f;
-
-      box-shadow:
-        0 40px 90px rgba(0,0,0,0.55),
-        0 0 0 1px rgba(247,242,230,0.06);
-
-      overflow: hidden;
-
-      position: relative;
-    }
-
-    .phone-notch {
-      position: absolute;
-
-      top: 8px;
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      width: 90px;
-      height: 18px;
-
-      background: #05060f;
-
-      border-radius: 12px;
-
-      z-index: 3;
-    }
-
-    .wa-head {
-      background: #1F2C34;
-
-      padding: 34px 16px 14px;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      color: #E9EDEF;
-    }
-
-   .wa-avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex: none;
-}
-
-.wa-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 4px;
-}
-
-    .wa-head .who {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .wa-head .sub {
-      font-size: 11px;
-      color: #8FA0A8;
-    }
-
-    .wa-body {
-      background: #0B141A;
-
-      background-image:
-        radial-gradient(
-          rgba(255,255,255,0.03) 1px,
-          transparent 1px
-        );
-
-      background-size: 14px 14px;
-
-      padding: 16px 12px 20px;
-
-      min-height: 420px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 9px;
-    }
-
-    .wa-date {
-      align-self: center;
-
-      background: #1F2C34;
-
-      color: #8FA0A8;
-
-      font-size: 10.5px;
-
-      padding: 4px 10px;
-
-      border-radius: 8px;
-
-      margin-bottom: 6px;
-    }
-
-    .bubble {
-      max-width: 82%;
-
-      padding: 9px 12px;
-
-      border-radius: 9px;
-
-      font-size: 13px;
-
-      line-height: 1.45;
-
-      position: relative;
-
-      opacity: 0;
-
-      animation: pop .5s ease forwards;
-    }
-
-    .bubble.in {
-      background: #1F2C34;
-
-      color: #E9EDEF;
-
-      align-self: flex-start;
-
-      border-top-left-radius: 2px;
-    }
-
-    .bubble.out {
-      background: #005C4B;
-
-      color: #E9EDEF;
-
-      align-self: flex-end;
-
-      border-top-right-radius: 2px;
-    }
-
-    .bubble .time {
-      display: block;
-
-      font-size: 9.5px;
-
-      color: rgba(233,237,239,0.5);
-
-      margin-top: 4px;
-
-      text-align: right;
-    }
-
-    .bubble:nth-child(2) {
-      animation-delay: .3s;
-    }
-
-    .bubble:nth-child(3) {
-      animation-delay: 1.0s;
-    }
-
-    .bubble:nth-child(4) {
-      animation-delay: 1.7s;
-    }
-
-    .bubble:nth-child(5) {
-      animation-delay: 2.4s;
-    }
-
-    .bubble:nth-child(6) {
-      animation-delay: 3.1s;
-    }
-
-    @keyframes pop {
-
-      from {
-        opacity: 0;
-        transform: translateY(6px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .wa-input {
-      background: #1F2C34;
-
-      margin: 0 12px 14px;
-
-      border-radius: 24px;
-
-      height: 40px;
-
-      display: flex;
-
-      align-items: center;
-
-      padding: 0 14px;
-
-      color: #8FA0A8;
-
-      font-size: 12px;
-    }
-
-    .trustbar {
-      background: var(--paper-dim);
-
-      border-bottom: 1px solid var(--line);
-
-      padding: 22px 0;
-    }
-
-    .trustbar .wrap {
-      display: flex;
-
-      gap: 40px;
-
-      overflow-x: auto;
-
-      scrollbar-width: none;
-
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 12px;
-
-      letter-spacing: 0.05em;
-
-      text-transform: uppercase;
-
-      color: var(--text-soft);
-    }
-
-    .trustbar .wrap::-webkit-scrollbar {
-      display: none;
-    }
-
-    .trustbar span {
-      white-space: nowrap;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 8px;
-    }
-
-    .trustbar span::before {
-      content: "◆";
-
-      color: var(--marigold);
-
-      font-size: 8px;
-    }
-
-    section {
-      padding: 104px 0;
-    }
-
-    @media (max-width: 640px) {
-
-      section {
-        padding: 72px 0;
-      }
-    }
-
-    .section-head {
-      max-width: 640px;
-
-      margin-bottom: 56px;
-    }
-
-    .kicker {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 12px;
-
-      font-weight: 700;
-
-      letter-spacing: 0.08em;
-
-      text-transform: uppercase;
-
-      color: var(--marigold-deep);
-
-      margin-bottom: 14px;
-
-      display: block;
-    }
-
-    .section-head h2 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: clamp(30px, 3.5vw, 44px);
-
-      font-weight: 500;
-
-      letter-spacing: -0.04em;
-    }
-
-    .section-head p {
-      margin-top: 16px;
-
-      font-size: 16.5px;
-
-      color: var(--text-soft);
-
-      line-height: 1.65;
-    }
-
-    .why {
-      display: grid;
-
-      grid-template-columns: 0.95fr 1.05fr;
-
-      gap: 64px;
-
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-
-      .why {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .why-photo {
-      position: relative;
-    }
-
-    .why-photo img {
-      width: 100%;
-
-      height: 520px;
-
-      object-fit: cover;
-
-      border-radius: 22px;
-
-      box-shadow:
-        0 30px 60px rgba(18,20,43,0.16);
-    }
-
-    .why-photo .tag {
-      position: absolute;
-
-      bottom: 22px;
-      left: 22px;
-      right: 22px;
-
-      background: rgba(18,20,43,0.86);
-
-      backdrop-filter: blur(6px);
-
-      color: var(--paper);
-
-      border-radius: 14px;
-
-      padding: 16px 18px;
-
-      font-size: 13.5px;
-
-      line-height: 1.5;
-    }
-
-    .why-photo .tag b {
-      color: var(--marigold);
-
-      font-family: 'Manrope', sans-serif;
-
-      font-weight: 600;
-
-      display: block;
-
-      font-size: 15px;
-
-      margin-bottom: 3px;
-    }
-
-    .why-list {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 26px;
-    }
-
-    .why-item {
-      display: flex;
-
-      gap: 18px;
-
-      align-items: flex-start;
-    }
-
-    .why-item .ico {
-      flex: none;
-
-      width: 44px;
-      height: 44px;
-
-      border-radius: 12px;
-
-      background: var(--ink);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-    }
-
-    .why-item h3 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 19px;
-
-      font-weight: 600;
-
-      margin-bottom: 5px;
-
-      line-height: 1.15;
-    }
-
-    .why-item p {
-      font-size: 15px;
-
-      color: var(--text-soft);
-
-      line-height: 1.6;
-    }
-
-    .reviews-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3,1fr);
-
-      gap: 24px;
-    }
-
-    @media (max-width: 900px) {
-
-      .reviews-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .review-card {
-      background: var(--paper-dim);
-
-      border: 1px solid var(--line);
-
-      border-radius: 18px;
-
-      padding: 28px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 14px;
-    }
-
-    .review-card .quote-mark {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 34px;
-
-      color: var(--marigold);
-
-      line-height: 1;
-    }
-
-    .review-card h4 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 18px;
-
-      font-weight: 600;
-
-      line-height: 1.2;
-    }
-
-    .review-card p {
-      font-size: 14.5px;
-
-      color: var(--text-soft);
-
-      line-height: 1.65;
-    }
-
-    .review-who {
-      display: flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      margin-top: 6px;
-    }
-
-    .review-who .av {
-      width: 34px;
-      height: 34px;
-
-      border-radius: 50%;
-
-      object-fit: cover;
-    }
-
-    .review-who .meta {
-      font-size: 12.5px;
-
-      color: var(--text-soft);
-    }
-
-    .review-who .meta b {
-      color: var(--text-dark);
-
-      font-weight: 600;
-
-      display: block;
-
-      font-size: 13.5px;
-    }
-
-    .how {
-      background: var(--ink);
-
-      color: var(--paper);
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-    .how::before {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        radial-gradient(
-          circle at 85% 15%,
-          rgba(232,163,61,0.12),
-          transparent 45%
-        );
-    }
-
-    .how .wrap {
-      position: relative;
-
-      z-index: 1;
-    }
-
-    .how .section-head p {
-      color: rgba(247,242,230,0.65);
-    }
-
-    .how .kicker {
-      color: var(--marigold);
-    }
-
-    .how .section-head h2 {
-      color: var(--paper);
-    }
-
-    .steps {
-      display: grid;
-
-      grid-template-columns: repeat(3,1fr);
-
-      gap: 22px;
-    }
-
-    @media (max-width: 900px) {
-
-      .steps {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .step-card {
-      background: var(--ink2);
-
-      border: 1px solid var(--line-light);
-
-      border-radius: 20px;
-
-      padding: 32px 26px;
-    }
-
-    .step-num {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 15px;
-
-      color: var(--marigold);
-
-      width: 38px;
-      height: 38px;
-
-      border: 1px solid rgba(232,163,61,0.4);
-
-      border-radius: 50%;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      margin-bottom: 22px;
-    }
-
-    .step-card h3 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 20px;
-
-      margin-bottom: 10px;
-
-      color: var(--paper);
-
-      line-height: 1.2;
-    }
-
-    .step-card p {
-      font-size: 14.5px;
-
-      color: rgba(247,242,230,0.62);
-
-      line-height: 1.65;
-    }
-
-    .how-strip {
-      margin-top: 64px;
-
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 0;
-
-      border: 1px solid var(--line-light);
-
-      border-radius: 22px;
-
-      overflow: hidden;
-    }
-
-    @media (max-width: 820px) {
-
-      .how-strip {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .how-strip img {
-      width: 100%;
-
-      height: 100%;
-
-      min-height: 280px;
-
-      object-fit: cover;
-    }
-
-    .how-strip .copy {
-      padding: 44px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      gap: 16px;
-    }
-
-    .how-strip .copy h3 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 25px;
-
-      color: var(--paper);
-
-      line-height: 1.15;
-    }
-
-    .how-strip .copy p {
-      font-size: 15px;
-
-      color: rgba(247,242,230,0.62);
-
-      line-height: 1.65;
-    }
-
-    .root {
-      display: grid;
-
-      grid-template-columns: 0.9fr 1.1fr;
-
-      gap: 60px;
-
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-
-      .root {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .map {
-      position: relative;
-
-      min-height: 420px;
-    }
-
-    .center-node {
-      position: absolute;
-
-      top: 50%;
-      left: 26%;
-
-      transform: translate(-50%,-50%);
-
-      width: 128px;
-      height: 128px;
-
-      border-radius: 50%;
-
-      background: var(--ink);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      flex-direction: column;
-
-      box-shadow:
-        0 20px 40px rgba(18,20,43,0.22);
-
-      border: 2px solid var(--marigold);
-
-      z-index: 2;
-    }
-
-    .center-node span.hi {
-      font-family: 'Manrope', sans-serif;
-
-      color: var(--paper);
-
-      font-size: 19px;
-
-      font-weight: 600;
-    }
-
-    .center-node span.lo {
-      font-family: 'Manrope', sans-serif;
-
-      color: var(--marigold);
-
-      font-size: 9.5px;
-
-      letter-spacing: 0.08em;
-
-      text-transform: uppercase;
-
-      margin-top: 2px;
-    }
-
-    .leaf {
-      position: absolute;
-
-      padding: 10px 16px;
-
-      border-radius: 11px;
-
-      font-size: 13.5px;
-
-      font-weight: 600;
-
-      box-shadow:
-        0 10px 24px rgba(18,20,43,0.10);
-
-      white-space: nowrap;
-    }
-
-    @media (max-width: 640px) {
-
-      .map {
-        min-height: 520px;
-      }
-
-      .center-node {
-        left: 50%;
-        top: 16%;
-      }
-    }
-
-    .root-copy h2 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: clamp(30px,3.4vw,42px);
-
-      margin-bottom: 18px;
-
-      line-height: 1.05;
-    }
-
-    .root-copy p {
-      font-size: 16.5px;
-
-      color: var(--text-soft);
-
-      line-height: 1.65;
-
-      margin-bottom: 28px;
-    }
-
-    /* =========================================
-       TECHNIQUES
-       ========================================= */
-
-    .tech-panel {
-      background: var(--paper-dim);
-
-      border: 1px solid var(--line);
-
-      border-radius: 22px;
-
-      padding: 36px;
-    }
-
-    .tech-panel h3 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 22px;
-
-      line-height: 1.2;
-    }
-
-    .tech-grid {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 18px;
-
-      margin-top: 22px;
-    }
-
-    @media (max-width: 520px) {
-
-      .tech-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .tech-item {
-      background: var(--paper);
-
-      border: 1px solid var(--line);
-
-      border-radius: 14px;
-
-      padding: 18px;
-
-      display: flex;
-
-      gap: 12px;
-
-      align-items: flex-start;
-    }
-
-    .tech-item .ico {
-      flex: none;
-
-      width: 36px;
-      height: 36px;
-
-      border-radius: 9px;
-
-      background: var(--marigold);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      color: #241505;
-
-      font-size: 16px;
-    }
-
-    .tech-item h4 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 15px;
-
-      font-weight: 600;
-
-      margin-bottom: 3px;
-    }
-
-    .tech-item p {
-      font-size: 12.5px;
-
-      color: var(--text-soft);
-
-      line-height: 1.45;
-    }
-
-    .final {
-      background:
-        linear-gradient(
-          180deg,
-          var(--ink) 0%,
-          #0d0f22 100%
-        );
-
-      color: var(--paper);
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-    .final::before {
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        radial-gradient(
-          ellipse at 50% 0%,
-          rgba(232,163,61,0.16),
-          transparent 60%
-        );
-    }
-
-    .final .wrap {
-      position: relative;
-
-      z-index: 1;
-
-      text-align: center;
-
-      max-width: 680px;
-    }
-
-    .final h2 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: clamp(32px,4vw,52px);
-
-      color: var(--paper);
-
-      margin-bottom: 18px;
-
-      line-height: 1.05;
-    }
-
-    .final p {
-      font-size: 17px;
-
-      color: rgba(247,242,230,0.68);
-
-      line-height: 1.65;
-
-      margin-bottom: 36px;
-    }
-
-    .final-actions {
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 16px;
-
-      flex-wrap: wrap;
-    }
-
-    .price-note {
-      margin-top: 22px;
-
-      font-size: 13px;
-
-      color: rgba(247,242,230,0.5);
-    }
-
-    footer {
-      background: var(--ink2);
-
-      color: rgba(247,242,230,0.7);
-
-      padding: 72px 0 32px;
-    }
-
-    .foot-grid {
-      display: grid;
-
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-
-      gap: 40px;
-
-      padding-bottom: 52px;
-
-      border-bottom: 1px solid var(--line-light);
-    }
-
-    @media (max-width: 800px) {
-
-      .foot-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      .foot-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .foot-grid h5 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 11.5px;
-
-      font-weight: 700;
-
-      letter-spacing: 0.08em;
-
-      text-transform: uppercase;
-
-      color: rgba(247,242,230,0.4);
-
-      margin-bottom: 18px;
-    }
-
-    .foot-grid a {
-      display: block;
-
-      font-size: 14px;
-
-      margin-bottom: 12px;
-
-      color: rgba(247,242,230,0.72);
-
-      transition: color .2s;
-    }
-
-    .foot-grid a:hover {
-      color: var(--marigold);
-    }
-
-    .foot-brand .logo {
-      margin-bottom: 16px;
-    }
-
-    .foot-brand p {
-      font-size: 13.5px;
-
-      color: rgba(247,242,230,0.5);
-
-      max-width: 270px;
-
-      line-height: 1.6;
-    }
-
-    .social {
-      display: flex;
-
-      gap: 10px;
-
-      margin-top: 20px;
-    }
-
-    .social a {
-      width: 36px;
-      height: 36px;
-
-      border-radius: 50%;
-
-      border: 1px solid var(--line-light);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      margin-bottom: 0;
-    }
-
-    .foot-bottom {
-      padding-top: 28px;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      flex-wrap: wrap;
-
-      gap: 12px;
-
-      font-size: 12.5px;
-
-      color: rgba(247,242,230,0.4);
-    }
-
-    .foot-bottom a {
-      color: rgba(247,242,230,0.4);
-    }
-
-    .foot-bottom a:hover {
-      color: var(--marigold);
-    }
-
-  </style>
+  /* ── TRUST BAR ── */
+  .trust-bar { background: var(--navy); color: var(--gold-light); text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; }
+  .trust-bar span { margin: 0 12px; opacity: 0.7; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    padding: 48px 20px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .hero-eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 20px; }
+
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    line-height: 1.12;
+    max-width: 820px;
+    margin: 0 auto 24px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+
+  /* FIX: India-specific sub-headline replacing generic one */
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.78);
+    max-width: 580px;
+    margin: 0 auto 12px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* NEW: India-specific trigger line */
+  .hero-india-line {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  /* NEW: Social proof counter strip — moved above CTA */
+  .hero-social-proof {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 100px;
+    padding: 8px 20px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+  .hero-social-proof .avatar-stack {
+    display: flex;
+    margin-right: 4px;
+  }
+  .hero-social-proof .avatar-stack span {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--navy);
+    margin-right: -8px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #d4af37;
+    color: #1a1a1a;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(212,175,55,0.35);
+    transition: all 0.2s ease;
+    margin: 0 auto 16px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    cursor: pointer;
+    border: none;
+  }
+  .cta-btn:hover { background: #c19b2e; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(212,175,55,0.45); }
+  .cta-btn:active { transform: scale(0.98); }
+  .cta-arrow { transition: transform 0.2s ease; }
+  .cta-btn:hover .cta-arrow { transform: translateX(4px); }
+
+  /* NEW: micro-reassurance below CTA */
+  .cta-micro {
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0;
+  }
+
+  /* NEW: UPI badge row */
+  .upi-badge-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 14px auto 0;
+    padding-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .upi-badge-row img {
+    height: 28px;
+    width: auto;
+    opacity: 0.75;
+    filter: brightness(0) invert(1);
+  }
+  .upi-badge-row .upi-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── HERO TRUST STRIP (bottom of hero) ── */
+  .hero-trust-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 14px 20px 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.38);
+  }
+  .hero-trust-strip .dot { opacity: 0.25; }
+  .hero-trust-strip span { white-space: nowrap; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonial-section { background: var(--white); padding: 60px 16px; }
+  .testimonial-slider-wrap { max-width: 680px; margin: 28px auto 0; position: relative; }
+  .testimonial-card { background:#fff; border:1px solid #ececec; border-radius:20px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.05); margin-bottom:10px; }
+  .testimonial-card img { width:100%; display:block; }
+
+  .testimonial-info {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 22px;
+    background:#fff;
+    border-bottom:1px solid #ececec;
+  }
+  .testimonial-info h4 { margin:0; font-size:17px; font-weight:700; color:#183459; line-height:1.2; }
+  .testimonial-info span { display:block; margin-top:4px; font-size:13px; color:#6b7280; }
+  .testimonial-stars { color:#F4B400; font-size:18px; letter-spacing:1px; flex-shrink:0; }
+
+  /* NEW: testimonial count badge */
+  .testi-count-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(46,125,209,0.08);
+    border: 1px solid rgba(46,125,209,0.18);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 13px;
+    color: var(--sky);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .swiper-button-next, .swiper-button-prev { width:52px !important; height:52px !important; color:#1e293b !important; top:50% !important; transform:translateY(-50%) !important; }
+  .swiper-button-next:after, .swiper-button-prev:after { font-size:28px !important; font-weight:700; }
+  .swiper-button-prev { left:-6px !important; top:50% !important; }
+  .swiper-button-next { right:-6px !important; }
+  .swiper-pagination { position:relative !important; bottom:0 !important; margin-top:18px !important; display:flex; justify-content:center; align-items:center; z-index:20; }
+  .swiper { padding-bottom:50px; }
+  .swiper-pagination-bullet { width:8px; height:8px; background:#c7c7c7 !important; opacity:1; }
+  .swiper-pagination-bullet-active { background:#1e293b !important; width:9px; height:9px; }
+
+  @media(max-width:768px) {
+    .testimonial-section { padding:40px 14px; }
+    .testimonial-slider-wrap { margin-top:20px; }
+    .swiper-button-next, .swiper-button-prev { width:42px !important; height:42px !important; }
+    .swiper-button-next:after, .swiper-button-prev:after { font-size:22px !important; }
+    .testimonial-info { padding:14px 16px; }
+    .testimonial-info h4 { font-size:15px; }
+    .testimonial-info span { font-size:12px; }
+    .testimonial-stars { font-size:15px; }
+  }
+
+  /* ── REFRAME ── */
+  .reframe-block { background: var(--navy); color: var(--white); border-radius: 8px; padding: 48px 40px; text-align: center; margin: 40px 0; }
+  .reframe-block blockquote { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(22px, 4vw, 32px); font-weight: 700; font-style: italic; line-height: 1.45; color: var(--white); max-width: 560px; margin: 0 auto; }
+  .reframe-block blockquote em { color: var(--gold-light); font-style: normal; }
+
+  /* ── FAILS ── */
+  .fails-grid { max-width: 720px; margin: 32px auto 0; display: flex; flex-direction: column; gap: 18px; }
+  .fail-card { display: flex; align-items: flex-start; gap: 18px; padding: 24px; background: #ffffff; border: 1px solid #e6e8eb; border-radius: 14px; transition: all 0.25s ease; }
+  .fail-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
+  .fail-number { font-size: 24px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+  .fail-card h3 { margin: 0 0 8px 0; font-size: 18px; font-weight: 700; color: #111827; }
+  .fail-card p { margin: 0; font-size: 15px; line-height: 1.7; color: #4b5563; }
+
+  @media (max-width: 600px) {
+    .fail-card { padding: 18px; gap: 14px; }
+    .fail-card h3 { font-size: 16px; }
+    .fail-card p { font-size: 14px; line-height: 1.6; }
+  }
+
+  /* ── SYSTEM INTRO ── */
+  .system-intro { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%); padding: 80px 20px; color: var(--white); }
+  .system-intro-inner { max-width: 720px; margin: 0 auto; }
+  .system-intro .h2 { color: var(--white); }
+  .system-intro .h2 em { color: var(--gold-light); }
+  .system-intro .lead { color: rgba(255,255,255,0.7); }
+  .phases { display: flex; justify-content: center; align-items: center; }
+  .phase-image img { width: 100%; max-width: 900px; height: auto; border-radius: 12px; object-fit: cover; }
+
+  /* ── FEATURES ── */
+  .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+  .feature-card { background: #ffffff; padding: 20px 16px; border-radius: 12px; border: 0.5px solid #e0dcd4; text-align: left; transition: 0.2s ease; }
+  .feature-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+  .feature-card .icon { font-size: 22px; margin-bottom: 10px; }
+  .feature-card .eyebrow { font-size: 12px; color: #6b7280; letter-spacing: 1px; margin-bottom: 6px; }
+  .feature-card h3 { font-size: 18px; margin-bottom: 8px; }
+  .feature-card p { font-size: 14px; color: #4b5563; margin-bottom: 12px; }
+  .tag { font-size: 12px; background: #e5e7eb; padding: 6px 10px; border-radius: 999px; }
+  .feature-card.full { grid-column: span 1; }
+
+  @media (max-width: 600px) {
+    .features-grid { grid-template-columns: 1fr; gap: 14px; }
+    .feature-card { padding: 18px 16px; }
+    .feature-card h3 { font-size: 16px; line-height: 1.4; }
+    .feature-card p { font-size: 13.5px; line-height: 1.5; }
+    .feature-card .eyebrow { font-size: 10px; }
+    .feature-card .tag { font-size: 11px; padding: 4px 8px; }
+  }
+
+  /* ── PRICING ── */
+  .pricing-section { background: var(--navy); padding: 80px 20px; text-align: center; color: var(--white); }
+  .pricing-inner { max-width: 520px; margin: 0 auto; }
+  .pricing-section .h2 { color: var(--white); margin-bottom: 8px; }
+  .pricing-section .h2 em { color: var(--gold-light); }
+  .pricing-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 40px 32px; margin: 32px 0; }
+  .price-main { font-size: 72px; font-weight: 900; color: var(--gold-light); font-family: 'Playfair Display', Georgia, serif; line-height: 1; }
+  .price-original { font-size: 22px; text-decoration: line-through; color: rgba(255,255,255,0.3); margin-bottom: 6px; }
+  .price-save-tag { display: inline-block; background: var(--gold); color: var(--navy); font-size: 13px; font-weight: 700; padding: 5px 14px; border-radius: 3px; margin: 12px 0 20px; }
+  .urgency-line { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 10px; }
+  .includes { text-align: left; margin: 24px 0; }
+  .includes li { display: flex; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.75); padding: 6px 0; list-style: none; }
+  .includes li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+  /* NEW: pricing UPI row */
+  .pricing-upi-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0 0;
+    flex-wrap: wrap;
+  }
+  .pricing-upi-row .upi-chip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 500;
+  }
+  .pricing-upi-row .upi-chip span { font-size: 15px; }
+
+  /* NEW: guarantee block */
+  .guarantee-block { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 36px 32px; text-align: center; margin: 0 0 0; color: var(--white); }
+  .guarantee-block .g-badge { font-size: 48px; margin-bottom: 16px; }
+  .guarantee-block .g-title { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 800; margin-bottom: 12px; color: var(--white); }
+  .guarantee-block p { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.6); }
+
+  /* ── FOR YOU / NOT FOR YOU ── */
+  .for-you-section { background: var(--cream); padding: 64px 20px; }
+  .for-you-inner { max-width: 720px; margin: 0 auto; }
+  .for-you-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+  .for-you-card { background: #fff; border-radius: 14px; padding: 28px; border: 1px solid #e6e8eb; }
+  .for-you-card.yes { border-top: 3px solid #1A7A4A; }
+  .for-you-card.no { border-top: 3px solid #C0392B; }
+  .for-you-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+  .for-you-card h3.yes-head { color: #1A7A4A; }
+  .for-you-card h3.no-head { color: #C0392B; }
+  .for-you-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .for-you-list li { font-size: 14px; color: var(--text-mid); line-height: 1.55; display: flex; gap: 8px; align-items: flex-start; }
+  .for-you-list li span.check { color: #1A7A4A; font-weight: 700; flex-shrink: 0; }
+  .for-you-list li span.cross { color: #C0392B; font-weight: 700; flex-shrink: 0; }
+
+  @media (max-width: 600px) {
+    .for-you-grid { grid-template-columns: 1fr; gap: 14px; }
+  }
+
+  /* ── MENTOR ── */
+  .mentor { background: var(--cream); padding: 80px 24px; }
+  .mentor-card { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 48px; box-shadow: 0 4px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.06); }
+  .mentor-header { display: flex; gap: 24px; align-items: flex-start; margin-bottom: 32px; flex-wrap: wrap; }
+  .mentor-photo { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 3px solid var(--gold); }
+  .mentor-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .mentor-name { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .mentor-title { font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
+  .mentor-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge { font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 100px; background: rgba(201,168,76,0.12); color: #8B6914; border: 1px solid rgba(201,168,76,0.3); }
+  .mentor-story { font-size: 16px; color: var(--text-dark); line-height: 1.75; }
+  .mentor-story p { margin-bottom: 16px; }
+  .mentor-story p:last-child { margin-bottom: 0; }
+  .mentor-story strong { color: var(--navy); font-weight: 600; }
+  .mentor-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.08); }
+  .mentor-stat { text-align: center; }
+  .mentor-stat-num { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; color: var(--navy); }
+  .mentor-stat-label { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+  @media (max-width: 768px) {
+    .mentor { padding: 40px 16px; }
+    .mentor-card { padding: 24px 18px; border-radius: 12px; }
+    .mentor-header { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+    .mentor-photo { width: 72px; height: 72px; }
+    .mentor-name { font-size: 22px; }
+    .mentor-badges { justify-content: center; }
+    .mentor-stats { grid-template-columns: 1fr; gap: 12px; }
+  }
+
+  /* ── FAQ ── */
+  .faq-item { border-bottom: 1px solid rgba(11,31,58,0.1); padding: 24px 0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q { font-weight: 600; font-size: 16px; margin-bottom: 10px; color: var(--navy); }
+  .faq-a { font-size: 15px; line-height: 1.75; color: var(--text-mid); }
+  .faq-a strong { color: var(--navy); }
+
+  /* ── FINAL CTA ── */
+  .final-cta { background: var(--navy); padding: 80px 20px; text-align: center; color: var(--white); }
+  .final-cta-inner { max-width: 600px; margin: 0 auto; }
+  .final-cta .h2 { color: var(--white); margin-bottom: 20px; }
+  .final-cta .h2 em { color: var(--gold-light); }
+  .final-cta .lead { color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+  .final-cta .komal-sign { margin: 28px 0 32px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .final-cta .komal-sign img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; }
+  .final-cta .komal-sign p { font-size: 15px; color: rgba(255,255,255,0.65); font-style: italic; max-width: 400px; line-height: 1.6; }
+  .final-cta .footnote { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 14px; }
+
+  /* ── SHARED ── */
+  .section { padding: 56px 20px 80px; max-width: 720px; margin: 0 auto; }
+  .section-wide { padding: 80px 20px; max-width: 960px; margin: 0 auto; }
+  .h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 4vw, 40px); font-weight: 800; line-height: 1.2; color: var(--navy); margin-bottom: 16px; }
+  .h2 em { font-style: italic; color: var(--sky); }
+  .lead { font-size: 17px; line-height: 1.8; color: var(--text-mid); margin-bottom: 20px; }
+  .divider { max-width: 60px; height: 2px; background: var(--gold); margin: 20px auto 32px; }
+  .eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sky); font-weight: 600; margin-bottom: 14px; display: block; }
+  .footnote { font-size: 15px; color: var(--text-light); margin-top: 12px; }
+
+  footer { background: #080F17; padding: 32px 24px; text-align: center; font-size: 13px; color: rgba(255,255,255,0.25); }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    section { padding: 56px 20px !important; }
+    p { font-size: 15px; line-height: 1.6; }
+    h1 { font-size: 32px; line-height: 1.2; }
+    h2 { font-size: 26px; }
+    .hero { padding: 36px 16px 0; }
+    .reframe-block { padding: 32px 20px; }
+    .mentor-card { padding: 24px 16px; }
+  }
+</style>
 </head>
-
-
 <body>
 
-  <nav>
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<div class="hero">
+  <h1>
+    Your Body Is Tired.<br>
+    <em>But Your Brain </em><br>
+    Won't Shut Up
+  </h1>
 
-    <div class="nav-inner">
+  <p class="hero-sub">
+    A 21-day sleep reset system for working professionals whose brain won't switch off when their head hits the pillow.
+  </p>
 
-      <a href="#top" class="logo">
-
-        <svg class="logo-mark" viewBox="0 0 26 26" fill="none">
-          <path
-            d="M17 3C11 3 6.5 8 6.5 14C6.5 20 11.5 24.5 17.5 23.8C13.2 21.6 10.2 17.8 10.2 13.2C10.2 8.6 13.2 4.6 17 3Z"
-            fill="#E8A33D"
-          />
-          <circle
-            cx="19.5"
-            cy="6.5"
-            r="1.4"
-            fill="#E8A33D"
-          />
-        </svg>
-
-        <span class="logo-word">MindVeda</span>
-
-      </a>
-
-
-      <div class="nav-links">
-
-        <a href="#why">The Problem</a>
-
-        <a href="#how">The Solution</a>
-
-        <a href="#reviews">How it Works</a>
-
-        <a href="#help">Testimonials</a>
-
-      </div>
-
-
-      <a href="#start" class="btn btn-marigold nav-cta">
-        Get Started Tonight
-      </a>
-
-
-      <button class="menu-btn">
-        ☰
-      </button>
-
+  <!-- FIX: Social proof moved ABOVE the CTA button -->
+  <div class="hero-social-proof">
+    <div class="avatar-stack">
+      <span>R</span><span>P</span><span>A</span>
     </div>
+    Join 450+ Indians already sleeping better
+  </div>
 
-  </nav>
+  <br>
 
-  <header class="hero" id="top">
+  <a class="cta-btn" href="https://superprofile.bio/vp/21-Day-Anxiety-Sleep-Reset-System" target="_blank">
+    Calm My Mind Tonight
+  </a>
 
-    <div class="wrap hero-grid">
-
-
-      <div class="reveal in">
-
-        <span class="eyebrow">
-          <span class="dot"></span>
-          Trusted by 500+ Indians
-        </span>
-
-
-        <h1>
-          Your Body Is Tired.<br>
-          But Your Mind<em> Won't Shut Up.</em>
-        </h1>
-
-
-        <p class="lede">
-          MindVeda is a 21-night guided sleep-reset program
-          for people whose body is tired but whose mind won't
-          switch off, delivered through WhatsApp.
-        </p>
-
-
-        <div class="hero-actions">
-
-          <a href="#start" class="btn btn-marigold">
-            Get Started Tonight
-          </a>
-
-         
-
-        </div>
-
-
-        <div class="hero-trust">
-
-          <div>
-
-            <div class="num">21</div>
-
-            <div class="lbl">
-              Nights of guided sleep reset.
-            </div>
-
-          </div>
-
-
-          <div>
-
-            <div class="num">10 Mins</div>
-
-            <div class="lbl">
-              Delivered on WhatsApp each night.
-            </div>
-
-          </div>
-
-
-          <div>
-
-            <div class="num">₹999</div>
-
-            <div class="lbl">
-              Lifetime access, no subscription.
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="phone-stage reveal in">
-
-        <div class="phone">
-
-          <div class="phone-notch"></div>
-
-
-          <div class="wa-head">
-
-            <div class="wa-avatar">
-  <img src="3.png" alt="MindVeda logo">
+  <div class="hero-trust-strip">
+    <span>✓ Instant download</span>
+    <span class="dot">·</span>
+    <span>📱 30-day money back guarantee</span>
+    <span class="dot">·</span>
+  </div>
 </div>
 
-            <div>
 
-              <div class="who">
-                MindVeda
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS — moved immediately after hero
+     FIX: social proof before the pitch
+════════════════════════════════════════════ -->
+<div class="testimonial-section">
+  <div class="section-wide" style="padding:0;">
+
+    <span class="eyebrow" style="text-align:center;">TESTIMONIALS</span>
+    <div class="h2" style="text-align:center;">Real People <em>Real Results</em></div>
+    <!-- FIX: show volume count so depth registers even without swiping -->
+    <div style="text-align:center; margin-bottom: 8px;">
+      <span class="testi-count-badge">⭐ 4.8/5 Average</span>
+    </div>
+    <div class="divider"></div>
+
+    <div class="testimonial-slider-wrap">
+      <div class="swiper testimonialSwiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-info">
+                <div><h4>Neha Sharma</h4><span>Software Engineer · Bengaluru</span></div>
+                <div class="testimonial-stars">★★★★★</div>
               </div>
+              <img src="1.webp" loading="eager" alt="Neha Sharma testimonial">
+            </div>
+          </div>
 
-              <div class="sub">
-                Night 1 of 21 · online
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-info">
+                <div><h4>Manish Mehta</h4><span>HR Manager · Mumbai</span></div>
+                <div class="testimonial-stars">★★★★★</div>
               </div>
-
+              <img src="2.webp" loading="lazy" alt="Manish Mehta testimonial">
             </div>
-
           </div>
 
-
-          <div class="wa-body">
-
-            <div class="wa-date">
-              Tonight, 10:00 PM
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-info">
+                <div><h4>Kavya Verma</h4><span>Marketing Executive · Delhi</span></div>
+                <div class="testimonial-stars">★★★★★</div>
+              </div>
+              <img src="3.webp" loading="lazy" alt="Kavya Verma testimonial">
             </div>
-
-
-            <div class="bubble in">
-
-              Night 1 · Naming the Noise 🌙
-
-              <span class="time">
-                10:00 PM
-              </span>
-
-            </div>
-
-
-            <div class="bubble in">
-
-              Before any sleep tools — let's find what's actually
-              keeping you up. In one line: what's the loudest
-              thought at 1am?
-
-              <span class="time">
-                10:00 PM
-              </span>
-
-            </div>
-
-
-            <div class="bubble out">
-
-              Tomorrow's client call. On loop, honestly.
-
-              <span class="time">
-                10:00 PM
-              </span>
-
-            </div>
-
-
-            <div class="bubble in">
-
-              That's your brain trying to "solve" something it
-              can't fix at 1am. Tonight's 8-min audio teaches it
-              to close that file until morning. ▶️
-
-              <span class="time">
-                10:00 PM
-              </span>
-
-            </div>
-
-
-            <div class="bubble in">
-
-              Reply DONE once you've listened, and I'll see you
-              tomorrow night.
-
-              <span class="time">
-                10:00 PM
-              </span>
-
-            </div>
-
           </div>
 
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-info">
+                <div><h4>Sneha Gupta</h4><span>Chartered Accountant · Pune</span></div>
+                <div class="testimonial-stars">★★★★★</div>
+              </div>
+              <img src="4.webp" loading="lazy" alt="Sneha Gupta testimonial">
+            </div>
+          </div>
 
-          <div class="wa-input">
-            Type a message
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-info">
+                <div><h4>Aditya Singh</h4><span>Product Manager · Gurgaon</span></div>
+                <div class="testimonial-stars">★★★★★</div>
+              </div>
+              <img src="5.webp" loading="lazy" alt="Aditya Singh testimonial">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-info">
+                <div><h4>Karan Singh</h4><span>Teacher · Chandigarh</span></div>
+                <div class="testimonial-stars">★★★★★</div>
+              </div>
+              <img src="6.webp" loading="lazy" alt="Karan Singh testimonial">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-info">
+                <div><h4>Priya Gupta</h4><span>Business Owner · Ahmedabad</span></div>
+                <div class="testimonial-stars">★★★★★</div>
+              </div>
+              <img src="7.webp" loading="lazy" alt="Priya Gupta testimonial">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-info">
+                <div><h4>Sourav Kumar</h4><span>UX Designer · Hyderabad</span></div>
+                <div class="testimonial-stars">★★★★★</div>
+              </div>
+              <img src="8.webp" loading="lazy" alt="Sourav Kumar testimonial">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-info">
+                <div><h4>Rohit Malhotra</h4><span>Operations Manager · Noida</span></div>
+                <div class="testimonial-stars">★★★★★</div>
+              </div>
+              <img src="9.webp" loading="lazy" alt="Rohit Malhotra testimonial">
+            </div>
           </div>
 
         </div>
-
+        <div class="swiper-pagination"></div>
       </div>
-
     </div>
 
-  </header>
-  
-  <section
-    id="reviews"
-    style="
-      background:var(--paper-dim);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    "
-  >
+  </div>
+</div>
 
-    <div class="wrap">
+<!-- ═══════════════════════════════════════════
+     REFRAME
+════════════════════════════════════════════ -->
+<div style="padding: 0 20px; max-width: 720px; margin: 0 auto;">
+  <div class="reframe-block">
+    <blockquote>
+      The Goal Isn't To Force Sleep<br>
+      It's To Remove <em>What's Keeping</em> You Awake.
+    </blockquote>
+  </div>
+</div>
 
-      <div class="section-head reveal">
 
-        <span class="kicker">
-          Testimonials
-        </span>
-
-        <h2>
-          Real People, Real Results
-        </h2>
-
-        <p>
-          These are the moments people shared back with us
-          over WhatsApp during their 21 nights.
-        </p>
-
+<!-- ═══════════════════════════════════════════
+     WHY NOTHING ELSE WORKED
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="h2" style="margin-top: 20px;">Why Nothing Else Worked <em>And Why This Will</em></div>
+  <div class="divider" style="margin-left: 0;"></div>
+  <div class="fails-grid">
+    <div class="fail-card">
+      <div class="fail-number">💊</div>
+      <div>
+        <h3>Sleeping pills</h3>
+        <p>They don't fix sleep, they suppress your nervous system temporarily, so the moment you stop, the anxiety comes back harder.</p>
       </div>
-
-
-      <div class="reviews-grid">
-
-
-        <div class="review-card reveal">
-
-          <div class="quote-mark">
-            "
-          </div>
-
-          <h4>
-            Actually fell asleep before midnight
-          </h4>
-
-          <p>
-            I track everything — I'm that person.
-            My average time-to-sleep dropped by 40 minutes
-            by night 12. The worry window trick alone
-            was worth it.
-          </p>
-
-          <div class="review-who">
-
-            <img
-              class="av"
-              src="https://images.unsplash.com/photo-1512310604669-443f26c35f52?auto=format&fit=crop&w=100&q=80"
-              alt=""
-            >
-
-            <div class="meta">
-
-              <b>Ananya R.</b>
-
-              Consultant, Bengaluru
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="review-card reveal">
-
-          <div class="quote-mark">
-            "
-          </div>
-
-          <h4>
-            Stopped dreading bedtime
-          </h4>
-
-          <p>
-            Every app I'd tried felt like homework.
-            This felt like a friend checking in each night —
-            and it never once felt like therapy-lite.
-          </p>
-
-          <div class="review-who">
-
-            <img
-              class="av"
-              src="https://images.unsplash.com/photo-1618245472177-2a74ad3b994a?auto=format&fit=crop&w=100&q=80"
-              alt=""
-            >
-
-            <div class="meta">
-
-              <b>Priya S.</b>
-
-              Product Manager, Gurugram
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="review-card reveal">
-
-          <div class="quote-mark">
-            "
-          </div>
-
-          <h4>
-            My psychiatrist approved of the structure
-          </h4>
-
-          <p>
-            I showed her the program outline before starting —
-            she said it was close to what she'd assign as
-            CBT-I homework. That mattered to me.
-          </p>
-
-          <div class="review-who">
-
-            <img
-              class="av"
-              src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?auto=format&fit=crop&w=100&q=80"
-              alt=""
-            >
-
-            <div class="meta">
-
-              <b>Kabir M.</b>
-
-              Architect, Mumbai
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
     </div>
-
-  </section>
-  
-  <section id="why">
-
-    <div class="wrap why">
-
-
-      <div class="reveal">
-
-        <div class="why-photo">
-
-          <img
-            src="1.png"
-            alt="Woman in stress"
-          >
-
-        </div>
-
+    <div class="fail-card">
+      <div class="fail-number">📱</div>
+      <div>
+        <h3>Meditation apps</h3>
+        <p>When your mind is already racing, "just breathe and observe your thoughts" doesn't calm you down. It gives you something new to fail at.</p>
       </div>
-
-
-      <div class="reveal">
-
-        <span class="kicker">
-          The Root Cause
-        </span>
-
-
-        <h2
-          style="
-            font-size:clamp(28px,3vw,38px);
-            margin-bottom:30px;
-          "
-        >
-         What's Keeping You Awake
-        </h2>
-
-
-        <div class="why-list">
-
-
-          <div class="why-item">
-
-            <div class="ico">
-
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M12 3v4M12 17v4M3 12h4M17 12h4"
-                  stroke="#E8A33D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="4"
-                  stroke="#E8A33D"
-                  stroke-width="2"
-                />
-              </svg>
-
-            </div>
-
-
-            <div>
-
-              <h3>
-                Treats the anxiety, not just the tiredness
-              </h3>
-
-              <p>
-                Most sleep apps hand you white noise.
-                MindVeda works on the racing, over-thinking
-                mind that's actually keeping you up.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="why-item">
-
-            <div class="ico">
-
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M4 4h16v12H7l-3 3V4z"
-                  stroke="#E8A33D"
-                  stroke-width="2"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-            </div>
-
-
-            <div>
-
-              <h3>
-                Lives where you already are — WhatsApp
-              </h3>
-
-              <p>
-                No download, no login to remember,
-                no new icon on your home screen.
-                Just one message a night.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="why-item">
-
-            <div class="ico">
-
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M5 13l4 4L19 7"
-                  stroke="#E8A33D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-            </div>
-
-
-            <div>
-
-              <h3>
-                One steady program, not an infinite feed
-              </h3>
-
-              <p>
-                21 nights, in order, building on each other —
-                the way real therapy homework works.
-                Nothing to binge or abandon.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="why-item">
-
-            <div class="ico">
-
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="8"
-                  stroke="#E8A33D"
-                  stroke-width="2"
-                />
-
-                <path
-                  d="M12 8v4l3 2"
-                  stroke="#E8A33D"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-
-            </div>
-
-
-            <div>
-
-              <h3>
-                Built on CBT-I, not generic meditation
-              </h3>
-
-              <p>
-                Cognitive Behavioural Therapy for Insomnia is
-                the approach sleep clinics use first — reworked
-                for a nightly, self-guided format.
-              </p>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
     </div>
-
-  </section>
-
-
-  <section id="how" class="how">
-
-    <div class="wrap">
-
-
-      <div class="section-head reveal">
-
-        <span class="kicker">
-          The 21-night reset
-        </span>
-
-        <h2>
-          How MindVeda actually works
-        </h2>
-
-        <p>
-          Three stages, delivered night by night —
-          never dumped on you all at once.
-        </p>
-
+    <div class="fail-card">
+      <div class="fail-number">🛋️</div>
+      <div>
+        <h3>Therapy</h3>
+        <p>Therapy is good. But ₹1,500–2,000 per session quickly becomes ₹6,000+ a month — and results take months when all you want is your mind to switch off tonight.</p>
       </div>
-
-
-      <div class="steps">
-
-
-        <div class="step-card reveal">
-
-          <div class="step-num">
-            01
-          </div>
-
-          <h3>
-            Take the 5-minute screening
-          </h3>
-
-          <p>
-            A short set of questions on your sleep,
-            stress and thought patterns — so night one
-            is written for your specific kind of "wired."
-          </p>
-
-        </div>
-
-
-        <div class="step-card reveal">
-
-          <div class="step-num">
-            02
-          </div>
-
-          <h3>
-            Get your night-by-night program
-          </h3>
-
-          <p>
-            One message, one exercise, every evening for
-            21 nights — a short audio, a reframing prompt,
-            or a wind-down ritual. Ten minutes, no more.
-          </p>
-
-        </div>
-
-
-        <div class="step-card reveal">
-
-          <div class="step-num">
-            03
-          </div>
-
-          <h3>
-            Wake up without the 3am spiral
-          </h3>
-
-          <p>
-            By the final week, you're not fighting your
-            mind at night — you've built the habits that
-            keep it quiet on its own.
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-      <div class="how-strip reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1666843527155-14ec5f016802?auto=format&fit=crop&w=900&q=80"
-          alt="City skyline at night with lit windows"
-        >
-
-
-        <div class="copy">
-
-          <h3>
-            Built for Indian nights, not translated from one
-          </h3>
-
-          <p>
-            Written for the 11pm-to-1am stretch that Indian
-            professionals actually live in — deadline anxiety,
-            joint-family expectations, and a phone that never
-            fully switches off. Not a Western sleep app with
-            the currency changed.
-          </p>
-
-        </div>
-
-      </div>
-
     </div>
-
-  </section>
-
-
-  
-
-  <section
-    style="
-      background:var(--paper-dim);
-      border-top:1px solid var(--line);
-    "
-  >
-
-    <div class="wrap">
-
-
-      <div class="section-head reveal">
-
-        <span class="kicker">
-          Inside the program
-        </span>
-
-        <h2>
-          The techniques we actually use
-        </h2>
-
-        <p>
-          Adapted from Cognitive Behavioural Therapy for
-          Insomnia (CBT-I) — the approach sleep clinics
-          reach for first, before medication.
-        </p>
-
+  </div>
+</div>
+<!-- ═══════════════════════════════════════════
+     SYSTEM INTRO
+════════════════════════════════════════════ -->
+<div class="system-intro">
+  <div class="system-intro-inner">
+    <span class="eyebrow" style="color: var(--gold);">Introducing</span>
+    <div class="h2">21-Day Anxiety Sleep Reset System™</div>
+    <div class="divider"></div>
+    <p class="lead">
+      <strong style="color:white;">A step-by-step system designed to stop bedtime overthinking and help your brain fall asleep faster naturally.</strong>
+      In the next 21 days, your brain will stop treating bedtime as a threat and sleep starts happening on its own — just 20 minutes a day, built around a specific method: the
+      <strong style="color:white;">3-Step Brain Shutdown Process™.</strong>
+      <br><br>
+   
+    <div class="phases">
+      <div class="phase-image">
+        <img src="3-Step.webp" alt="3-Step Brain Shutdown Process illustration" loading="lazy">
       </div>
-
-
-      <div class="tech-panel reveal">
-
-
-        <div
-          style="
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            flex-wrap:wrap;
-            gap:16px;
-          "
-        >
-
-          <div>
-
-            <h3>
-              We specialise in anxiety-driven insomnia
-            </h3>
-
-            <p
-              style="
-                color:var(--text-soft);
-                font-size:14.5px;
-                margin-top:8px;
-                max-width:520px;
-                line-height:1.6;
-              "
-            >
-              Not general relaxation, not sleep tracking —
-              a structured, clinically-grounded path built
-              specifically for the "exhausted but wired" pattern.
-            </p>
-
-          </div>
-
-
-          <a href="#start" class="btn btn-marigold">
-            Build my program
-          </a>
-
-        </div>
-
-
-        <div class="tech-grid">
-
-
-          <div class="tech-item">
-
-            <div class="ico">
-              ✎
-            </div>
-
-            <div>
-
-              <h4>
-                Thought Download
-              </h4>
-
-              <p>
-                Cognitive restructuring for the specific
-                thought looping in your head tonight.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="tech-item">
-
-            <div class="ico">
-              ⏱
-            </div>
-
-            <div>
-
-              <h4>
-                The Worry Window
-              </h4>
-
-              <p>
-                A scheduled 10 minutes earlier in the evening,
-                so worry doesn't wait for your pillow.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="tech-item">
-
-            <div class="ico">
-              ☾
-            </div>
-
-            <div>
-
-              <h4>
-                Wind-Down Anchor
-              </h4>
-
-              <p>
-                A consistent pre-sleep ritual that retrains
-                your body's association with bed.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="tech-item">
-
-            <div class="ico">
-              ◐
-            </div>
-
-            <div>
-
-              <h4>
-                Body Scan Reset
-              </h4>
-
-              <p>
-                A short guided audio to release physical
-                tension the mind has been holding onto.
-              </p>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
     </div>
+  </div>
+</div>
+<!-- ═══════════════════════════════════════════
+     WHAT'S INSIDE
+════════════════════════════════════════════ -->
+<div class="section" style="text-align:center; padding: 40px 20px 60px;">
+  <span class="eyebrow">What's Inside</span>
+  <div class="h2"><em>What You Get And How It Fixes Your Sleep</em></div>
+  <div class="divider" style="margin: 20px auto;"></div>
+  <div style="width:100%; display:flex; justify-content:center;">
+    <img src="Mockup.webp" loading="lazy" style="width:100%; max-width:1200px; height:auto; display:block;" alt="Product bundle mockup">
+  </div>
 
-  </section>
-
-
-  <section class="final" id="start">
-
-    <div class="wrap">
-
-      <span
-        class="kicker"
-        style="color:var(--marigold);"
-      >
-        Tonight Can Be Different
-      </span>
-
-
-      <h2>
-        Your Brain Already Knows How to Sleep.
-It just forgot how to switch off.
-      </h2>
-
-
-      <p>
-        You've spent enough nights staring at the ceiling. You don't need more willpower. You need a system that works with your anxious brain.
-      </p>
-
-
-      <div class="final-actions">
-
-
-        <a href="#" class="btn btn-wa">
-
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="#0b3b20"
-          >
-
-            <path
-              d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.4C8.4 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm5.6 14.3c-.2.6-1.2 1.2-1.9 1.3-.5.1-1.1.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.3.1.7-.1 1.3z"
-            />
-
-          </svg>
-
-          Message MindVeda on WhatsApp
-
-        </a>
-
-      </div>
-
-
-      <p class="price-note">
-        Join 500+ Indians already sleeping better.
-      </p>
-
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="icon">📘</div>
+      <div class="eyebrow">THE MAIN SYSTEM</div>
+      <h3>21-Day Anxiety Sleep Reset System™</h3>
+      <p>Complete day-by-day system covering your entire day, not just bedtime.</p>
+      <p><strong>Morning Reset:</strong> How to wake up without triggering stress for the night</p>
+      <p><strong>Afternoon Reset:</strong> Simple adjustments that stop anxiety from building up</p>
+      <p><strong>Evening Reset:</strong> Preparing your brain before you even reach the bed</p>
+      <p><strong>Night Reset:</strong> Exactly what to do the moment you lie down</p>
+      <p>Every step is sequenced for 21 days. Just 20 minutes a day. No thinking. Just follow.</p>
+      <span class="tag">Value: ₹999</span>
     </div>
+    <div class="feature-card">
+      <div class="icon">🧠</div>
+      <div class="eyebrow">WHAT YOU DO EVERY NIGHT</div>
+      <h3>3 Step Brain Shutdown Process™</h3>
+      <p><strong>Step 1</strong> Convinces your brain that every unfinished thought has been handled so the racing stops.</p>
+      <p><strong>Step 2</strong> Uses a specific breathing pattern to physically drop your heart rate and calm your cortisol spike.</p>
+      <p><strong>Step 3</strong> Trains your brain to recognise bedtime as safe, so by Day 21, sleep stops being something you try for.</p>
+      <span class="tag">Value: ₹999</span>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⚡</div>
+      <div class="eyebrow">FOR THE WORST NIGHTS</div>
+      <h3>The 2AM Shutdown Protocol</h3>
+      <!-- FIX: audio positioned as highest-value item with emotional benefit lead -->
+      <p>For the nights anxiety takes over completely. Just press play and let Komal's voice walk your nervous system down. A 7-minute breathing + audio that does the work for you — no willpower needed at 2 AM.</p>
+      <span class="tag">Value: ₹999</span>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📋</div>
+      <div class="eyebrow">JUST TICK, NOTHING ELSE</div>
+      <h3>30-Day Sleep Accountability Tracker</h3>
+      <p>Every process is already printed and sequenced. You tick and move on. No thinking. No planning. Just follow and sleep.</p>
+      <span class="tag">Value: ₹499</span>
+    </div>
+    <div class="feature-card full">
+      <div class="icon">🎧</div>
+      <div class="eyebrow">JUST PRESS PLAY</div>
+      <h3>Night Audio Walkthroughs</h3>
+      <p>You don't have to remember anything. Just press play, lie down, and let the audio guide your brain through the process. No effort. No thinking. Sleep happens.</p>
+      <span class="tag">Value: ₹499</span>
+    </div>
+  </div>
+</div>
 
-  </section>
+<!-- ═══════════════════════════════════════════
+     PRICING
+════════════════════════════════════════════ -->
+<div class="pricing-section">
+  <div class="pricing-inner">
+    <span class="eyebrow" style="color: var(--gold); display: block;">Get Instant Access</span>
+    <div class="h2">One Decision.<br><em>21 Nights.</em> A Different Life.</div>
+    <div class="pricing-card">
+      <div class="price-original">₹2,999</div>
+      <div class="price-main">₹799</div>
+      <!-- <div class="price-save-tag">FIRST 500 BUYERS ONLY · 70% OFF</div> -->
+      <ul class="includes">
+        <li>Complete 21-Day Anxiety Sleep Reset System™</li>
+        <li>Printable 30-Day Sleep Accountability Tracker</li>
+        <li>Bonus: The 2AM Emergency Shutdown Protocol</li>
+        <li>Guided Night Audio Walkthroughs</li>
+      </ul>
+      <a class="cta-btn" href="https://superprofile.bio/vp/21-Day-Anxiety-Sleep-Reset-System" target="_blank">
+        Calm My Mind Tonight 
+      </a>
+
+      <div class="urgency-line" style="margin-top:6px;">Total Value: ₹2,996 — Yours Today for ₹799</div>
+      <!-- FIX: UPI trust chips in pricing section -->
+      <div class="pricing-upi-row">
+        <div class="upi-chip"><span>📱</span> PhonePe</div>
+        <div class="upi-chip"><span>💳</span> GPay</div>
+        <div class="upi-chip"><span>🏦</span> Paytm</div>
+        <div class="upi-chip"><span>🔒</span> Razorpay</div>
+      </div>
+    </div>
+    <div class="guarantee-block">
+      <div class="g-badge">🛡️</div>
+      <div class="g-title">Try It For 30 Nights. Or Pay ₹0.</div>
+      <p>Follow the system for 21 nights. If you don't sleep noticeably better, email me within 30 days and I'll refund every rupee. No questions. No conditions. One email.</p>
+    </div>
+  </div>
+</div>
 
 
-  <footer>
-
-    <div class="wrap">
-
-
-      <div class="foot-grid">
-
-
-        <div class="foot-brand">
-
-          <div class="logo">
-
-            <svg
-              class="logo-mark"
-              viewBox="0 0 26 26"
-              fill="none"
-            >
-
-              <path
-                d="M17 3C11 3 6.5 8 6.5 14C6.5 20 11.5 24.5 17.5 23.8C13.2 21.6 10.2 17.8 10.2 13.2C10.2 8.6 13.2 4.6 17 3Z"
-                fill="#E8A33D"
-              />
-
-              <circle
-                cx="19.5"
-                cy="6.5"
-                r="1.4"
-                fill="#E8A33D"
-              />
-
-            </svg>
-
-
-            <span
-              class="logo-word"
-              style="color:var(--paper);"
-            >
-              MindVeda
-            </span>
-
-          </div>
+<!-- ═══════════════════════════════════════════
+     NEW: THIS IS FOR YOU / NOT FOR YOU
+     FIX: qualifies right buyers, builds trust with skeptics
+════════════════════════════════════════════ -->
+<div class="for-you-section">
+  <div class="for-you-inner">
+    <!-- <span class="eyebrow" style="text-align:center; display:block;">Is This Right For You?</span> -->
+    <div class="h2" style="text-align:center;">This Is For You <em>If...</em></div>
+    <div class="divider"></div>
+    <div class="for-you-grid">
+      <div class="for-you-card yes">
+        <h3 class="yes-head">✓ &nbsp;This IS for you if...</h3>
+        <ul class="for-you-list">
+          <li><span class="check">✓</span> Your mind races the moment you lie down, even when your body is exhausted</li>
+          <li><span class="check">✓</span> You've tried meditation apps, sleep tips, or supplements and nothing stuck</li>
+          <li><span class="check">✓</span> You wake up at 2–3 AM with anxious thoughts and can't fall back asleep</li>
+          <li><span class="check">✓</span> You're a working professional with a busy schedule — you need something that fits in 20 minutes</li>
+          <li><span class="check">✓</span> You want a real system, not another tip to "avoid screens before bed"</li>
+        </ul>
+      </div>
+      <div class="for-you-card no">
+        <h3 class="no-head">✗ &nbsp;This is NOT for you if...</h3>
+        <ul class="for-you-list">
+          <li><span class="cross">✗</span> You're looking for a magic pill that works without any effort</li>
+          <li><span class="cross">✗</span> You have a diagnosed clinical sleep disorder — please see a physician first</li>
+          <li><span class="cross">✗</span> You're not willing to follow a system consistently for 21 days</li>
+          <li><span class="cross">✗</span> You sleep fine but just want to sleep faster occasionally</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-          <p>
-            A 21-night guided reset for anxiety-driven
-            insomnia, built on CBT-I and delivered on WhatsApp.
-            MindVeda Wellness Pvt. Ltd.
-          </p>
-
-
-          <div class="social">
-
-            <a href="#" aria-label="Instagram">
-              ◐
-            </a>
-
-            <a href="#" aria-label="LinkedIn">
-              in
-            </a>
-
-          </div>
-
+<!-- ═══════════════════════════════════════════
+     MEET THE CREATOR
+════════════════════════════════════════════ -->
+<section class="mentor">
+  <div style="padding: 0 20px 60px; max-width: 720px; margin: 0 auto;">
+    <span class="eyebrow">Meet The Creator</span>
+    <div class="mentor-card">
+      <div class="mentor-header">
+        <div class="mentor-photo">
+          <img src="Authority.webp" alt="Komal Thakur" loading="lazy">
         </div>
-
-
         <div>
-
-          <h5>
-            Program
-          </h5>
-
-          <a href="#why">
-            Our Method
-          </a>
-
-          <a href="#how">
-            How It Works
-          </a>
-
-          <a href="#reviews">
-            Reviews
-          </a>
-
-          <a href="#start">
-            Pricing
-          </a>
-
+          <div class="mentor-name">Komal Thakur</div>
+          <!-- FIX: credential pulled up into title line -->
+          <div class="mentor-title">Sleep & Nervous System Coach · Ex-Corporate Professional · Delhi NCR</div>
+          <div class="mentor-badges">
+            <span class="badge">12 months sleep neuroscience research</span>
+            <span class="badge">450+ Indians helped</span>
+          </div>
         </div>
-
-
-        <div>
-
-          <h5>
-            Company
-          </h5>
-
-          <a href="#">
-            Our Story
-          </a>
-
-          <a href="#">
-            Careers
-          </a>
-
-          <a href="#">
-            For Therapists
-          </a>
-
-          <a href="#">
-            Contact
-          </a>
-
-        </div>
-
-        <div>
-
-          <h5>
-            Resources
-          </h5>
-
-          <a href="#">
-            What is CBT-I?
-          </a>
-
-          <a href="#">
-            Sleep Anxiety Test
-          </a>
-
-          <a href="#">
-            Help Centre
-          </a>
-
-          <a href="#">
-            Blog
-          </a>
-
-        </div>
-
       </div>
-
-      <div class="foot-bottom">
-
-        <span>
-          © 2026 MindVeda Wellness Pvt. Ltd.
-          MindVeda is not a substitute for medical or psychiatric care.
-        </span>
-
-
-        <span>
-
-          <a href="#">
-            Terms
-          </a>
-
-          &nbsp;·&nbsp;
-
-          <a href="#">
-            Privacy
-          </a>
-
-        </span>
-
+      <div class="mentor-story">
+        <p><strong>For almost 2 years, I went to bed exhausted and the moment my head hit the pillow, my mind would switch on.</strong></p>
+        <p>The breaking point was August 2024. I had an office presentation next morning, went to bed at 11 PM, and by 2:00 AM I was still awake.</p>
+        <p>Lying there thinking, <strong>"Why can't I sleep even when I'm exhausted?"</strong> By 3 AM, I took half a melatonin just to force myself asleep. That's when I realised — the problem wasn't sleep. My nervous system didn't feel safe enough to switch off.</p>
+        <p><strong>I tried everything after that. Meditation. Night routines. No phone after 10 PM. Supplements. None gave a permanent solution.</strong></p>
+        <p>What finally changed everything wasn't a new technique. <strong>It was understanding why the brain stays alert at night and what it actually takes to make it feel safe again.</strong></p>
+        <p>I spent the next 12 months studying sleep neuroscience, nervous system regulation, and the specific mechanisms that keep the brain in high-alert mode at night. Tested everything on myself. <strong>The result is a system that has now helped 450+ Indians sleep without pills, apps, or forcing it.</strong></p>
       </div>
-
+      </div>
     </div>
+  </div>
+</section>
 
-  </footer>
+<!-- ═══════════════════════════════════════════
+     FAQ
+     FIX: 2 new India-specific questions added
+════════════════════════════════════════════ -->
+<div class="section">
+  <span class="eyebrow">Questions</span>
+  <div class="h2">Frequently <em>Asked</em></div>
+  <div class="divider" style="margin-left: 0;"></div>
 
-  <script>
+  <div class="faq-item">
+    <div class="faq-q">1. I've tried everything and nothing worked. Why would this?</div>
+    <div class="faq-a">Because everything you've tried has treated the symptoms. This targets what's actually keeping you awake — it works with how your nervous system behaves at night and slowly teaches it that bedtime isn't a threat.</div>
+  </div>
 
-    const io = new IntersectionObserver(
-      (entries) => {
+  <div class="faq-item">
+    <div class="faq-q">2. I have a busy schedule. How much time does this take?</div>
+    <div class="faq-a">20 minutes a day. Each step is short and designed for real Indian routines — late dinners, early mornings, work pressure included. By Week 2, it becomes as automatic as brushing your teeth.</div>
+  </div>
 
-        entries.forEach(
-          (e) => {
+  <div class="faq-item">
+    <div class="faq-q">3. How is this different from apps, free content on Google & YouTube?</div>
+    <div class="faq-a">Meditation apps calm you in the moment — they don't fix why your brain won't switch off. Free content gives you 50 random techniques with no order, no logic. This system gives your nervous system a structured 21-day sequence to unlearn the alertness, so sleep stops being something you have to try for.</div>
+  </div>
 
-            if (e.isIntersecting) {
-              e.target.classList.add('in');
-            }
+  <!-- FIX: NEW — durability objection -->
+  <div class="faq-item">
+    <div class="faq-q">4. I've had this problem for years. Can 21 days really fix it?</div>
+    <div class="faq-a">The 21 days don't "fix" you — they <strong>retrain</strong> your nervous system's response to bedtime. Most people notice a shift within the first week. By Day 21, the new response is becoming automatic. You're not fighting your brain anymore; you're working with it. That's why it holds.</div>
+  </div>
 
-          }
-        );
-      },
-      {
-        threshold: 0.12
+  <!-- FIX: NEW — joint family / practical India objection -->
+  <div class="faq-item">
+    <div class="faq-q">5. I live with family and don't always have privacy at night. Will this still work?</div>
+    <div class="faq-a">Yes. The system is designed for real Indian homes — not a quiet studio apartment. Most of the process happens internally, takes under 20 minutes, and the audio walkthroughs work with earphones in any room. No special environment needed.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">6. How do I actually access it?</div>
+    <div class="faq-a">It's a digital product. You'll receive a download link on your email and WhatsApp within seconds of payment.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">7. What if it doesn't work for me?</div>
+    <div class="faq-a">Then I refund every rupee. Follow the system for 21 nights. If you don't sleep noticeably better, email me within 30 days — no questions, no conditions. One email and the money is back. I'm confident enough in this to put my money where my mouth is.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FINAL CTA
+     FIX: Komal's photo + personal sign-off added
+     FIX: Dark navy background for gravitas
+════════════════════════════════════════════ -->
+<div class="final-cta">
+  <div class="final-cta-inner">
+    <span class="eyebrow" style="color: var(--gold);">Tonight Can Feel Different</span>
+    <div class="h2">Your Brain <em>Already Knows</em> How to Sleep.<br>It just forgot how to switch off.</div>
+    <div class="divider"></div>
+    <p class="lead">You've spent enough nights staring at the ceiling. You don't need more willpower. You need a system that works with your anxious brain.</p>
+    <p class="lead" style="color:rgba(255,255,255,0.5); font-size:15px;">Join 450+ Indians already sleeping better.</p>
+
+   
+    <a class="cta-btn" href="https://superprofile.bio/vp/21-Day-Anxiety-Sleep-Reset-System" target="_blank">
+      Calm My Mind Tonight 
+    </a>
+    <p class="footnote">Instant download · Works from Day 1 · 30-Day money-back guarantee</p>
+  </div>
+</div>
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <p>© 2026 MindVeda · 21-Day Anxiety Sleep Reset System™ · Delhi NCR, India</p>
+  <p style="margin-top: 8px;"><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Refund Policy</a> &nbsp;·&nbsp; <a href="#">Contact</a></p>
+  <p style="margin-top: 12px; font-size: 11px; max-width: 500px; margin-left: auto; margin-right: auto;">This system is for educational purposes. It is not a substitute for medical advice. If you suspect a clinical sleep disorder, please consult a physician.</p>
+</footer>
+<!-- ═══════════════════════════════════════════
+     SWIPER JS — deferred
+════════════════════════════════════════════ -->
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    function initSwiper() {
+      if (typeof Swiper !== 'undefined') {
+        new Swiper(".testimonialSwiper", {
+          loop: true,
+          autoplay: { delay: 2800, disableOnInteraction: false },
+          navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+          pagination: { el: ".swiper-pagination", clickable: true },
+          slidesPerView: 1,
+          centeredSlides: true,
+          spaceBetween: 20,
+        });
+      } else {
+        setTimeout(initSwiper, 100);
       }
-    );
-
-    document
-      .querySelectorAll('.reveal')
-      .forEach(
-        (el) => io.observe(el)
-      );
-
-  </script>
-
-
+    }
+    initSwiper();
+  });
+</script>
 </body>
-
-
 </html>
