@@ -9,8 +9,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link rel="icon" type="image/png" href="2.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
@@ -25,15 +30,15 @@
       --dusk: #D9776B;
 
       --paper: #FFFFFF;
-      --paper-dim: #FFFFFF;
+      --paper-dim: #FAFAF8;
 
       --text-dark: #211D30;
       --text-soft: #5B5670;
 
       --sage: #8FA07E;
 
-      --line: rgba(18,20,43,0.10);
-      --line-light: rgba(247,242,230,0.14);
+      --line: rgba(18, 20, 43, 0.10);
+      --line-light: rgba(247, 242, 230, 0.14);
     }
 
     * {
@@ -78,6 +83,16 @@
       font-family: 'Manrope', sans-serif;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     .mono {
       font-family: 'Manrope', sans-serif;
       font-weight: 700;
@@ -97,7 +112,6 @@
     }
 
     .display-xl {
-      font-family: 'Manrope', sans-serif;
       font-size: clamp(3.5rem, 6.5vw, 6.5rem);
       font-weight: 500;
       line-height: 0.94;
@@ -105,7 +119,6 @@
     }
 
     .display-lg {
-      font-family: 'Manrope', sans-serif;
       font-size: clamp(3rem, 5.5vw, 5.5rem);
       font-weight: 500;
       line-height: 0.95;
@@ -113,7 +126,6 @@
     }
 
     .display-md {
-      font-family: 'Manrope', sans-serif;
       font-size: clamp(2.5rem, 4.3vw, 4.25rem);
       font-weight: 500;
       line-height: 0.98;
@@ -121,7 +133,6 @@
     }
 
     .display-sm {
-      font-family: 'Manrope', sans-serif;
       font-size: clamp(2rem, 3.3vw, 3rem);
       font-weight: 500;
       line-height: 1;
@@ -129,7 +140,6 @@
     }
 
     .body-lg {
-      font-family: 'Manrope', sans-serif;
       font-size: clamp(1.05rem, 1.5vw, 1.3rem);
       font-weight: 400;
       line-height: 1.7;
@@ -137,63 +147,22 @@
     }
 
     .body-md {
-      font-family: 'Manrope', sans-serif;
       font-size: 1rem;
       font-weight: 400;
       line-height: 1.65;
     }
 
     .body-sm {
-      font-family: 'Manrope', sans-serif;
       font-size: 0.875rem;
       font-weight: 400;
       line-height: 1.6;
     }
 
-    .button-text {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
 
     .wrap {
       max-width: 1180px;
       margin: 0 auto;
       padding: 0 32px;
-    }
-
-    @media (max-width: 640px) {
-
-      .wrap {
-        padding: 0 20px;
-      }
-
-      .display-xl {
-        font-size: clamp(3.2rem, 15vw, 5rem);
-      }
-
-      .display-lg {
-        font-size: clamp(2.8rem, 13vw, 4.5rem);
-      }
-
-      .display-md {
-        font-size: clamp(2.4rem, 11vw, 3.5rem);
-      }
-
-      .display-sm {
-        font-size: clamp(2rem, 9vw, 2.8rem);
-      }
     }
 
     .reveal {
@@ -222,152 +191,142 @@
       }
     }
 
-   nav{
-  position:sticky;
-  top:0;
-  z-index:50;
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
 
-  background:#0D0F12;
+      background: #0D0F12;
 
-  border-bottom:1px solid rgba(247,242,230,0.08);
+      border-bottom: 1px solid rgba(247, 242, 230, 0.08);
 
-  box-shadow:0 4px 20px rgba(0,0,0,0.18);
-}
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+    }
 
-.nav-inner{
-  max-width:1180px;
-  margin:0 auto;
-  padding:18px 32px;
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
 
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+      padding: 18px 32px;
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:var(--paper);
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.logo-mark{
-  width:26px;
-  height:26px;
-  flex:none;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--paper);
+    }
 
-.logo-word{
-  font-family:'Manrope', sans-serif;
-  font-weight:600;
-  font-size:20px;
-  letter-spacing:-0.01em;
-  color:var(--paper);
-}
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      flex: none;
+    }
 
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:34px;
-}
+    .logo-word {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      color: var(--paper);
+    }
 
-.nav-links a{
-  color:rgba(247,242,230,0.72);
-  font-size:14.5px;
-  font-weight:500;
-  transition:color .2s ease;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
 
-.nav-links a:hover{
-  color:var(--paper);
-}
+    .nav-links a {
+      color: rgba(247, 242, 230, 0.72);
+      font-size: 14.5px;
+      font-weight: 500;
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
+      transition: color .2s ease;
+    }
 
-  padding:13px 26px;
-  border-radius:100px;
+    .nav-links a:hover {
+      color: var(--paper);
+    }
 
-  font-weight:600;
-  font-size:14.5px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
 
-  border:none;
-  cursor:pointer;
+      padding: 13px 26px;
 
-  transition:
-    transform .18s ease,
-    box-shadow .18s ease,
-    background .18s ease;
+      border-radius: 100px;
 
-  white-space:nowrap;
-}
+      font-weight: 600;
+      font-size: 14.5px;
 
-.btn-marigold{
-  background:var(--marigold);
-  color:#241505;
-}
+      border: none;
 
-.btn-marigold:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(232,163,61,0.35);
-}
+      cursor: pointer;
 
-.btn-ghost{
-  background:transparent;
-  color:var(--paper);
-  border:1px solid rgba(247,242,230,0.3);
-}
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
 
-.btn-ghost:hover{
-  border-color:rgba(247,242,230,0.6);
-}
+      white-space: nowrap;
+    }
 
-.btn-dark{
-  background:var(--ink);
-  color:var(--paper);
-}
+    .btn-marigold {
+      background: var(--marigold);
+      color: #241505;
+    }
 
-.btn-dark:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(18,20,43,0.25);
-}
+    .btn-marigold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(232, 163, 61, 0.35);
+    }
 
-.btn-wa{
-  background:#25D366;
-  color:#0b3b20;
-}
+    .btn-ghost {
+      background: transparent;
+      color: var(--paper);
+      border: 1px solid rgba(247, 242, 230, 0.3);
+    }
 
-.btn-wa:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(37,211,102,0.35);
-}
+    .btn-ghost:hover {
+      border-color: rgba(247, 242, 230, 0.6);
+    }
 
-.nav-cta{
-  display:none;
-}
+    .btn-dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-@media (min-width:860px){
-  .nav-cta{
-    display:inline-flex;
-  }
-}
+    .btn-dark:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(18, 20, 43, 0.25);
+    }
 
-.menu-btn{
-  display:none;
-  color:var(--paper);
-  background:none;
-  border:none;
-  font-size:22px;
-}
+    .btn-wa {
+      background: #25D366;
+      color: #0b3b20;
+    }
 
-@media (max-width:859px){
-  .nav-links{
-    display:none;
-  }
-}
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    @media (min-width: 860px) {
+      .nav-cta {
+        display: inline-flex;
+      }
+    }
 
     .menu-btn {
       display: none;
@@ -395,28 +354,19 @@
       background:
         radial-gradient(
           ellipse at 18% -10%,
-          rgba(232,163,61,0.16),
+          rgba(232, 163, 61, 0.16),
           transparent 55%
         ),
-
         radial-gradient(
           ellipse at 90% 10%,
-          rgba(217,119,107,0.14),
+          rgba(217, 119, 107, 0.14),
           transparent 50%
         ),
-
         var(--ink);
 
       color: var(--paper);
 
       padding: 84px 0 96px;
-    }
-
-    /* Mobile: reduce only the top space above the hero eyebrow */
-    @media (max-width: 640px) {
-      .hero {
-        padding: 20px 0 96px;
-      }
     }
 
     .hero::before {
@@ -427,7 +377,7 @@
 
       background-image:
         radial-gradient(
-          rgba(247,242,230,0.5) 1px,
+          rgba(247, 242, 230, 0.5) 1px,
           transparent 1px
         );
 
@@ -440,6 +390,7 @@
 
     .hero-grid {
       display: grid;
+
       grid-template-columns: 1.05fr 0.95fr;
 
       gap: 56px;
@@ -447,6 +398,7 @@
       align-items: center;
 
       position: relative;
+
       z-index: 1;
     }
 
@@ -480,8 +432,6 @@
     }
 
     .hero h1 {
-      font-family: 'Manrope', sans-serif;
-
       font-size: clamp(42px, 5vw, 68px);
 
       color: var(--paper);
@@ -503,9 +453,10 @@
       margin-top: 22px;
 
       font-size: 18px;
+
       line-height: 1.65;
 
-      color: rgba(247,242,230,0.78);
+      color: rgba(247, 242, 230, 0.78);
 
       max-width: 520px;
 
@@ -515,17 +466,11 @@
     .hero-actions {
       display: flex;
       align-items: center;
-
       gap: 18px;
 
       margin-top: 34px;
 
       flex-wrap: wrap;
-    }
-
-    .hero-actions .note {
-      font-size: 13.5px;
-      color: rgba(247,242,230,0.55);
     }
 
     .hero-trust {
@@ -547,8 +492,6 @@
     }
 
     .hero-trust .num {
-      font-family: 'Manrope', sans-serif;
-
       font-size: 26px;
 
       color: var(--marigold);
@@ -559,7 +502,7 @@
     .hero-trust .lbl {
       font-size: 12.5px;
 
-      color: rgba(247,242,230,0.58);
+      color: rgba(247, 242, 230, 0.58);
 
       margin-top: 2px;
 
@@ -584,8 +527,8 @@
       border: 8px solid #05060f;
 
       box-shadow:
-        0 40px 90px rgba(0,0,0,0.55),
-        0 0 0 1px rgba(247,242,230,0.06);
+        0 40px 90px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(247, 242, 230, 0.06);
 
       overflow: hidden;
 
@@ -624,24 +567,32 @@
       color: #E9EDEF;
     }
 
-   .wa-avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex: none;
-}
+    .wa-avatar {
+      width: 34px;
+      height: 34px;
 
-.wa-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 4px;
-}
+      border-radius: 50%;
+
+      background: #ffffff;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      flex: none;
+    }
+
+    .wa-avatar img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      padding: 4px;
+    }
 
     .wa-head .who {
       font-size: 14px;
@@ -658,7 +609,7 @@
 
       background-image:
         radial-gradient(
-          rgba(255,255,255,0.03) 1px,
+          rgba(255, 255, 255, 0.03) 1px,
           transparent 1px
         );
 
@@ -734,7 +685,7 @@
 
       font-size: 9.5px;
 
-      color: rgba(233,237,239,0.5);
+      color: rgba(233, 237, 239, 0.5);
 
       margin-top: 4px;
 
@@ -746,7 +697,7 @@
     }
 
     .bubble:nth-child(3) {
-      animation-delay: 1.0s;
+      animation-delay: 1s;
     }
 
     .bubble:nth-child(4) {
@@ -811,8 +762,6 @@
 
       scrollbar-width: none;
 
-      font-family: 'Manrope', sans-serif;
-
       font-size: 12px;
 
       letter-spacing: 0.05em;
@@ -848,13 +797,6 @@
       padding: 104px 0;
     }
 
-    @media (max-width: 640px) {
-
-      section {
-        padding: 72px 0;
-      }
-    }
-
     .section-head {
       max-width: 640px;
 
@@ -862,8 +804,6 @@
     }
 
     .kicker {
-      font-family: 'Manrope', sans-serif;
-
       font-size: 12px;
 
       font-weight: 700;
@@ -880,8 +820,6 @@
     }
 
     .section-head h2 {
-      font-family: 'Manrope', sans-serif;
-
       font-size: clamp(30px, 3.5vw, 44px);
 
       font-weight: 500;
@@ -897,6 +835,359 @@
       color: var(--text-soft);
 
       line-height: 1.65;
+    }
+
+    .testimonials-section {
+      background: var(--paper-dim);
+
+      border-top: 1px solid var(--line);
+
+      border-bottom: 1px solid var(--line);
+
+      overflow: hidden;
+    }
+
+    .testimonials-heading {
+      max-width: 720px;
+
+      margin-bottom: 58px;
+    }
+
+    .testimonials-heading .kicker {
+      color: var(--marigold-deep);
+
+      margin-bottom: 18px;
+    }
+
+    .testimonials-heading h2 {
+      font-size: clamp(38px, 5vw, 62px);
+
+      font-weight: 500;
+
+      line-height: 0.98;
+
+      letter-spacing: -0.055em;
+
+      color: var(--text-dark);
+    }
+
+    .testimonials-heading p {
+      max-width: 620px;
+
+      margin-top: 22px;
+
+      font-size: 17px;
+
+      line-height: 1.7;
+
+      color: var(--text-soft);
+    }
+
+    .testimonial-window {
+      width: 100%;
+
+      overflow: hidden;
+
+      position: relative;
+
+      mask-image:
+        linear-gradient(
+          to right,
+          transparent 0,
+          black 4%,
+          black 96%,
+          transparent 100%
+        );
+
+      -webkit-mask-image:
+        linear-gradient(
+          to right,
+          transparent 0,
+          black 4%,
+          black 96%,
+          transparent 100%
+        );
+    }
+
+    .testimonial-track {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 24px;
+
+      width: max-content;
+
+      animation: testimonialScroll 38s linear infinite;
+
+      will-change: transform;
+    }
+
+    .testimonial-window:hover .testimonial-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes testimonialScroll {
+
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 12px));
+      }
+    }
+
+    .testimonial-card {
+      flex: 0 0 clamp(330px, 31vw, 370px);
+
+      background: #F6F6F4;
+
+      border: 1px solid rgba(18, 20, 43, 0.08);
+
+      border-radius: 24px;
+
+      padding: 30px 30px 28px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      box-shadow:
+        0 10px 30px rgba(18, 20, 43, 0.035);
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 18px 40px rgba(18, 20, 43, 0.08);
+    }
+
+
+    .testimonial-card.card-short {
+      min-height: 365px;
+    }
+
+    .testimonial-card.card-medium {
+      min-height: 430px;
+    }
+
+    .testimonial-card.card-tall {
+      min-height: 500px;
+    }
+
+    .testimonial-quote {
+      font-family: Georgia, serif;
+
+      font-size: 82px;
+
+      font-weight: 700;
+
+      line-height: 0.65;
+
+      letter-spacing: -0.08em;
+
+      color: #0B5960;
+
+      margin-bottom: 28px;
+
+      height: 48px;
+    }
+
+    .testimonial-card h4 {
+      font-size: 22px;
+
+      font-weight: 700;
+
+      line-height: 1.15;
+
+      letter-spacing: -0.035em;
+
+      color: var(--ink);
+
+      margin-bottom: 15px;
+
+      max-width: 310px;
+    }
+
+    .testimonial-card p {
+      font-size: 15px;
+
+      line-height: 1.68;
+
+      color: #4E4A5E;
+
+      letter-spacing: -0.01em;
+
+      max-width: 320px;
+    }
+
+    .testimonial-source {
+      margin-top: auto;
+
+      padding-top: 28px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .testimonial-source .source-dot {
+      width: 34px;
+      height: 34px;
+
+      border-radius: 50%;
+
+      background: #E8A33D;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      color: #241505;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      flex: none;
+    }
+
+    .testimonial-source .source-text {
+      font-size: 12px;
+
+      color: #7A7585;
+
+      line-height: 1.4;
+    }
+
+    .testimonial-source .source-text strong {
+      display: block;
+
+      color: var(--text-dark);
+
+      font-size: 13px;
+
+      font-weight: 700;
+    }
+
+    .testimonial-card:nth-child(2),
+    .testimonial-card:nth-child(5) {
+      background: #F2F4EF;
+    }
+
+    .testimonial-footer {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      margin-top: 30px;
+
+      gap: 20px;
+    }
+
+    .testimonial-footer-note {
+      font-size: 12px;
+
+      color: #8A8592;
+
+      letter-spacing: 0.03em;
+    }
+
+    .testimonial-footer-line {
+      height: 1px;
+
+      flex: 1;
+
+      background: var(--line);
+    }
+
+    @media (max-width: 700px) {
+
+      .testimonials-section {
+        padding-top: 76px;
+        padding-bottom: 76px;
+      }
+
+      .testimonials-heading {
+        margin-bottom: 42px;
+      }
+
+      .testimonials-heading h2 {
+        font-size: clamp(38px, 12vw, 52px);
+      }
+
+      .testimonials-heading p {
+        font-size: 15.5px;
+      }
+
+      .testimonial-window {
+        mask-image: none;
+        -webkit-mask-image: none;
+
+        overflow: hidden;
+
+        width: calc(100vw - 20px);
+      }
+
+      .testimonial-track {
+        gap: 16px;
+
+        animation-duration: 30s;
+      }
+
+      .testimonial-card {
+        flex: 0 0 calc(100vw - 62px);
+
+        padding: 27px;
+
+        border-radius: 21px;
+      }
+
+      .testimonial-card.card-short {
+        min-height: 360px;
+      }
+
+      .testimonial-card.card-medium {
+        min-height: 410px;
+      }
+
+      .testimonial-card.card-tall {
+        min-height: 455px;
+      }
+
+      .testimonial-card h4 {
+        font-size: 20px;
+      }
+
+      .testimonial-card p {
+        font-size: 14.5px;
+      }
+
+      .testimonial-footer {
+        margin-top: 24px;
+      }
+
+      .testimonial-footer-line {
+        display: none;
+      }
+
+      .testimonial-footer-note {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     .why {
@@ -930,43 +1221,7 @@
       border-radius: 22px;
 
       box-shadow:
-        0 30px 60px rgba(18,20,43,0.16);
-    }
-
-    .why-photo .tag {
-      position: absolute;
-
-      bottom: 22px;
-      left: 22px;
-      right: 22px;
-
-      background: rgba(18,20,43,0.86);
-
-      backdrop-filter: blur(6px);
-
-      color: var(--paper);
-
-      border-radius: 14px;
-
-      padding: 16px 18px;
-
-      font-size: 13.5px;
-
-      line-height: 1.5;
-    }
-
-    .why-photo .tag b {
-      color: var(--marigold);
-
-      font-family: 'Manrope', sans-serif;
-
-      font-weight: 600;
-
-      display: block;
-
-      font-size: 15px;
-
-      margin-bottom: 3px;
+        0 30px 60px rgba(18, 20, 43, 0.16);
     }
 
     .why-list {
@@ -998,13 +1253,10 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
     }
 
     .why-item h3 {
-      font-family: 'Manrope', sans-serif;
-
       font-size: 19px;
 
       font-weight: 600;
@@ -1020,100 +1272,6 @@
       color: var(--text-soft);
 
       line-height: 1.6;
-    }
-
-    .reviews-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3,1fr);
-
-      gap: 24px;
-    }
-
-    @media (max-width: 900px) {
-
-      .reviews-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .review-card {
-      background: var(--paper-dim);
-
-      border: 1px solid var(--line);
-
-      border-radius: 18px;
-
-      padding: 28px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 14px;
-    }
-
-    .review-card .quote-mark {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 34px;
-
-      color: var(--marigold);
-
-      line-height: 1;
-    }
-
-    .review-card h4 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: 18px;
-
-      font-weight: 600;
-
-      line-height: 1.2;
-    }
-
-    .review-card p {
-      font-size: 14.5px;
-
-      color: var(--text-soft);
-
-      line-height: 1.65;
-    }
-
-    .review-who {
-      display: flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      margin-top: 6px;
-    }
-
-    .review-who .av {
-      width: 34px;
-      height: 34px;
-
-      border-radius: 50%;
-
-      object-fit: cover;
-    }
-
-    .review-who .meta {
-      font-size: 12.5px;
-
-      color: var(--text-soft);
-    }
-
-    .review-who .meta b {
-      color: var(--text-dark);
-
-      font-weight: 600;
-
-      display: block;
-
-      font-size: 13.5px;
     }
 
     .how {
@@ -1136,19 +1294,18 @@
       background:
         radial-gradient(
           circle at 85% 15%,
-          rgba(232,163,61,0.12),
+          rgba(232, 163, 61, 0.12),
           transparent 45%
         );
     }
 
     .how .wrap {
       position: relative;
-
       z-index: 1;
     }
 
     .how .section-head p {
-      color: rgba(247,242,230,0.65);
+      color: rgba(247, 242, 230, 0.65);
     }
 
     .how .kicker {
@@ -1162,7 +1319,7 @@
     .steps {
       display: grid;
 
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
 
       gap: 22px;
     }
@@ -1185,8 +1342,6 @@
     }
 
     .step-num {
-      font-family: 'Manrope', sans-serif;
-
       font-size: 15px;
 
       color: var(--marigold);
@@ -1194,22 +1349,19 @@
       width: 38px;
       height: 38px;
 
-      border: 1px solid rgba(232,163,61,0.4);
+      border: 1px solid rgba(232, 163, 61, 0.4);
 
       border-radius: 50%;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       margin-bottom: 22px;
     }
 
     .step-card h3 {
-      font-family: 'Manrope', sans-serif;
-
       font-size: 20px;
 
       margin-bottom: 10px;
@@ -1222,7 +1374,7 @@
     .step-card p {
       font-size: 14.5px;
 
-      color: rgba(247,242,230,0.62);
+      color: rgba(247, 242, 230, 0.62);
 
       line-height: 1.65;
     }
@@ -1273,8 +1425,6 @@
     }
 
     .how-strip .copy h3 {
-      font-family: 'Manrope', sans-serif;
-
       font-size: 25px;
 
       color: var(--paper);
@@ -1285,141 +1435,10 @@
     .how-strip .copy p {
       font-size: 15px;
 
-      color: rgba(247,242,230,0.62);
+      color: rgba(247, 242, 230, 0.62);
 
       line-height: 1.65;
     }
-
-    .root {
-      display: grid;
-
-      grid-template-columns: 0.9fr 1.1fr;
-
-      gap: 60px;
-
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-
-      .root {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .map {
-      position: relative;
-
-      min-height: 420px;
-    }
-
-    .center-node {
-      position: absolute;
-
-      top: 50%;
-      left: 26%;
-
-      transform: translate(-50%,-50%);
-
-      width: 128px;
-      height: 128px;
-
-      border-radius: 50%;
-
-      background: var(--ink);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      flex-direction: column;
-
-      box-shadow:
-        0 20px 40px rgba(18,20,43,0.22);
-
-      border: 2px solid var(--marigold);
-
-      z-index: 2;
-    }
-
-    .center-node span.hi {
-      font-family: 'Manrope', sans-serif;
-
-      color: var(--paper);
-
-      font-size: 19px;
-
-      font-weight: 600;
-    }
-
-    .center-node span.lo {
-      font-family: 'Manrope', sans-serif;
-
-      color: var(--marigold);
-
-      font-size: 9.5px;
-
-      letter-spacing: 0.08em;
-
-      text-transform: uppercase;
-
-      margin-top: 2px;
-    }
-
-    .leaf {
-      position: absolute;
-
-      padding: 10px 16px;
-
-      border-radius: 11px;
-
-      font-size: 13.5px;
-
-      font-weight: 600;
-
-      box-shadow:
-        0 10px 24px rgba(18,20,43,0.10);
-
-      white-space: nowrap;
-    }
-
-    @media (max-width: 640px) {
-
-      .map {
-        min-height: 520px;
-      }
-
-      .center-node {
-        left: 50%;
-        top: 16%;
-      }
-    }
-
-    .root-copy h2 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: clamp(30px,3.4vw,42px);
-
-      margin-bottom: 18px;
-
-      line-height: 1.05;
-    }
-
-    .root-copy p {
-      font-size: 16.5px;
-
-      color: var(--text-soft);
-
-      line-height: 1.65;
-
-      margin-bottom: 28px;
-    }
-
-    /* =========================================
-       TECHNIQUES
-       ========================================= */
 
     .tech-panel {
       background: var(--paper-dim);
@@ -1432,8 +1451,6 @@
     }
 
     .tech-panel h3 {
-      font-family: 'Manrope', sans-serif;
-
       font-size: 22px;
 
       line-height: 1.2;
@@ -1485,7 +1502,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       color: #241505;
@@ -1494,8 +1510,6 @@
     }
 
     .tech-item h4 {
-      font-family: 'Manrope', sans-serif;
-
       font-size: 15px;
 
       font-weight: 600;
@@ -1536,7 +1550,7 @@
       background:
         radial-gradient(
           ellipse at 50% 0%,
-          rgba(232,163,61,0.16),
+          rgba(232, 163, 61, 0.16),
           transparent 60%
         );
     }
@@ -1552,9 +1566,7 @@
     }
 
     .final h2 {
-      font-family: 'Manrope', sans-serif;
-
-      font-size: clamp(32px,4vw,52px);
+      font-size: clamp(32px, 4vw, 52px);
 
       color: var(--paper);
 
@@ -1566,7 +1578,7 @@
     .final p {
       font-size: 17px;
 
-      color: rgba(247,242,230,0.68);
+      color: rgba(247, 242, 230, 0.68);
 
       line-height: 1.65;
 
@@ -1590,13 +1602,13 @@
 
       font-size: 13px;
 
-      color: rgba(247,242,230,0.5);
+      color: rgba(247, 242, 230, 0.5);
     }
 
     footer {
       background: var(--ink2);
 
-      color: rgba(247,242,230,0.7);
+      color: rgba(247, 242, 230, 0.7);
 
       padding: 72px 0 32px;
     }
@@ -1628,8 +1640,6 @@
     }
 
     .foot-grid h5 {
-      font-family: 'Manrope', sans-serif;
-
       font-size: 11.5px;
 
       font-weight: 700;
@@ -1638,7 +1648,7 @@
 
       text-transform: uppercase;
 
-      color: rgba(247,242,230,0.4);
+      color: rgba(247, 242, 230, 0.4);
 
       margin-bottom: 18px;
     }
@@ -1650,7 +1660,7 @@
 
       margin-bottom: 12px;
 
-      color: rgba(247,242,230,0.72);
+      color: rgba(247, 242, 230, 0.72);
 
       transition: color .2s;
     }
@@ -1666,7 +1676,7 @@
     .foot-brand p {
       font-size: 13.5px;
 
-      color: rgba(247,242,230,0.5);
+      color: rgba(247, 242, 230, 0.5);
 
       max-width: 270px;
 
@@ -1692,7 +1702,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       margin-bottom: 0;
@@ -1711,15 +1720,69 @@
 
       font-size: 12.5px;
 
-      color: rgba(247,242,230,0.4);
+      color: rgba(247, 242, 230, 0.4);
     }
 
     .foot-bottom a {
-      color: rgba(247,242,230,0.4);
+      color: rgba(247, 242, 230, 0.4);
     }
 
     .foot-bottom a:hover {
       color: var(--marigold);
+    }
+
+    @media (max-width: 640px) {
+
+      .wrap {
+        padding: 0 20px;
+      }
+
+      .hero {
+        padding: 20px 0 96px;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .display-xl {
+        font-size: clamp(3.2rem, 15vw, 5rem);
+      }
+
+      .display-lg {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+      }
+
+      .display-md {
+        font-size: clamp(2.4rem, 11vw, 3.5rem);
+      }
+
+      .display-sm {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+      }
+
+      .why-photo img {
+        height: 420px;
+      }
+
+      .tech-panel {
+        padding: 25px;
+      }
+
+      .how-strip .copy {
+        padding: 30px 25px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .testimonial-track {
+        animation: none;
+      }
+
+      .testimonial-card {
+        transition: none;
+      }
     }
 
   </style>
@@ -1734,38 +1797,58 @@
 
       <a href="#top" class="logo">
 
-        <svg class="logo-mark" viewBox="0 0 26 26" fill="none">
+        <svg
+          class="logo-mark"
+          viewBox="0 0 26 26"
+          fill="none"
+        >
+
           <path
             d="M17 3C11 3 6.5 8 6.5 14C6.5 20 11.5 24.5 17.5 23.8C13.2 21.6 10.2 17.8 10.2 13.2C10.2 8.6 13.2 4.6 17 3Z"
             fill="#E8A33D"
           />
+
           <circle
             cx="19.5"
             cy="6.5"
             r="1.4"
             fill="#E8A33D"
           />
+
         </svg>
 
-        <span class="logo-word">MindVeda</span>
+        <span class="logo-word">
+          MindVeda
+        </span>
 
       </a>
 
 
       <div class="nav-links">
 
-        <a href="#why">The Problem</a>
+        <a href="#why">
+          The Problem
+        </a>
 
-        <a href="#how">The Solution</a>
+        <a href="#how">
+          The Solution
+        </a>
 
-        <a href="#reviews">How it Works</a>
+        <a href="#reviews">
+          How it Works
+        </a>
 
-        <a href="#help">Testimonials</a>
+        <a href="#testimonials">
+          Testimonials
+        </a>
 
       </div>
 
 
-      <a href="#start" class="btn btn-marigold nav-cta">
+      <a
+        href="#start"
+        class="btn btn-marigold nav-cta"
+      >
         Get Started Tonight
       </a>
 
@@ -1778,7 +1861,10 @@
 
   </nav>
 
-  <header class="hero" id="top">
+  <header
+    class="hero"
+    id="top"
+  >
 
     <div class="wrap hero-grid">
 
@@ -1787,24 +1873,28 @@
 
         <h1>
           Your Body Is Tired.<br>
-          But Your Mind<em> Won't Switch Off.</em>
+          But Your Mind
+          <em>Won't Switch Off.</em>
         </h1>
 
 
         <p class="lede">
+
           A 21-night guided sleep reset for Indian professionals,
           whose body is tired but whose brain won't
           switch off at bedtime, delivered through WhatsApp.
+
         </p>
 
 
         <div class="hero-actions">
 
-          <a href="#start" class="btn btn-marigold">
+          <a
+            href="#start"
+            class="btn btn-marigold"
+          >
             Get Started Tonight
           </a>
-
-         
 
         </div>
 
@@ -1813,7 +1903,9 @@
 
           <div>
 
-            <div class="num">500+</div>
+            <div class="num">
+              500+
+            </div>
 
             <div class="lbl">
               Indian Professionals helped.
@@ -1824,7 +1916,9 @@
 
           <div>
 
-            <div class="num">21 Nights</div>
+            <div class="num">
+              21 Nights
+            </div>
 
             <div class="lbl">
               Delivered on WhatsApp step-by-step.
@@ -1835,7 +1929,9 @@
 
           <div>
 
-            <div class="num">₹999</div>
+            <div class="num">
+              ₹999
+            </div>
 
             <div class="lbl">
               One-time payment, no subscription.
@@ -1857,8 +1953,14 @@
           <div class="wa-head">
 
             <div class="wa-avatar">
-  <img src="3.png" alt="MindVeda logo">
-</div>
+
+              <img
+                src="3.png"
+                alt="MindVeda logo"
+              >
+
+            </div>
+
 
             <div>
 
@@ -1955,157 +2057,312 @@
     </div>
 
   </header>
-  
+
   <section
-    id="reviews"
-    style="
-      background:var(--paper-dim);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    "
+    id="testimonials"
+    class="testimonials-section"
   >
 
     <div class="wrap">
 
-      <div class="section-head reveal">
+
+      <div class="testimonials-heading reveal">
 
         <span class="kicker">
           Testimonials
         </span>
 
+
         <h2>
-          Real People, Real Results
+          Actual MindVeda
+          customer reviews
         </h2>
 
+
         <p>
-          These are the moments people shared back with us
-          over WhatsApp during their 21 nights.
+          These are the moments people shared back with us during their 21 nights.
         </p>
 
+
+      </div>
+
+
+      <div class="testimonial-window">
+
+
+        <div class="testimonial-track">
+
+          <article class="testimonial-card card-tall">
+
+            <div class="testimonial-quote">
+              “
+            </div>
+
+
+            <h4>
+              Actually fell asleep before midnight
+            </h4>
+
+
+            <p>
+              I track everything — I'm that person.
+              My average time-to-sleep dropped by 40 minutes
+              by night 12. The worry window trick alone
+              was worth it.
+            </p>
+
+
+            <div class="testimonial-source">
+
+              <div class="source-dot">
+                AR
+              </div>
+
+              <div class="source-text">
+
+                <strong>
+                  Ananya R.
+                </strong>
+
+                Consultant, Bengaluru
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="testimonial-card card-medium">
+
+            <div class="testimonial-quote">
+              “
+            </div>
+
+
+            <h4>
+              Stopped dreading bedtime
+            </h4>
+
+
+            <p>
+              Every app I'd tried felt like homework.
+              This felt like a friend checking in each night —
+              and it never once felt like therapy-lite.
+            </p>
+
+
+            <div class="testimonial-source">
+
+              <div class="source-dot">
+                PS
+              </div>
+
+              <div class="source-text">
+
+                <strong>
+                  Priya S.
+                </strong>
+
+                Product Manager, Gurugram
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="testimonial-card card-short">
+
+            <div class="testimonial-quote">
+              “
+            </div>
+
+
+            <h4>
+              My psychiatrist approved of the structure
+            </h4>
+
+
+            <p>
+              I showed her the program outline before starting —
+              she said it was close to what she'd assign as
+              CBT-I homework. That mattered to me.
+            </p>
+
+
+            <div class="testimonial-source">
+
+              <div class="source-dot">
+                KM
+              </div>
+
+              <div class="source-text">
+
+                <strong>
+                  Kabir M.
+                </strong>
+
+                Architect, Mumbai
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article
+            class="testimonial-card card-tall"
+            aria-hidden="true"
+          >
+
+            <div class="testimonial-quote">
+              “
+            </div>
+
+
+            <h4>
+              Actually fell asleep before midnight
+            </h4>
+
+
+            <p>
+              I track everything — I'm that person.
+              My average time-to-sleep dropped by 40 minutes
+              by night 12. The worry window trick alone
+              was worth it.
+            </p>
+
+
+            <div class="testimonial-source">
+
+              <div class="source-dot">
+                AR
+              </div>
+
+              <div class="source-text">
+
+                <strong>
+                  Ananya R.
+                </strong>
+
+                Consultant, Bengaluru
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="testimonial-card card-medium"
+            aria-hidden="true"
+          >
+
+            <div class="testimonial-quote">
+              “
+            </div>
+
+
+            <h4>
+              Stopped dreading bedtime
+            </h4>
+
+
+            <p>
+              Every app I'd tried felt like homework.
+              This felt like a friend checking in each night —
+              and it never once felt like therapy-lite.
+            </p>
+
+
+            <div class="testimonial-source">
+
+              <div class="source-dot">
+                PS
+              </div>
+
+              <div class="source-text">
+
+                <strong>
+                  Priya S.
+                </strong>
+
+                Product Manager, Gurugram
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article
+            class="testimonial-card card-short"
+            aria-hidden="true"
+          >
+
+            <div class="testimonial-quote">
+              “
+            </div>
+
+
+            <h4>
+              My psychiatrist approved of the structure
+            </h4>
+
+
+            <p>
+              I showed her the program outline before starting —
+              she said it was close to what she'd assign as
+              CBT-I homework. That mattered to me.
+            </p>
+
+
+            <div class="testimonial-source">
+
+              <div class="source-dot">
+                KM
+              </div>
+
+              <div class="source-text">
+
+                <strong>
+                  Kabir M.
+                </strong>
+
+                Architect, Mumbai
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
       </div>
 
 
-      <div class="reviews-grid">
 
+      <div class="testimonial-footer">
 
-        <div class="review-card reveal">
+        <div class="testimonial-footer-line"></div>
 
-          <div class="quote-mark">
-            "
-          </div>
-
-          <h4>
-            Actually fell asleep before midnight
-          </h4>
-
-          <p>
-            I track everything — I'm that person.
-            My average time-to-sleep dropped by 40 minutes
-            by night 12. The worry window trick alone
-            was worth it.
-          </p>
-
-          <div class="review-who">
-
-            <img
-              class="av"
-              src="https://images.unsplash.com/photo-1512310604669-443f26c35f52?auto=format&fit=crop&w=100&q=80"
-              alt=""
-            >
-
-            <div class="meta">
-
-              <b>Ananya R.</b>
-
-              Consultant, Bengaluru
-
-            </div>
-
-          </div>
-
+        <div class="testimonial-footer-note">
+         Join 500+ Indian professionals who have reset their sleep with MindVeda.
         </div>
 
-
-        <div class="review-card reveal">
-
-          <div class="quote-mark">
-            "
-          </div>
-
-          <h4>
-            Stopped dreading bedtime
-          </h4>
-
-          <p>
-            Every app I'd tried felt like homework.
-            This felt like a friend checking in each night —
-            and it never once felt like therapy-lite.
-          </p>
-
-          <div class="review-who">
-
-            <img
-              class="av"
-              src="https://images.unsplash.com/photo-1618245472177-2a74ad3b994a?auto=format&fit=crop&w=100&q=80"
-              alt=""
-            >
-
-            <div class="meta">
-
-              <b>Priya S.</b>
-
-              Product Manager, Gurugram
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="review-card reveal">
-
-          <div class="quote-mark">
-            "
-          </div>
-
-          <h4>
-            My psychiatrist approved of the structure
-          </h4>
-
-          <p>
-            I showed her the program outline before starting —
-            she said it was close to what she'd assign as
-            CBT-I homework. That mattered to me.
-          </p>
-
-          <div class="review-who">
-
-            <img
-              class="av"
-              src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?auto=format&fit=crop&w=100&q=80"
-              alt=""
-            >
-
-            <div class="meta">
-
-              <b>Kabir M.</b>
-
-              Architect, Mumbai
-
-            </div>
-
-          </div>
-
-        </div>
-
+        <div class="testimonial-footer-line"></div>
 
       </div>
+
 
     </div>
 
   </section>
-  
+
   <section id="why">
 
     <div class="wrap why">
@@ -2125,6 +2382,7 @@
       </div>
 
 
+
       <div class="reveal">
 
         <span class="kicker">
@@ -2138,7 +2396,7 @@
             margin-bottom:30px;
           "
         >
-         What's Keeping You Awake
+          What's Keeping You Awake
         </h2>
 
 
@@ -2155,6 +2413,7 @@
                 viewBox="0 0 24 24"
                 fill="none"
               >
+
                 <path
                   d="M12 3v4M12 17v4M3 12h4M17 12h4"
                   stroke="#E8A33D"
@@ -2169,6 +2428,7 @@
                   stroke="#E8A33D"
                   stroke-width="2"
                 />
+
               </svg>
 
             </div>
@@ -2191,6 +2451,7 @@
           </div>
 
 
+
           <div class="why-item">
 
             <div class="ico">
@@ -2201,12 +2462,14 @@
                 viewBox="0 0 24 24"
                 fill="none"
               >
+
                 <path
                   d="M4 4h16v12H7l-3 3V4z"
                   stroke="#E8A33D"
                   stroke-width="2"
                   stroke-linejoin="round"
                 />
+
               </svg>
 
             </div>
@@ -2229,6 +2492,7 @@
           </div>
 
 
+
           <div class="why-item">
 
             <div class="ico">
@@ -2239,6 +2503,7 @@
                 viewBox="0 0 24 24"
                 fill="none"
               >
+
                 <path
                   d="M5 13l4 4L19 7"
                   stroke="#E8A33D"
@@ -2246,6 +2511,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
+
               </svg>
 
             </div>
@@ -2268,6 +2534,7 @@
           </div>
 
 
+
           <div class="why-item">
 
             <div class="ico">
@@ -2278,6 +2545,7 @@
                 viewBox="0 0 24 24"
                 fill="none"
               >
+
                 <circle
                   cx="12"
                   cy="12"
@@ -2292,6 +2560,7 @@
                   stroke-width="2"
                   stroke-linecap="round"
                 />
+
               </svg>
 
             </div>
@@ -2322,8 +2591,10 @@
 
   </section>
 
-
-  <section id="how" class="how">
+  <section
+    id="how"
+    class="how"
+  >
 
     <div class="wrap">
 
@@ -2344,6 +2615,7 @@
         </p>
 
       </div>
+
 
 
       <div class="steps">
@@ -2368,6 +2640,7 @@
         </div>
 
 
+
         <div class="step-card reveal">
 
           <div class="step-num">
@@ -2385,6 +2658,7 @@
           </p>
 
         </div>
+
 
 
         <div class="step-card reveal">
@@ -2407,6 +2681,7 @@
 
 
       </div>
+
 
 
       <div class="how-strip reveal">
@@ -2435,12 +2710,10 @@
 
       </div>
 
+
     </div>
 
   </section>
-
-
-  
 
   <section
     style="
@@ -2469,6 +2742,7 @@
         </p>
 
       </div>
+
 
 
       <div class="tech-panel reveal">
@@ -2507,11 +2781,15 @@
           </div>
 
 
-          <a href="#start" class="btn btn-marigold">
+          <a
+            href="#start"
+            class="btn btn-marigold"
+          >
             Build my program
           </a>
 
         </div>
+
 
 
         <div class="tech-grid">
@@ -2539,6 +2817,7 @@
           </div>
 
 
+
           <div class="tech-item">
 
             <div class="ico">
@@ -2561,6 +2840,7 @@
           </div>
 
 
+
           <div class="tech-item">
 
             <div class="ico">
@@ -2581,6 +2861,7 @@
             </div>
 
           </div>
+
 
 
           <div class="tech-item">
@@ -2614,9 +2895,13 @@
   </section>
 
 
-  <section class="final" id="start">
+  <section
+    class="final"
+    id="start"
+  >
 
     <div class="wrap">
+
 
       <span
         class="kicker"
@@ -2628,19 +2913,23 @@
 
       <h2>
         Your Brain Already Knows How to Sleep.
-It just forgot how to switch off.
+        It just forgot how to switch off.
       </h2>
 
 
       <p>
-        You've spent enough nights staring at the ceiling. You don't need more willpower. You need a system that works with your anxious brain.
+        You've spent enough nights staring at the ceiling.
+        You don't need more willpower. You need a system
+        that works with your anxious brain.
       </p>
 
 
       <div class="final-actions">
 
-
-        <a href="#" class="btn btn-wa">
+        <a
+          href="#"
+          class="btn btn-wa"
+        >
 
           <svg
             width="18"
@@ -2680,6 +2969,7 @@ It just forgot how to switch off.
 
 
         <div class="foot-brand">
+
 
           <div class="logo">
 
@@ -2723,17 +3013,24 @@ It just forgot how to switch off.
 
           <div class="social">
 
-            <a href="#" aria-label="Instagram">
+            <a
+              href="#"
+              aria-label="Instagram"
+            >
               ◐
             </a>
 
-            <a href="#" aria-label="LinkedIn">
+            <a
+              href="#"
+              aria-label="LinkedIn"
+            >
               in
             </a>
 
           </div>
 
         </div>
+
 
 
         <div>
@@ -2750,7 +3047,7 @@ It just forgot how to switch off.
             How It Works
           </a>
 
-          <a href="#reviews">
+          <a href="#testimonials">
             Reviews
           </a>
 
@@ -2759,6 +3056,7 @@ It just forgot how to switch off.
           </a>
 
         </div>
+
 
 
         <div>
@@ -2785,6 +3083,8 @@ It just forgot how to switch off.
 
         </div>
 
+
+
         <div>
 
           <h5>
@@ -2809,7 +3109,10 @@ It just forgot how to switch off.
 
         </div>
 
+
       </div>
+
+
 
       <div class="foot-bottom">
 
@@ -2835,36 +3138,63 @@ It just forgot how to switch off.
 
       </div>
 
+
     </div>
 
   </footer>
 
+
   <script>
+
 
     const io = new IntersectionObserver(
       (entries) => {
 
-        entries.forEach(
-          (e) => {
+        entries.forEach((entry) => {
 
-            if (e.isIntersecting) {
-              e.target.classList.add('in');
-            }
-
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
           }
-        );
+
+        });
+
       },
       {
         threshold: 0.12
       }
     );
 
+
     document
       .querySelectorAll('.reveal')
-      .forEach(
-        (el) => io.observe(el)
-      );
+      .forEach((element) => {
 
+        io.observe(element);
+
+      });
+
+
+    const testimonialTrack =
+      document.querySelector('.testimonial-track');
+
+    document.addEventListener(
+      'visibilitychange',
+      () => {
+
+        if (!testimonialTrack) return;
+
+
+        if (document.hidden) {
+
+          testimonialTrack.style.animationPlayState = 'paused';
+
+        } else {
+
+          testimonialTrack.style.animationPlayState = '';
+
+        }
+      }
+    );
   </script>
 </body>
 </html>
