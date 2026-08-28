@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=0.9">
+
   <title>MindVeda</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link rel="icon" type="image/png" href="2.ico">
+
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --ink: #0D0F12;
       --ink2: #16191E;
@@ -252,9 +260,17 @@
       transition: transform .25s ease, opacity .2s ease, top .25s ease;
     }
 
-    .hamburger-icon::before { top: 0; }
-    .hamburger-icon span { top: 7px; }
-    .hamburger-icon::after { top: 14px; }
+    .hamburger-icon::before {
+      top: 0;
+    }
+
+    .hamburger-icon span {
+      top: 7px;
+    }
+
+    .hamburger-icon::after {
+      top: 14px;
+    }
 
     .menu-btn.active .hamburger-icon::before {
       top: 7px;
@@ -275,6 +291,7 @@
     }
 
     @media (max-width: 859px) {
+
       .nav-links,
       .nav-cta {
         display: none;
@@ -555,15 +572,36 @@
       text-align: right;
     }
 
-    .bubble:nth-child(2) { animation-delay: .3s; }
-    .bubble:nth-child(3) { animation-delay: 1s; }
-    .bubble:nth-child(4) { animation-delay: 1.7s; }
-    .bubble:nth-child(5) { animation-delay: 2.4s; }
-    .bubble:nth-child(6) { animation-delay: 3.1s; }
+    .bubble:nth-child(2) {
+      animation-delay: .3s;
+    }
+
+    .bubble:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(4) {
+      animation-delay: 1.7s;
+    }
+
+    .bubble:nth-child(5) {
+      animation-delay: 2.4s;
+    }
+
+    .bubble:nth-child(6) {
+      animation-delay: 3.1s;
+    }
 
     @keyframes pop {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .wa-input {
@@ -665,8 +703,13 @@
     }
 
     @keyframes testimonialScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(calc(-50% - 12px)); }
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 12px));
+      }
     }
 
     .testimonial-card {
@@ -687,9 +730,17 @@
       box-shadow: 0 18px 40px rgba(18, 20, 43, 0.08);
     }
 
-    .testimonial-card.card-short { min-height: 365px; }
-    .testimonial-card.card-medium { min-height: 430px; }
-    .testimonial-card.card-tall { min-height: 500px; }
+    .testimonial-card.card-short {
+      min-height: 365px;
+    }
+
+    .testimonial-card.card-medium {
+      min-height: 430px;
+    }
+
+    .testimonial-card.card-tall {
+      min-height: 500px;
+    }
 
     .testimonial-quote {
       font-family: Georgia, serif;
@@ -1031,7 +1082,8 @@
     .faq-item {
       border-bottom: 1px solid var(--line);
     }
-.faq-question {
+
+    .faq-question {
       width: 100%;
       min-height: 106px;
       padding: 24px 6px;
@@ -1280,6 +1332,7 @@
     }
 
     @media (max-width: 700px) {
+
       .testimonials-section {
         padding-top: 76px;
         padding-bottom: 76px;
@@ -1315,9 +1368,17 @@
         border-radius: 21px;
       }
 
-      .testimonial-card.card-short { min-height: 360px; }
-      .testimonial-card.card-medium { min-height: 410px; }
-      .testimonial-card.card-tall { min-height: 455px; }
+      .testimonial-card.card-short {
+        min-height: 360px;
+      }
+
+      .testimonial-card.card-medium {
+        min-height: 410px;
+      }
+
+      .testimonial-card.card-tall {
+        min-height: 455px;
+      }
 
       .testimonial-card h4 {
         font-size: 20px;
@@ -1399,6 +1460,7 @@
     }
 
     @media (max-width: 640px) {
+
       .wrap {
         padding: 0 20px;
       }
@@ -1437,6 +1499,7 @@
     }
 
     @media (max-width: 520px) {
+
       .tech-grid {
         grid-template-columns: 1fr;
       }
@@ -1451,6 +1514,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .testimonial-track {
         animation: none;
       }
@@ -1463,29 +1527,51 @@
         transition: none;
       }
     }
+
   </style>
+
 </head>
 
 <body>
 
   <nav>
+
     <div class="nav-inner">
+
       <a href="#top" class="logo">
+
         <svg class="logo-mark" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+
           <path d="M17 3C11 3 6.5 8 6.5 14C6.5 20 11.5 24.5 17.5 23.8C13.2 21.6 10.2 17.8 10.2 13.2C10.2 8.6 13.2 4.6 17 3Z" fill="#E8A33D"/>
+
           <circle cx="19.5" cy="6.5" r="1.4" fill="#E8A33D"/>
+
         </svg>
+
         <span class="logo-word">MindVeda</span>
+
       </a>
 
       <div class="nav-links">
+
         <a href="#why">The Problem</a>
+
         <a href="#how">The Solution</a>
+
         <a href="#testimonials">Testimonials</a>
+
         <a href="#faqs">FAQs</a>
+
       </div>
 
-      <a href="#start" class="btn btn-marigold nav-cta">Get Started Tonight</a>
+      <a
+        href="https://superprofile.bio/vp/21-Day-Anxiety-Sleep-Reset-System"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-marigold nav-cta"
+      >
+        Get Started Tonight
+      </a>
 
       <button
         class="menu-btn"
@@ -1495,23 +1581,42 @@
         aria-expanded="false"
         aria-controls="mobileMenu"
       >
+
         <span class="hamburger-icon"><span></span></span>
+
       </button>
 
       <div class="mobile-menu" id="mobileMenu">
+
         <a href="#why">The Problem</a>
+
         <a href="#how">The Solution</a>
+
         <a href="#testimonials">Testimonials</a>
+
         <a href="#faqs">FAQs</a>
-        <a href="#start" class="mobile-cta">Get Started Tonight</a>
+
+        <a
+          href="https://superprofile.bio/vp/21-Day-Anxiety-Sleep-Reset-System"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-cta"
+        >
+          Get Started Tonight
+        </a>
+
       </div>
+
     </div>
+
   </nav>
 
   <header class="hero" id="top">
+
     <div class="wrap hero-grid">
 
       <div class="reveal in">
+
         <h1>
           Your Body Is Tired.<br>
           But Your Mind <em>Won't Switch Off.</em>
@@ -1524,40 +1629,65 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#start" class="btn btn-marigold">Get Started Tonight</a>
+
+          <a
+            href="https://superprofile.bio/vp/21-Day-Anxiety-Sleep-Reset-System"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-marigold"
+          >
+            Get Started Tonight
+          </a>
+
         </div>
 
         <div class="hero-trust">
+
           <div>
             <div class="num">500+</div>
             <div class="lbl">Indian Professionals helped.</div>
           </div>
+
           <div>
             <div class="num">21 Nights</div>
             <div class="lbl">Delivered on WhatsApp step-by-step.</div>
           </div>
+
           <div>
             <div class="num">₹999</div>
             <div class="lbl">One-time payment, no subscription.</div>
           </div>
+
         </div>
+
       </div>
 
       <div class="phone-stage reveal in">
+
         <div class="phone">
+
           <div class="phone-notch"></div>
 
           <div class="wa-head">
+
             <div class="wa-avatar">
+
               <img src="3.png" alt="MindVeda logo">
+
             </div>
+
             <div>
+
               <div class="who">MindVeda</div>
+
               <div class="sub">Night 1 of 21 · online</div>
+
             </div>
+
           </div>
 
           <div class="wa-body">
+
             <div class="wa-date">Tonight, 10:00 PM</div>
 
             <div class="bubble in">
@@ -1587,255 +1717,399 @@
               Reply DONE when you're finished. I'll see you tomorrow morning.
               <span class="time">10:00 PM</span>
             </div>
+
           </div>
 
           <div class="wa-input">Message</div>
+
         </div>
+
       </div>
+
     </div>
+
   </header>
 
   <section id="testimonials" class="testimonials-section">
+
     <div class="wrap">
 
       <div class="testimonials-heading reveal">
+
         <span class="kicker">Testimonials</span>
+
         <h2>Actual MindVeda customer reviews</h2>
+
         <p>These are the moments people shared back with us during their 21 nights.</p>
+
       </div>
 
       <div class="testimonial-window">
+
         <div class="testimonial-track">
 
           <article class="testimonial-card card-tall">
+
             <div class="testimonial-quote">“</div>
+
             <h4>Actually fell asleep before midnight</h4>
+
             <p>
               I track everything — I'm that person.
               My average time-to-sleep dropped by 40 minutes by night 12.
               The worry window trick alone was worth it.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=1" alt="Ananya R.">
+
               <div class="source-text">
+
                 <strong>Ananya R.</strong>
                 Consultant, Bengaluru
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-medium">
+
             <div class="testimonial-quote">“</div>
+
             <h4>Stopped dreading bedtime</h4>
+
             <p>
               Every app I'd tried felt like homework.
               This felt like a friend checking in each night —
               and it never once felt like therapy-lite.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=2" alt="Priya S.">
+
               <div class="source-text">
+
                 <strong>Priya S.</strong>
                 Product Manager, Gurugram
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-short">
+
             <div class="testimonial-quote">“</div>
+
             <h4>My psychiatrist approved of the structure</h4>
+
             <p>
               I showed her the program outline before starting —
               she said it was close to what she'd assign as
               CBT-I homework. That mattered to me.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=3" alt="Kabir M.">
+
               <div class="source-text">
+
                 <strong>Kabir M.</strong>
                 Architect, Mumbai
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-medium">
+
             <div class="testimonial-quote">“</div>
+
             <h4>My mornings finally feel different</h4>
+
             <p>
               I wasn't expecting some dramatic overnight change.
               But after two weeks, I noticed I was waking up
               without immediately reaching for my phone.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=4" alt="Rohan S.">
+
               <div class="source-text">
+
                 <strong>Rohan S.</strong>
                 Finance Lead, Hyderabad
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-tall">
+
             <div class="testimonial-quote">“</div>
+
             <h4>For once, I wasn't trying to force sleep</h4>
+
             <p>
               The biggest shift was learning to stop fighting bedtime.
               The nightly prompts were simple enough that I actually
               stuck with them every day.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=5" alt="Neha P.">
+
               <div class="source-text">
+
                 <strong>Neha P.</strong>
                 Designer, Pune
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-short">
+
             <div class="testimonial-quote">“</div>
+
             <h4>It became my favourite part of the evening</h4>
+
             <p>
               Twenty minutes before bed used to mean scrolling.
               Now I have a little routine that tells my brain
               the day is actually over.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=6" alt="Vikram S.">
+
               <div class="source-text">
+
                 <strong>Vikram S.</strong>
                 Founder, Chennai
+
               </div>
+
             </div>
+
           </article>
 
           <!-- DUPLICATE CARDS FOR LOOP -->
 
           <article class="testimonial-card card-tall" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
+
             <h4>Actually fell asleep before midnight</h4>
+
             <p>
               I track everything — I'm that person.
               My average time-to-sleep dropped by 40 minutes by night 12.
               The worry window trick alone was worth it.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=1" alt="">
+
               <div class="source-text">
+
                 <strong>Ananya R.</strong>
                 Consultant, Bengaluru
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-medium" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
+
             <h4>Stopped dreading bedtime</h4>
+
             <p>
               Every app I'd tried felt like homework.
               This felt like a friend checking in each night —
               and it never once felt like therapy-lite.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=2" alt="">
+
               <div class="source-text">
+
                 <strong>Priya S.</strong>
                 Product Manager, Gurugram
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-short" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
+
             <h4>My psychiatrist approved of the structure</h4>
+
             <p>
               I showed her the program outline before starting —
               she said it was close to what she'd assign as
               CBT-I homework. That mattered to me.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=3" alt="">
+
               <div class="source-text">
+
                 <strong>Kabir M.</strong>
                 Architect, Mumbai
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-medium" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
+
             <h4>My mornings finally feel different</h4>
+
             <p>
               I wasn't expecting some dramatic overnight change.
               But after two weeks, I noticed I was waking up
               without immediately reaching for my phone.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=4" alt="">
+
               <div class="source-text">
+
                 <strong>Rohan S.</strong>
                 Finance Lead, Hyderabad
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-tall" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
+
             <h4>For once, I wasn't trying to force sleep</h4>
+
             <p>
               The biggest shift was learning to stop fighting bedtime.
               The nightly prompts were simple enough that I actually
               stuck with them every day.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=5" alt="">
+
               <div class="source-text">
+
                 <strong>Neha P.</strong>
                 Designer, Pune
+
               </div>
+
             </div>
+
           </article>
 
           <article class="testimonial-card card-short" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
+
             <h4>It became my favourite part of the evening</h4>
+
             <p>
               Twenty minutes before bed used to mean scrolling.
               Now I have a little routine that tells my brain
               the day is actually over.
             </p>
+
             <div class="testimonial-source">
+
               <img class="source-dot" src="https://i.pravatar.cc/150?img=6" alt="">
+
               <div class="source-text">
+
                 <strong>Vikram S.</strong>
                 Founder, Chennai
+
               </div>
+
             </div>
+
           </article>
 
         </div>
+
       </div>
 
       <div class="testimonial-footer">
+
         <div class="testimonial-footer-line"></div>
+
         <div class="testimonial-footer-note">
           Join 500+ Indian professionals who have reset their sleep with MindVeda.
         </div>
+
         <div class="testimonial-footer-line"></div>
+
       </div>
+
     </div>
+
   </section>
 
   <section id="why">
+
     <div class="wrap why">
 
       <div class="reveal">
+
         <div class="why-photo">
+
           <img src="1.png" alt="Woman in stress">
+
         </div>
+
       </div>
 
       <div class="reveal">
+
         <span class="kicker">The Root Cause</span>
 
         <h2 style="font-size:clamp(28px,3vw,38px); margin-bottom:30px;">
@@ -1845,284 +2119,453 @@
         <div class="why-list">
 
           <div class="why-item">
+
             <div class="ico">
+
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+
                 <path d="M9.5 5.5C7.1 5.1 5 6.9 5 9.3c0 .7.2 1.4.5 2C4.6 12 4 13.1 4 14.3 4 16.5 5.8 18 8 18c.8 0 1.5-.2 2.1-.5.7 1 1.8 1.5 3 1.5 1.7 0 3.1-1 3.7-2.5.4.2.9.3 1.4.3 2.1 0 3.8-1.7 3.8-3.8 0-1.4-.8-2.7-2-3.3.1-.4.2-.8.2-1.2 0-2.4-2-4.4-4.4-4.4-.8 0-1.5.2-2.1.5-.7-1-1.7-1.6-2.9-1.6-.5 0-.9.1-1.3.2Z" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
                 <path d="M10 10.5c.8.6 1.6.6 2.4 0M14.8 13.5c.7.5 1.4.5 2.1 0M8.2 14.2c.6.5 1.2.5 1.8 0" stroke="#E8A33D" stroke-width="1.6" stroke-linecap="round"/>
+
               </svg>
+
             </div>
+
             <div>
+
               <h3>Your body is ready. Your mind isn’t.</h3>
+
               <p>
                 You’re exhausted, but the moment your head hits the pillow,
                 your brain starts replaying, planning, worrying, and solving.
               </p>
+
             </div>
+
           </div>
 
           <div class="why-item">
+
             <div class="ico">
+
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+
                 <rect x="4" y="5" width="16" height="15" rx="2" stroke="#E8A33D" stroke-width="1.8"/>
+
                 <path d="M8 3v4M16 3v4M4 9h16" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round"/>
+
                 <path d="M9 13h2M13 13h2M9 16h2" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round"/>
+
               </svg>
+
             </div>
+
             <div>
+
               <h3>You’re trying to solve tomorrow at 1 AM.</h3>
+
               <p>
                 The thought feels urgent. The problem probably isn’t.
                 But your brain hasn’t learned that bedtime is not the time to deal with it.
               </p>
+
             </div>
+
           </div>
 
           <div class="why-item">
+
             <div class="ico">
+
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+
                 <path d="M16.8 4.6a7.8 7.8 0 1 0 2.6 14.1A8.5 8.5 0 0 1 16.8 4.6Z" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
                 <path d="M18.5 7.2v2.1M17.45 8.25h2.1" stroke="#E8A33D" stroke-width="1.5" stroke-linecap="round"/>
+
                 <path d="M9 17.5c1 .7 2.1.7 3.1 0" stroke="#E8A33D" stroke-width="1.5" stroke-linecap="round"/>
+
               </svg>
+
             </div>
+
             <div>
+
               <h3>The harder you try to sleep, the harder it becomes.</h3>
+
               <p>
                 Checking the time. Forcing relaxation. Thinking about how little sleep you’ll get.
                 The pressure itself keeps you awake.
               </p>
+
             </div>
+
           </div>
 
           <div class="why-item">
+
             <div class="ico">
+
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+
                 <path d="M3.5 11.5h17v7.5h-17z" stroke="#E8A33D" stroke-width="1.8" stroke-linejoin="round"/>
+
                 <path d="M3.5 11.5V9.8c0-1 .8-1.8 1.8-1.8h4.1c1.1 0 2 .9 2 2v1.5M11.4 11.5V10c0-1.1.9-2 2-2h5c1.2 0 2.1 1 2.1 2.1v1.4M3.5 19v2M20.5 19v2" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
                 <path d="M6 15.5h12" stroke="#E8A33D" stroke-width="1.5" stroke-linecap="round"/>
+
               </svg>
+
             </div>
+
             <div>
+
               <h3>Your bed has become part of the problem.</h3>
+
               <p>
                 After enough restless nights, your brain can start associating
                 bed with frustration and wakefulness instead of sleep.
               </p>
+
             </div>
+
           </div>
 
         </div>
+
       </div>
+
     </div>
+
   </section>
 
   <section id="how" class="how">
+
     <div class="wrap">
 
       <div class="section-head reveal">
+
         <span class="kicker">The 21-night reset</span>
+
         <h2>How MindVeda actually works</h2>
+
         <p>
           Three stages, delivered night by night — never dumped on you all at once.
         </p>
+
       </div>
 
       <div class="steps">
 
         <div class="step-card reveal">
+
           <div class="step-num">01</div>
+
           <h3>Take the 5-minute screening</h3>
+
           <p>
             A short set of questions on your sleep, stress and thought patterns —
             so night one is written for your specific kind of "wired."
           </p>
+
         </div>
 
         <div class="step-card reveal">
+
           <div class="step-num">02</div>
+
           <h3>Get your night-by-night program</h3>
+
           <p>
             One message, one exercise, every evening for 21 nights — a short audio,
             a reframing prompt, or a wind-down ritual. Ten minutes, no more.
           </p>
+
         </div>
 
         <div class="step-card reveal">
+
           <div class="step-num">03</div>
+
           <h3>Wake up without the 3am spiral</h3>
+
           <p>
             By the final week, you're not fighting your mind at night —
             you've built the habits that keep it quiet on its own.
           </p>
+
         </div>
 
       </div>
 
       <div class="how-strip reveal">
+
         <img
           src="https://images.unsplash.com/photo-1666843527155-14ec5f016802?auto=format&fit=crop&w=900&q=80"
           alt="City skyline at night with lit windows"
         >
+
         <div class="copy">
+
           <h3>Built for Indian nights, not translated from one</h3>
+
           <p>
             Written for the 11pm-to-1am stretch that Indian professionals actually live in —
             deadline anxiety, joint-family expectations, and a phone that never fully switches off.
             Not a Western sleep app with the currency changed.
           </p>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
   <section style="background:var(--paper-dim); border-top:1px solid var(--line);">
+
     <div class="wrap">
 
       <div class="section-head reveal">
+
         <span class="kicker">Inside the program</span>
+
         <h2>The techniques we actually use</h2>
+
         <p>
           Adapted from Cognitive Behavioural Therapy for Insomnia (CBT-I) —
           the approach sleep clinics reach for first, before medication.
         </p>
+
       </div>
 
       <div class="tech-panel reveal">
 
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+
           <div>
+
             <h3>We specialise in anxiety-driven insomnia</h3>
+
             <p style="color:var(--text-soft); font-size:14.5px; margin-top:8px; max-width:520px; line-height:1.6;">
               Not general relaxation, not sleep tracking — a structured, clinically-grounded
               path built specifically for the "exhausted but wired" pattern.
             </p>
+
           </div>
 
-          <a href="#start" class="btn btn-marigold">Build my program</a>
+          <a
+            href="https://superprofile.bio/vp/21-Day-Anxiety-Sleep-Reset-System"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-marigold"
+          >
+            Build my program
+          </a>
+
         </div>
 
         <div class="tech-grid">
 
           <div class="tech-item">
+
             <div class="ico">✎</div>
+
             <div>
+
               <h4>Thought Download</h4>
+
               <p>
                 Cognitive restructuring for the specific thought looping in your head tonight.
               </p>
+
             </div>
+
           </div>
 
           <div class="tech-item">
+
             <div class="ico">⏱</div>
+
             <div>
+
               <h4>The Worry Window</h4>
+
               <p>
                 A scheduled 10 minutes earlier in the evening, so worry doesn't wait for your pillow.
               </p>
+
             </div>
+
           </div>
 
           <div class="tech-item">
+
             <div class="ico">☾</div>
+
             <div>
+
               <h4>Wind-Down Anchor</h4>
+
               <p>
                 A consistent pre-sleep ritual that retrains your body's association with bed.
               </p>
+
             </div>
+
           </div>
 
           <div class="tech-item">
+
             <div class="ico">◐</div>
+
             <div>
+
               <h4>Body Scan Reset</h4>
+
               <p>
                 A short guided audio to release physical tension the mind has been holding onto.
               </p>
+
             </div>
+
           </div>
 
         </div>
+
       </div>
+
     </div>
+
   </section>
 
   <section id="faqs" class="faq-section">
+
     <div class="wrap">
 
       <div class="faq-heading reveal">
+
         <span class="kicker">Questions before you start?</span>
+
         <h2>Frequently Asked Questions</h2>
+
         <p>
           Everything you need to know about MindVeda.
         </p>
+
       </div>
 
       <div class="faq-list">
 
         <div class="faq-item active reveal">
+
           <button class="faq-question" type="button" aria-expanded="true">
+
             <span class="faq-badge">Start here</span>
-            <span class="faq-question-text">What if I’ve tried meditation or sleep apps before?</span>
+
+            <span class="faq-question-text">
+              What if I’ve tried meditation or sleep apps before?
+            </span>
+
             <span class="faq-plus" aria-hidden="true"></span>
+
           </button>
 
           <div class="faq-answer">
+
             <div class="faq-answer-inner">
+
               <div class="faq-answer-content">
-              MindVeda is not meditation. We do not ask you to clear your mind, sit in silence, or listen to sounds. 
-              An overactive brain actually gets more frustrated trying to think about nothing at 1:00 AM.
-              Instead of giving you a library to work through, it sends one
-              focused exercise, prompt, or short audio each night through WhatsApp.
+                MindVeda is not meditation. We do not ask you to clear your mind, sit in silence, or listen to sounds.
+                An overactive brain actually gets more frustrated trying to think about nothing at 1:00 AM.
+                Instead of giving you a library to work through, it sends one
+                focused exercise, prompt, or short audio each night through WhatsApp.
               </div>
+
             </div>
+
           </div>
+
         </div>
 
         <div class="faq-item reveal">
+
           <button class="faq-question" type="button" aria-expanded="false">
+
             <span class="faq-badge" aria-hidden="true">Start here</span>
-            <span class="faq-question-text">How much time does this take? I’m already exhausted at night.</span>
+
+            <span class="faq-question-text">
+              How much time does this take? I’m already exhausted at night.
+            </span>
+
             <span class="faq-plus" aria-hidden="true"></span>
+
           </button>
 
           <div class="faq-answer">
+
             <div class="faq-answer-inner">
+
               <div class="faq-answer-content">
-                Less than 15 minutes a night. There are no long lectures, heavy modules, or 50-page PDFs to read. 
-                It is engineered to be completely frictionless. 
+                Less than 15 minutes a night. There are no long lectures, heavy modules, or 50-page PDFs to read.
+                It is engineered to be completely frictionless.
                 You simply open a single daily audio notification inside WhatsApp, complete the routine, log your progress, and go straight to sleep.
               </div>
+
             </div>
+
           </div>
+
         </div>
 
         <div class="faq-item reveal">
+
           <button class="faq-question" type="button" aria-expanded="false">
+
             <span class="faq-badge" aria-hidden="true">Start here</span>
-            <span class="faq-question-text">Do I need to download another app or make an account?</span>
+
+            <span class="faq-question-text">
+              Do I need to download another app or make an account?
+            </span>
+
             <span class="faq-plus" aria-hidden="true"></span>
+
           </button>
 
           <div class="faq-answer">
+
             <div class="faq-answer-inner">
+
               <div class="faq-answer-content">
                 No. MindVeda is built 100% on WhatsApp, There are zero app store downloads, zero storage requirements on your phone, and zero new passwords to remember.
               </div>
+
             </div>
+
           </div>
+
         </div>
 
         <div class="faq-item reveal">
+
           <button class="faq-question" type="button" aria-expanded="false">
+
             <span class="faq-badge" aria-hidden="true">Start here</span>
-            <span class="faq-question-text">Who is MindVeda best suited for?</span>
+
+            <span class="faq-question-text">
+              Who is MindVeda best suited for?
+            </span>
+
             <span class="faq-plus" aria-hidden="true"></span>
+
           </button>
 
           <div class="faq-answer">
+
             <div class="faq-answer-inner">
+
               <div class="faq-answer-content">
                 It is built for adults who feel exhausted but mentally switched on
                 at night — especially when work, planning, worry, or an overactive
@@ -2130,53 +2573,84 @@
                 educational, structured sleep routine and is not a diagnosis or
                 replacement for professional medical care.
               </div>
+
             </div>
+
           </div>
+
         </div>
 
         <div class="faq-item reveal">
+
           <button class="faq-question" type="button" aria-expanded="false">
+
             <span class="faq-badge" aria-hidden="true">Start here</span>
-            <span class="faq-question-text">Do I need a separate app or complicated setup?</span>
+
+            <span class="faq-question-text">
+              Do I need a separate app or complicated setup?
+            </span>
+
             <span class="faq-plus" aria-hidden="true"></span>
+
           </button>
 
           <div class="faq-answer">
+
             <div class="faq-answer-inner">
+
               <div class="faq-answer-content">
                 No. The program is delivered through WhatsApp, so the experience is
                 intentionally simple. You receive the nightly guidance there and
                 follow the exercise at your own pace.
               </div>
+
             </div>
+
           </div>
+
         </div>
 
         <div class="faq-item reveal">
+
           <button class="faq-question" type="button" aria-expanded="false">
+
             <span class="faq-badge" aria-hidden="true">Start here</span>
-            <span class="faq-question-text">Is MindVeda a medical treatment or clinical therapy?</span>
+
+            <span class="faq-question-text">
+              Is MindVeda a medical treatment or clinical therapy?
+            </span>
+
             <span class="faq-plus" aria-hidden="true"></span>
+
           </button>
 
           <div class="faq-answer">
+
             <div class="faq-answer-inner">
+
               <div class="faq-answer-content">
                 MindVeda is not a medical treatment or clinical therapy. It is an educational, structured sleep routine designed to help adults who feel exhausted but mentally switched on at night. It is not a replacement for professional medical care.
               </div>
+
             </div>
+
           </div>
+
         </div>
 
       </div>
 
     </div>
+
   </section>
 
   <section class="final" id="start">
+
     <div class="wrap">
 
-      <span class="kicker" style="color:var(--marigold);">Tonight Can Be Different</span>
+      <span class="kicker" style="color:var(--marigold);">
+        Tonight Can Be Different
+      </span>
 
       <h2>
         Your Brain Already Knows How to Sleep.
@@ -2190,39 +2664,66 @@
       </p>
 
       <div class="final-actions">
-        <a href="#" class="btn btn-wa">
+
+        <a
+          href="https://superprofile.bio/vp/21-Day-Anxiety-Sleep-Reset-System"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-wa"
+        >
+
           <svg width="18" height="18" viewBox="0 0 24 24" fill="#0b3b20" aria-hidden="true">
+
             <path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.4C8.4 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm5.6 14.3c-.2.6-1.2 1.2-1.9 1.3-.5.1-1.1.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.3.1.7-.1 1.3z"/>
+
           </svg>
+
           Get Started Tonight - ₹999
+
         </a>
+
       </div>
 
-      <p class="price-note">Join 500+ Indians already sleeping better.</p>
+      <p class="price-note">
+        Join 500+ Indians already sleeping better.
+      </p>
+
     </div>
+
   </section>
 
   <footer>
+
     <div class="simple-footer">
-      <div class="footer-copyright">© 2026 MindVeda · Delhi, India</div>
+
+      <div class="footer-copyright">
+        © 2026 MindVeda · Delhi, India
+      </div>
 
       <div class="footer-links">
+
         <a href="#">Privacy Policy</a>
+
         <span class="separator">·</span>
+
         <a href="#">Refund Policy</a>
+
         <span class="separator">·</span>
+
         <a href="#">Contact</a>
+
       </div>
 
       <div class="footer-disclaimer">
         This system is for educational purposes. It is not a substitute for medical advice.
         If you suspect a clinical sleep disorder, please consult a physician.
       </div>
+
     </div>
+
   </footer>
 
   <script>
-   
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -2243,6 +2744,7 @@
     const testimonialTrack = document.querySelector(".testimonial-track");
 
     document.addEventListener("visibilitychange", () => {
+
       if (!testimonialTrack) return;
 
       if (document.hidden) {
@@ -2250,47 +2752,76 @@
       } else {
         testimonialTrack.style.animationPlayState = "";
       }
+
     });
+
 
     const faqItems = document.querySelectorAll(".faq-item");
 
     faqItems.forEach((item) => {
+
       const question = item.querySelector(".faq-question");
 
       question.addEventListener("click", () => {
+
         const isOpen = item.classList.contains("active");
 
         faqItems.forEach((otherItem) => {
+
           otherItem.classList.remove("active");
-          otherItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+
+          otherItem
+            .querySelector(".faq-question")
+            .setAttribute("aria-expanded", "false");
+
         });
 
         if (!isOpen) {
+
           item.classList.add("active");
+
           question.setAttribute("aria-expanded", "true");
+
         }
+
       });
+
     });
 
 
     const menuBtn = document.getElementById("menuBtn");
+
     const mobileMenu = document.getElementById("mobileMenu");
 
+
     function closeMobileMenu() {
+
       menuBtn.classList.remove("active");
+
       mobileMenu.classList.remove("open");
+
       menuBtn.setAttribute("aria-expanded", "false");
+
       menuBtn.setAttribute("aria-label", "Open menu");
+
     }
+
 
     function openMobileMenu() {
+
       menuBtn.classList.add("active");
+
       mobileMenu.classList.add("open");
+
       menuBtn.setAttribute("aria-expanded", "true");
+
       menuBtn.setAttribute("aria-label", "Close menu");
+
     }
 
+
     menuBtn.addEventListener("click", (event) => {
+
       event.stopPropagation();
 
       const isOpen = mobileMenu.classList.contains("open");
@@ -2300,38 +2831,57 @@
       } else {
         openMobileMenu();
       }
+
     });
 
+
     mobileMenu.querySelectorAll("a").forEach((link) => {
+
       link.addEventListener("click", () => {
         closeMobileMenu();
       });
+
     });
 
+
     document.addEventListener("click", (event) => {
+
       if (
         mobileMenu.classList.contains("open") &&
         !mobileMenu.contains(event.target) &&
         !menuBtn.contains(event.target)
       ) {
+
         closeMobileMenu();
+
       }
+
     });
 
+
     document.addEventListener("keydown", (event) => {
+
       if (
         event.key === "Escape" &&
         mobileMenu.classList.contains("open")
       ) {
+
         closeMobileMenu();
+
       }
+
     });
 
+
     window.addEventListener("resize", () => {
+
       if (window.innerWidth >= 860) {
         closeMobileMenu();
       }
+
     });
+
+
 
   </script>
 
