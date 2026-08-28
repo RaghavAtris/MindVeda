@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=0.9">
 
   <title>MindVeda</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link rel="icon" type="image/png" href="2.ico">
@@ -203,6 +200,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
 
     .logo {
@@ -311,21 +309,160 @@
       }
     }
 
+    /* =========================
+       MOBILE HAMBURGER MENU
+       ========================= */
+
     .menu-btn {
       display: none;
+      width: 42px;
+      height: 42px;
+      padding: 0;
       color: var(--paper);
-      background: none;
-      border: none;
-      font-size: 22px;
+      background: transparent;
+      border: 1px solid rgba(247, 242, 230, 0.22);
+      border-radius: 10px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 100;
+    }
+
+    .hamburger-icon {
+      width: 21px;
+      height: 16px;
+      position: relative;
+      display: block;
+    }
+
+    .hamburger-icon span,
+    .hamburger-icon::before,
+    .hamburger-icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 21px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--paper);
+      transition:
+        transform .25s ease,
+        opacity .2s ease,
+        top .25s ease;
+    }
+
+    .hamburger-icon::before {
+      top: 0;
+    }
+
+    .hamburger-icon span {
+      top: 7px;
+    }
+
+    .hamburger-icon::after {
+      top: 14px;
+    }
+
+    .menu-btn.active .hamburger-icon::before {
+      top: 7px;
+      transform: rotate(45deg);
+    }
+
+    .menu-btn.active .hamburger-icon span {
+      opacity: 0;
+    }
+
+    .menu-btn.active .hamburger-icon::after {
+      top: 7px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
     }
 
     @media (max-width: 859px) {
+
       .nav-links {
         display: none;
       }
 
+      .nav-cta {
+        display: none;
+      }
+
       .menu-btn {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #0D0F12;
+        border-top: 1px solid rgba(247, 242, 230, 0.08);
+        border-bottom: 1px solid rgba(247, 242, 230, 0.08);
+        padding: 10px 20px 20px;
+        flex-direction: column;
+        gap: 4px;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+          opacity .25s ease,
+          transform .25s ease,
+          visibility .25s ease;
+
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .mobile-menu.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .mobile-menu a {
         display: block;
+        width: 100%;
+        padding: 15px 12px;
+        color: rgba(247, 242, 230, 0.78);
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 10px;
+        transition:
+          background .2s ease,
+          color .2s ease;
+      }
+
+      .mobile-menu a:hover,
+      .mobile-menu a:active {
+        background: rgba(247, 242, 230, 0.07);
+        color: var(--paper);
+      }
+
+      .mobile-menu .mobile-cta {
+        margin-top: 8px;
+        padding: 13px 20px;
+        text-align: center;
+        background: var(--marigold);
+        color: #241505;
+        font-weight: 700;
+        border-radius: 100px;
+      }
+
+      .mobile-menu .mobile-cta:hover,
+      .mobile-menu .mobile-cta:active {
+        background: var(--marigold);
+        color: #241505;
       }
     }
 
@@ -1450,9 +1587,55 @@
       </a>
 
 
-      <button class="menu-btn">
-        ☰
+      <!-- WORKING MOBILE HAMBURGER -->
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span class="hamburger-icon">
+          <span></span>
+        </span>
+
       </button>
+
+
+      <!-- MOBILE MENU -->
+
+      <div
+        class="mobile-menu"
+        id="mobileMenu"
+      >
+
+        <a href="#why">
+          The Problem
+        </a>
+
+        <a href="#how">
+          The Solution
+        </a>
+
+        <a href="#how">
+          How it Works
+        </a>
+
+        <a href="#testimonials">
+          Testimonials
+        </a>
+
+        <a
+          href="#start"
+          class="mobile-cta"
+        >
+          Get Started Tonight
+        </a>
+
+      </div>
 
     </div>
 
@@ -1594,7 +1777,7 @@
 
             <div class="bubble in">
 
-             Before your head hits the pillow, let's do a brain dump. what is the loudest thought running on repeat right now?
+              Before your head hits the pillow, let's do a brain dump. what is the loudest thought running on repeat right now?
 
               <span class="time">
                 10:00 PM
@@ -1683,216 +1866,457 @@
 
       <div class="testimonial-window">
 
-
         <div class="testimonial-track">
 
+
           <article class="testimonial-card card-tall">
+
             <div class="testimonial-quote">“</div>
-            <h4>Actually fell asleep before midnight</h4>
+
+            <h4>
+              Actually fell asleep before midnight
+            </h4>
+
             <p>
               I track everything — I'm that person.
               My average time-to-sleep dropped by 40 minutes
               by night 12. The worry window trick alone
               was worth it.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=1" alt="Ananya R.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=1"
+                alt="Ananya R."
+              >
+
               <div class="source-text">
-                <strong>Ananya R.</strong>
+
+                <strong>
+                  Ananya R.
+                </strong>
+
                 Consultant, Bengaluru
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-medium">
+
             <div class="testimonial-quote">“</div>
-            <h4>Stopped dreading bedtime</h4>
+
+            <h4>
+              Stopped dreading bedtime
+            </h4>
+
             <p>
               Every app I'd tried felt like homework.
               This felt like a friend checking in each night —
               and it never once felt like therapy-lite.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=2" alt="Priya S.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=2"
+                alt="Priya S."
+              >
+
               <div class="source-text">
-                <strong>Priya S.</strong>
+
+                <strong>
+                  Priya S.
+                </strong>
+
                 Product Manager, Gurugram
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-short">
+
             <div class="testimonial-quote">“</div>
-            <h4>My psychiatrist approved of the structure</h4>
+
+            <h4>
+              My psychiatrist approved of the structure
+            </h4>
+
             <p>
               I showed her the program outline before starting —
               she said it was close to what she'd assign as
               CBT-I homework. That mattered to me.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=3" alt="Kabir M.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=3"
+                alt="Kabir M."
+              >
+
               <div class="source-text">
-                <strong>Kabir M.</strong>
+
+                <strong>
+                  Kabir M.
+                </strong>
+
                 Architect, Mumbai
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-medium">
+
             <div class="testimonial-quote">“</div>
-            <h4>My mornings finally feel different</h4>
+
+            <h4>
+              My mornings finally feel different
+            </h4>
+
             <p>
               I wasn't expecting some dramatic overnight change.
               But after two weeks, I noticed I was waking up
               without immediately reaching for my phone.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=4" alt="Rohan S.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=4"
+                alt="Rohan S."
+              >
+
               <div class="source-text">
-                <strong>Rohan S.</strong>
+
+                <strong>
+                  Rohan S.
+                </strong>
+
                 Finance Lead, Hyderabad
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-tall">
+
             <div class="testimonial-quote">“</div>
-            <h4>For once, I wasn't trying to force sleep</h4>
+
+            <h4>
+              For once, I wasn't trying to force sleep
+            </h4>
+
             <p>
               The biggest shift was learning to stop fighting
               bedtime. The nightly prompts were simple enough
               that I actually stuck with them every day.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=5" alt="Neha P.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=5"
+                alt="Neha P."
+              >
+
               <div class="source-text">
-                <strong>Neha P.</strong>
+
+                <strong>
+                  Neha P.
+                </strong>
+
                 Designer, Pune
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-short">
+
             <div class="testimonial-quote">“</div>
-            <h4>It became my favourite part of the evening</h4>
+
+            <h4>
+              It became my favourite part of the evening
+            </h4>
+
             <p>
               Twenty minutes before bed used to mean scrolling.
               Now I have a little routine that tells my brain
               the day is actually over.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=6" alt="Vikram S.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=6"
+                alt="Vikram S."
+              >
+
               <div class="source-text">
-                <strong>Vikram S.</strong>
+
+                <strong>
+                  Vikram S.
+                </strong>
+
                 Founder, Chennai
+
               </div>
+
             </div>
+
           </article>
 
 
+          <!-- DUPLICATE CARDS FOR LOOP -->
 
           <article class="testimonial-card card-tall" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
-            <h4>Actually fell asleep before midnight</h4>
+
+            <h4>
+              Actually fell asleep before midnight
+            </h4>
+
             <p>
               I track everything — I'm that person.
               My average time-to-sleep dropped by 40 minutes
               by night 12. The worry window trick alone
               was worth it.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=1" alt="Ananya R.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=1"
+                alt="Ananya R."
+              >
+
               <div class="source-text">
-                <strong>Ananya R.</strong>
+
+                <strong>
+                  Ananya R.
+                </strong>
+
                 Consultant, Bengaluru
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-medium" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
-            <h4>Stopped dreading bedtime</h4>
+
+            <h4>
+              Stopped dreading bedtime
+            </h4>
+
             <p>
               Every app I'd tried felt like homework.
               This felt like a friend checking in each night —
               and it never once felt like therapy-lite.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=2" alt="Priya S.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=2"
+                alt="Priya S."
+              >
+
               <div class="source-text">
-                <strong>Priya S.</strong>
+
+                <strong>
+                  Priya S.
+                </strong>
+
                 Product Manager, Gurugram
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-short" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
-            <h4>My psychiatrist approved of the structure</h4>
+
+            <h4>
+              My psychiatrist approved of the structure
+            </h4>
+
             <p>
               I showed her the program outline before starting —
               she said it was close to what she'd assign as
               CBT-I homework. That mattered to me.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=3" alt="Kabir M.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=3"
+                alt="Kabir M."
+              >
+
               <div class="source-text">
-                <strong>Kabir M.</strong>
+
+                <strong>
+                  Kabir M.
+                </strong>
+
                 Architect, Mumbai
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-medium" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
-            <h4>My mornings finally feel different</h4>
+
+            <h4>
+              My mornings finally feel different
+            </h4>
+
             <p>
               I wasn't expecting some dramatic overnight change.
               But after two weeks, I noticed I was waking up
               without immediately reaching for my phone.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=4" alt="Rohan S.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=4"
+                alt="Rohan S."
+              >
+
               <div class="source-text">
-                <strong>Rohan S.</strong>
+
+                <strong>
+                  Rohan S.
+                </strong>
+
                 Finance Lead, Hyderabad
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-tall" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
-            <h4>For once, I wasn't trying to force sleep</h4>
+
+            <h4>
+              For once, I wasn't trying to force sleep
+            </h4>
+
             <p>
               The biggest shift was learning to stop fighting
               bedtime. The nightly prompts were simple enough
               that I actually stuck with them every day.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=5" alt="Neha P.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=5"
+                alt="Neha P."
+              >
+
               <div class="source-text">
-                <strong>Neha P.</strong>
+
+                <strong>
+                  Neha P.
+                </strong>
+
                 Designer, Pune
+
               </div>
+
             </div>
+
           </article>
 
+
           <article class="testimonial-card card-short" aria-hidden="true">
+
             <div class="testimonial-quote">“</div>
-            <h4>It became my favourite part of the evening</h4>
+
+            <h4>
+              It became my favourite part of the evening
+            </h4>
+
             <p>
               Twenty minutes before bed used to mean scrolling.
               Now I have a little routine that tells my brain
               the day is actually over.
             </p>
+
             <div class="testimonial-source">
-              <img class="source-dot" src="https://i.pravatar.cc/150?img=6" alt="Vikram S.">
+
+              <img
+                class="source-dot"
+                src="https://i.pravatar.cc/150?img=6"
+                alt="Vikram S."
+              >
+
               <div class="source-text">
-                <strong>Vikram S.</strong>
+
+                <strong>
+                  Vikram S.
+                </strong>
+
                 Founder, Chennai
+
               </div>
+
             </div>
+
           </article>
+
+
         </div>
 
       </div>
@@ -1964,6 +2388,7 @@
                 viewBox="0 0 24 24"
                 fill="none"
               >
+
                 <path
                   d="M9.5 5.5C7.1 5.1 5 6.9 5 9.3c0 .7.2 1.4.5 2C4.6 12 4 13.1 4 14.3 4 16.5 5.8 18 8 18c.8 0 1.5-.2 2.1-.5.7 1 1.8 1.5 3 1.5 1.7 0 3.1-1 3.7-2.5.4.2.9.3 1.4.3 2.1 0 3.8-1.7 3.8-3.8 0-1.4-.8-2.7-2-3.3.1-.4.2-.8.2-1.2 0-2.4-2-4.4-4.4-4.4-.8 0-1.5.2-2.1.5-.7-1-1.7-1.6-2.9-1.6-.5 0-.9.1-1.3.2Z"
                   stroke="#E8A33D"
@@ -1971,12 +2396,14 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
+
                 <path
                   d="M10 10.5c.8.6 1.6.6 2.4 0M14.8 13.5c.7.5 1.4.5 2.1 0M8.2 14.2c.6.5 1.2.5 1.8 0"
                   stroke="#E8A33D"
                   stroke-width="1.6"
                   stroke-linecap="round"
                 />
+
               </svg>
 
             </div>
@@ -2007,23 +2434,31 @@
                 viewBox="0 0 24 24"
                 fill="none"
               >
+
                 <rect
-                  x="4" y="5" width="16" height="15" rx="2"
+                  x="4"
+                  y="5"
+                  width="16"
+                  height="15"
+                  rx="2"
                   stroke="#E8A33D"
                   stroke-width="1.8"
                 />
+
                 <path
                   d="M8 3v4M16 3v4M4 9h16"
                   stroke="#E8A33D"
                   stroke-width="1.8"
                   stroke-linecap="round"
                 />
+
                 <path
                   d="M9 13h2M13 13h2M9 16h2"
                   stroke="#E8A33D"
                   stroke-width="1.8"
                   stroke-linecap="round"
                 />
+
               </svg>
 
             </div>
@@ -2036,7 +2471,7 @@
               </h3>
 
               <p>
-              The thought feels urgent. The problem probably isn’t. But your brain hasn’t learned that bedtime is not the time to deal with it.
+                The thought feels urgent. The problem probably isn’t. But your brain hasn’t learned that bedtime is not the time to deal with it.
               </p>
 
             </div>
@@ -2054,6 +2489,7 @@
                 viewBox="0 0 24 24"
                 fill="none"
               >
+
                 <path
                   d="M16.8 4.6a7.8 7.8 0 1 0 2.6 14.1A8.5 8.5 0 0 1 16.8 4.6Z"
                   stroke="#E8A33D"
@@ -2061,18 +2497,21 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
+
                 <path
                   d="M18.5 7.2v2.1M17.45 8.25h2.1"
                   stroke="#E8A33D"
                   stroke-width="1.5"
                   stroke-linecap="round"
                 />
+
                 <path
                   d="M9 17.5c1 .7 2.1.7 3.1 0"
                   stroke="#E8A33D"
                   stroke-width="1.5"
                   stroke-linecap="round"
                 />
+
               </svg>
 
             </div>
@@ -2103,12 +2542,14 @@
                 viewBox="0 0 24 24"
                 fill="none"
               >
+
                 <path
                   d="M3.5 11.5h17v7.5h-17z"
                   stroke="#E8A33D"
                   stroke-width="1.8"
                   stroke-linejoin="round"
                 />
+
                 <path
                   d="M3.5 11.5V9.8c0-1 .8-1.8 1.8-1.8h4.1c1.1 0 2 .9 2 2v1.5M11.4 11.5V10c0-1.1.9-2 2-2h5c1.2 0 2.1 1 2.1 2.1v1.4M3.5 19v2M20.5 19v2"
                   stroke="#E8A33D"
@@ -2116,12 +2557,14 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
+
                 <path
                   d="M6 15.5h12"
                   stroke="#E8A33D"
                   stroke-width="1.5"
                   stroke-linecap="round"
                 />
+
               </svg>
 
             </div>
@@ -2130,7 +2573,7 @@
             <div>
 
               <h3>
-                Your bed has become part of the problem. 
+                Your bed has become part of the problem.
               </h3>
 
               <p>
@@ -2140,6 +2583,7 @@
             </div>
 
           </div>
+
 
         </div>
 
@@ -2310,6 +2754,7 @@
             gap:16px;
           "
         >
+
           <div>
 
             <h3>
@@ -2366,6 +2811,7 @@
             </div>
 
           </div>
+
 
           <div class="tech-item">
 
@@ -2507,7 +2953,6 @@
   </section>
 
 
-
   <footer>
 
     <div class="simple-footer">
@@ -2541,15 +2986,22 @@
 
       </div>
 
+
       <div class="footer-disclaimer">
         This system is for educational purposes. It is not a substitute for medical advice.
         If you suspect a clinical sleep disorder, please consult a physician.
       </div>
-      
+
     </div>
 
   </footer>
+
+
   <script>
+
+    /* =========================
+       REVEAL ANIMATIONS
+       ========================= */
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -2567,11 +3019,18 @@
         threshold: 0.12
       }
     );
+
+
     document
       .querySelectorAll('.reveal')
       .forEach((element) => {
         io.observe(element);
       });
+
+
+    /* =========================
+       TESTIMONIAL ANIMATION
+       ========================= */
 
     const testimonialTrack =
       document.querySelector('.testimonial-track');
@@ -2592,9 +3051,150 @@
           testimonialTrack.style.animationPlayState = '';
 
         }
+
+      }
+    );
+
+
+    /* =========================
+       MOBILE HAMBURGER MENU
+       ========================= */
+
+    const menuBtn =
+      document.getElementById('menuBtn');
+
+    const mobileMenu =
+      document.getElementById('mobileMenu');
+
+
+    function closeMobileMenu() {
+
+      menuBtn.classList.remove('active');
+
+      mobileMenu.classList.remove('open');
+
+      menuBtn.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      menuBtn.setAttribute(
+        'aria-label',
+        'Open menu'
+      );
+
+    }
+
+
+    function openMobileMenu() {
+
+      menuBtn.classList.add('active');
+
+      mobileMenu.classList.add('open');
+
+      menuBtn.setAttribute(
+        'aria-expanded',
+        'true'
+      );
+
+      menuBtn.setAttribute(
+        'aria-label',
+        'Close menu'
+      );
+
+    }
+
+
+    menuBtn.addEventListener(
+      'click',
+      (event) => {
+
+        event.stopPropagation();
+
+        const isOpen =
+          mobileMenu.classList.contains('open');
+
+        if (isOpen) {
+
+          closeMobileMenu();
+
+        } else {
+
+          openMobileMenu();
+
+        }
+
+      }
+    );
+
+
+    /* Close menu when clicking a mobile link */
+
+    mobileMenu
+      .querySelectorAll('a')
+      .forEach((link) => {
+
+        link.addEventListener(
+          'click',
+          () => {
+            closeMobileMenu();
+          }
+        );
+
+      });
+
+
+    /* Close menu when clicking outside */
+
+    document.addEventListener(
+      'click',
+      (event) => {
+
+        if (
+          mobileMenu.classList.contains('open') &&
+          !mobileMenu.contains(event.target) &&
+          !menuBtn.contains(event.target)
+        ) {
+
+          closeMobileMenu();
+
+        }
+
+      }
+    );
+
+
+    /* Close menu when pressing Escape */
+
+    document.addEventListener(
+      'keydown',
+      (event) => {
+
+        if (
+          event.key === 'Escape' &&
+          mobileMenu.classList.contains('open')
+        ) {
+
+          closeMobileMenu();
+
+        }
+
+      }
+    );
+
+    window.addEventListener(
+      'resize',
+      () => {
+
+        if (window.innerWidth >= 860) {
+          closeMobileMenu();
+        }
+
       }
     );
 
   </script>
+
 </body>
+
 </html>
