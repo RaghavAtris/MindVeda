@@ -828,48 +828,193 @@
       align-items: center;
     }
 
-    .why-photo img {
+    .why-diagram {
       width: 100%;
-      height: 520px;
-      object-fit: cover;
-      border-radius: 22px;
-      box-shadow: 0 30px 60px rgba(18, 20, 43, 0.16);
+      min-width: 0;
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(145px, 0.8fr) minmax(220px, 1.2fr);
+      gap: 58px;
+      align-items: center;
     }
 
-    .why-list {
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
-    }
-
-    .why-item {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-    }
-
-    .why-item .ico {
-      flex: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--ink);
+    .why-diagram-center {
+      width: min(100%, 185px);
+      aspect-ratio: 1;
+      justify-self: center;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 38% 44% 40% 43%;
+      background: #fff;
+      border: 3px solid transparent;
+      background-image:
+        linear-gradient(#fff, #fff),
+        conic-gradient(
+          from 210deg,
+          #F4D17E,
+          #B8F19D,
+          #86E7DC,
+          #9FC8FF,
+          #F39BC2,
+          #F4D17E
+        );
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 16px 34px rgba(18, 20, 43, 0.06);
+      color: var(--ink);
+      font-size: 24px;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
     }
 
-    .why-item h3 {
-      font-size: 19px;
-      font-weight: 600;
-      margin-bottom: 5px;
-      line-height: 1.15;
+    .why-diagram-branches {
+      display: grid;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
     }
 
-    .why-item p {
+    .why-cause {
+      min-height: 58px;
+      padding: 12px 20px;
+      border: 2px solid;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      color: var(--ink);
       font-size: 15px;
-      color: var(--text-soft);
+      font-weight: 600;
+      line-height: 1.25;
+      position: relative;
+    }
+
+    .why-cause:nth-child(1) {
+      background: #FDE0EC;
+      border-color: #F39BC2;
+    }
+
+    .why-cause:nth-child(2) {
+      background: #E1DEFF;
+      border-color: #8B78E8;
+    }
+
+    .why-cause:nth-child(3) {
+      background: #DDEBFF;
+      border-color: #9FC8FF;
+    }
+
+    .why-cause:nth-child(4) {
+      background: #DDF8F4;
+      border-color: #86E7DC;
+    }
+
+    .why-cause:nth-child(5) {
+      background: #E8F9DF;
+      border-color: #B8F19D;
+    }
+
+    .why-cause:nth-child(6) {
+      background: #FFF2D2;
+      border-color: #F4D17E;
+    }
+
+    .why-diagram-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .why-diagram-lines path {
+      fill: none;
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .why-copy h2 {
+      font-size: clamp(34px, 4vw, 58px);
+      margin-bottom: 24px;
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 560px;
+    }
+
+    .why-copy p {
+      max-width: 570px;
+      font-size: 17px;
+      color: var(--text-dark);
       line-height: 1.6;
+    }
+
+    @media (max-width: 680px) {
+      .why {
+        gap: 40px;
+      }
+
+      .why-diagram {
+        grid-template-columns: minmax(92px, 0.7fr) minmax(0, 1.3fr);
+        gap: 28px;
+      }
+
+      .why-diagram-center {
+        width: min(100%, 135px);
+        font-size: 18px;
+      }
+
+      .why-diagram-branches {
+        gap: 9px;
+      }
+
+      .why-cause {
+        min-height: 48px;
+        padding: 9px 12px;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+
+      .why-diagram-lines path {
+        stroke-width: 5;
+      }
+
+      .why-copy h2 {
+        font-size: clamp(34px, 10vw, 46px);
+      }
+
+      .why-copy p {
+        font-size: 15.5px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .why-diagram {
+        grid-template-columns: 82px minmax(0, 1fr);
+        gap: 22px;
+      }
+
+      .why-diagram-center {
+        width: 82px;
+        font-size: 15px;
+      }
+
+      .why-diagram-branches {
+        gap: 7px;
+      }
+
+      .why-cause {
+        min-height: 43px;
+        padding: 8px 9px;
+        font-size: 10.5px;
+      }
+
+      .why-diagram-lines path {
+        stroke-width: 4;
+      }
     }
 
     .how {
@@ -2162,149 +2307,38 @@
   </section>
 
   <section id="why">
-
     <div class="wrap why">
+      <div class="why-diagram reveal">
+        <div class="why-diagram-center">Sleep</div>
 
-      <div class="reveal">
-
-        <div class="why-photo">
-
-          <img src="1.png" alt="Woman in stress">
-
+        <div class="why-diagram-branches">
+          <div class="why-cause">Anxieties</div>
+          <div class="why-cause">Stress from work</div>
+          <div class="why-cause">Burnout</div>
+          <div class="why-cause">Financial worries</div>
+          <div class="why-cause">Lifestyle changes</div>
+          <div class="why-cause">Sleep-related stress</div>
         </div>
 
+        <svg class="why-diagram-lines" viewBox="0 0 500 430" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M92 215 C145 215 135 35 235 35 C260 35 270 35 295 35" stroke="#F39BC2"></path>
+          <path d="M92 215 C150 215 145 105 235 105 C260 105 270 105 295 105" stroke="#8B78E8"></path>
+          <path d="M92 215 C160 215 160 175 235 175 C260 175 270 175 295 175" stroke="#9FC8FF"></path>
+          <path d="M92 215 C160 215 160 255 235 255 C260 255 270 255 295 255" stroke="#86E7DC"></path>
+          <path d="M92 215 C150 215 145 325 235 325 C260 325 270 325 295 325" stroke="#B8F19D"></path>
+          <path d="M92 215 C145 215 135 395 235 395 C260 395 270 395 295 395" stroke="#F4D17E"></path>
+        </svg>
       </div>
 
-      <div class="reveal">
-
+      <div class="why-copy reveal">
         <span class="kicker">The Root Cause</span>
-
-        <h2 style="font-size:clamp(28px,3vw,38px); margin-bottom:30px;">
-          What's Keeping You Awake
-        </h2>
-
-        <div class="why-list">
-
-          <div class="why-item">
-
-            <div class="ico">
-
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-
-                <path d="M9.5 5.5C7.1 5.1 5 6.9 5 9.3c0 .7.2 1.4.5 2C4.6 12 4 13.1 4 14.3 4 16.5 5.8 18 8 18c.8 0 1.5-.2 2.1-.5.7 1 1.8 1.5 3 1.5 1.7 0 3.1-1 3.7-2.5.4.2.9.3 1.4.3 2.1 0 3.8-1.7 3.8-3.8 0-1.4-.8-2.7-2-3.3.1-.4.2-.8.2-1.2 0-2.4-2-4.4-4.4-4.4-.8 0-1.5.2-2.1.5-.7-1-1.7-1.6-2.9-1.6-.5 0-.9.1-1.3.2Z" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-
-                <path d="M10 10.5c.8.6 1.6.6 2.4 0M14.8 13.5c.7.5 1.4.5 2.1 0M8.2 14.2c.6.5 1.2.5 1.8 0" stroke="#E8A33D" stroke-width="1.6" stroke-linecap="round"/>
-
-              </svg>
-
-            </div>
-
-            <div>
-
-              <h3>Your mind starts working when your body stops.</h3>
-
-              <p>
-                You’re exhausted, but the moment your head hits the pillow,
-                your brain starts replaying, planning, worrying, and solving.
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="why-item">
-
-            <div class="ico">
-
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-
-                <rect x="4" y="5" width="16" height="15" rx="2" stroke="#E8A33D" stroke-width="1.8"/>
-
-                <path d="M8 3v4M16 3v4M4 9h16" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round"/>
-
-                <path d="M9 13h2M13 13h2M9 16h2" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round"/>
-
-              </svg>
-
-            </div>
-
-            <div>
-
-              <h3>The night starts feeling like the only time to deal with it.</h3>
-
-              <p>
-                The thought feels urgent. The problem probably isn’t.
-                But your brain hasn’t learned that bedtime is not the time to deal with it.
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="why-item">
-
-            <div class="ico">
-
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-
-                <path d="M16.8 4.6a7.8 7.8 0 1 0 2.6 14.1A8.5 8.5 0 0 1 16.8 4.6Z" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-
-                <path d="M18.5 7.2v2.1M17.45 8.25h2.1" stroke="#E8A33D" stroke-width="1.5" stroke-linecap="round"/>
-
-                <path d="M9 17.5c1 .7 2.1.7 3.1 0" stroke="#E8A33D" stroke-width="1.5" stroke-linecap="round"/>
-
-              </svg>
-
-            </div>
-
-            <div>
-
-              <h3>The harder you try to sleep, the harder it becomes.</h3>
-
-              <p>
-                Checking the time. Forcing relaxation. Thinking about how little sleep you’ll get.
-                The pressure itself keeps you awake.
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="why-item">
-
-            <div class="ico">
-
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-
-                <path d="M3.5 11.5h17v7.5h-17z" stroke="#E8A33D" stroke-width="1.8" stroke-linejoin="round"/>
-
-                <path d="M3.5 11.5V9.8c0-1 .8-1.8 1.8-1.8h4.1c1.1 0 2 .9 2 2v1.5M11.4 11.5V10c0-1.1.9-2 2-2h5c1.2 0 2.1 1 2.1 2.1v1.4M3.5 19v2M20.5 19v2" stroke="#E8A33D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-
-                <path d="M6 15.5h12" stroke="#E8A33D" stroke-width="1.5" stroke-linecap="round"/>
-
-              </svg>
-
-            </div>
-
-            <div>
-
-              <h3>Your bed has become part of the problem.</h3>
-
-              <p>
-                After enough restless nights, your brain can start associating
-                bed with frustration and wakefulness instead of sleep.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
+        <h2>What's Keeping You Awake</h2>
+        <p>
+          Insomnia is often a symptom of deeper challenges like anxiety, stress, or other things going on in your life.
+          That’s why things like cutting coffee, and meditation aren’t enough.
+        </p>
       </div>
-
     </div>
-
   </section>
 
   <section id="how" class="how">
@@ -2945,6 +2979,7 @@
 
     });
 
+    
   </script>
 </body>
 </html>
