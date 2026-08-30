@@ -738,15 +738,15 @@
     }
 
     .testimonial-quote {
-  font-family: Georgia, serif;
-  font-size: 82px;
-  font-weight: 700;
-  line-height: 0.65;
-  letter-spacing: -0.08em;
-  color: var(--marigold);
-  margin-bottom: 28px;
-  height: 48px;
-}
+      font-family: Georgia, serif;
+      font-size: 82px;
+      font-weight: 700;
+      line-height: 0.65;
+      letter-spacing: -0.08em;
+      color: var(--marigold);
+      margin-bottom: 28px;
+      height: 48px;
+    }
 
     .testimonial-card h4 {
       font-size: 22px;
@@ -950,6 +950,10 @@
       font-size: 17px;
       color: var(--text-dark);
       line-height: 1.6;
+    }
+
+    .why-copy p + p {
+      margin-top: 18px;
     }
 
     @media (max-width: 680px) {
@@ -1176,6 +1180,170 @@
       font-size: 12.5px;
       color: var(--text-soft);
       line-height: 1.45;
+    }
+
+    .comparison-section {
+      background: var(--paper);
+      padding: 96px 0 104px;
+      overflow: hidden;
+    }
+
+    .comparison-heading {
+      max-width: 760px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+
+    .comparison-heading .kicker {
+      margin-bottom: 18px;
+    }
+
+    .comparison-heading h2 {
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      color: var(--text-dark);
+    }
+
+    .comparison-heading p {
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .comparison-wrap {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 18px 50px rgba(18, 20, 43, 0.045);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      table-layout: fixed;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .comparison-table th:last-child,
+    .comparison-table td:last-child {
+      border-right: 0;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .comparison-table thead th {
+      height: 102px;
+      padding: 24px 20px;
+      background: #F5F6F2;
+      color: #68736A;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.25;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .comparison-table thead th:first-child {
+      width: 30%;
+      text-align: left;
+      color: #35453D;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .comparison-table tbody td {
+      height: 118px;
+      padding: 22px 20px;
+      background: #fff;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .comparison-table tbody td:first-child {
+      text-align: left;
+      color: #26372F;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .comparison-table tbody tr.mindveda-row td {
+      background: #EDF6EC;
+      border-bottom: 0;
+    }
+
+    .comparison-table tbody tr.mindveda-row td:first-child {
+      color: #31503B;
+      font-size: 19px;
+    }
+
+    .recommended-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+      padding: 7px 13px;
+      border-radius: 100px;
+      background: #DCEEDF;
+      color: #4F795B;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .comparison-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .comparison-icon.yes {
+      background: #E5F2E6;
+      color: #568363;
+    }
+
+    .comparison-icon.no {
+      background: #FCE9E5;
+      color: #D77868;
+      font-weight: 500;
+    }
+
+    .comparison-icon.maybe {
+      background: #F0F2EF;
+      color: #9AA39C;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .comparison-note {
+      margin: 22px auto 0;
+      max-width: 900px;
+      text-align: center;
+      color: #8A8592;
+      font-size: 11.5px;
+      line-height: 1.55;
     }
 
     .faq-section {
@@ -1541,6 +1709,15 @@
       .faq-question {
         min-height: 96px;
       }
+
+      .comparison-wrap {
+        border-radius: 22px;
+        overflow-x: auto;
+      }
+
+      .comparison-table {
+        min-width: 700px;
+      }
     }
 
     @media (max-width: 700px) {
@@ -1611,6 +1788,76 @@
       .testimonial-footer-note {
         width: 100%;
         text-align: center;
+      }
+
+      .comparison-section {
+        padding: 76px 0 82px;
+      }
+
+      .comparison-heading {
+        margin-bottom: 40px;
+      }
+
+      .comparison-heading h2 {
+        font-size: clamp(38px, 12vw, 52px);
+      }
+
+      .comparison-heading p {
+        font-size: 14.5px;
+      }
+
+      .comparison-wrap {
+        border-radius: 18px;
+        box-shadow: none;
+      }
+
+      .comparison-table {
+        min-width: 650px;
+      }
+
+      .comparison-table thead th {
+        height: 88px;
+        padding: 18px 14px;
+        font-size: 12px;
+      }
+
+      .comparison-table thead th:first-child {
+        width: 28%;
+        font-size: 13px;
+      }
+
+      .comparison-table tbody td {
+        height: 92px;
+        padding: 16px 12px;
+      }
+
+      .comparison-table tbody td:first-child {
+        font-size: 14px;
+      }
+
+      .comparison-table tbody tr.mindveda-row td:first-child {
+        font-size: 15px;
+      }
+
+      .comparison-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+
+      .comparison-icon.maybe {
+        font-size: 20px;
+      }
+
+      .recommended-badge {
+        margin-left: 6px;
+        padding: 5px 9px;
+        font-size: 9px;
+      }
+
+      .comparison-note {
+        padding: 0 10px;
+        font-size: 10.5px;
       }
 
       .faq-section {
@@ -1738,6 +1985,7 @@
       .faq-answer {
         transition: none;
       }
+
     }
 
   </style>
@@ -2122,8 +2370,6 @@
 
           </article>
 
-          <!-- DUPLICATE CARDS FOR LOOP -->
-
           <article class="testimonial-card card-tall" aria-hidden="true">
 
             <div class="testimonial-quote">“</div>
@@ -2307,41 +2553,65 @@
   </section>
 
   <section id="why">
+
     <div class="wrap why">
+
       <div class="why-diagram reveal">
+
         <div class="why-diagram-center">Sleep</div>
 
         <div class="why-diagram-branches">
+
           <div class="why-cause">Replaying conversations</div>
+
           <div class="why-cause">Tomorrow's deadlines</div>
+
           <div class="why-cause">Burnout</div>
+
           <div class="why-cause">Financial worries</div>
+
           <div class="why-cause">Calculating sleep hours</div>
+
           <div class="why-cause">Scrolling at Night</div>
+
         </div>
 
         <svg class="why-diagram-lines" viewBox="0 0 500 430" preserveAspectRatio="none" aria-hidden="true">
+
           <path d="M92 215 C145 215 135 35 235 35 C260 35 270 35 295 35" stroke="#F39BC2"></path>
+
           <path d="M92 215 C150 215 145 105 235 105 C260 105 270 105 295 105" stroke="#8B78E8"></path>
+
           <path d="M92 215 C160 215 160 175 235 175 C260 175 270 175 295 175" stroke="#9FC8FF"></path>
+
           <path d="M92 215 C160 215 160 255 235 255 C260 255 270 255 295 255" stroke="#86E7DC"></path>
+
           <path d="M92 215 C150 215 145 325 235 325 C260 325 270 325 295 325" stroke="#B8F19D"></path>
+
           <path d="M92 215 C145 215 135 395 235 395 C260 395 270 395 295 395" stroke="#F4D17E"></path>
+
         </svg>
+
       </div>
 
       <div class="why-copy reveal">
+
         <span class="kicker">The Root Cause</span>
+
         <h2>What's Actually Keeping You Awake</h2>
+
         <p>
           You already know you need to turn off your phone, dim the lights, and stop drinking coffee late in the day. Yet, you get into bed completely tired, only for your brain to start racing the second your head hits the pillow.
         </p>
-        
+
         <p>
-           That is because your brain doesn't have an off-switch. It is stuck in a loop, planning tomorrow’s work, replaying conversations from the office, and calculating exactly how many hours of sleep you have left if you fall asleep right now.
+          That is because your brain doesn't have an off-switch. It is stuck in a loop, planning tomorrow’s work, replaying conversations from the office, and calculating exactly how many hours of sleep you have left if you fall asleep right now.
         </p>
+
       </div>
+
     </div>
+
   </section>
 
   <section id="how" class="how">
@@ -2540,6 +2810,170 @@
         </div>
 
       </div>
+
+    </div>
+
+  </section>
+
+  <section class="comparison-section">
+
+    <div class="wrap">
+
+      <div class="comparison-heading reveal">
+
+        <span class="kicker">Why MindVeda</span>
+
+        <h2>Why Other Sleep Solutions Didn't Work for You</h2>
+
+        <p>
+          Most sleep solutions solve symptoms. MindVeda solves the root cause: an overactive mind that won't switch off at bedtime.
+        </p>
+
+      </div>
+
+      <div class="comparison-wrap reveal">
+
+        <table class="comparison-table">
+
+          <thead>
+
+            <tr>
+
+              <th>Solution</th>
+
+              <th>Easy to stick with</th>
+
+              <th>Personalized</th>
+
+              <th>Long-term</th>
+
+              <th>Mind + lifestyle</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>Meditation</td>
+
+              <td>
+                <span class="comparison-icon no" aria-label="No">×</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon no" aria-label="No">×</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon maybe" aria-label="Somewhat">−</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon yes" aria-label="Yes">✓</span>
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>Apps</td>
+
+              <td>
+                <span class="comparison-icon yes" aria-label="Yes">✓</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon maybe" aria-label="Somewhat">−</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon no" aria-label="No">×</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon maybe" aria-label="Somewhat">−</span>
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>Pills</td>
+
+              <td>
+                <span class="comparison-icon yes" aria-label="Yes">✓</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon no" aria-label="No">×</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon no" aria-label="No">×</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon no" aria-label="No">×</span>
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>Sleep eBooks</td>
+
+              <td>
+                <span class="comparison-icon maybe" aria-label="Somewhat">−</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon no" aria-label="No">×</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon maybe" aria-label="Somewhat">−</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon yes" aria-label="Yes">✓</span>
+              </td>
+
+            </tr>
+
+            <tr class="mindveda-row">
+
+              <td>
+                MindVeda
+                <span class="recommended-badge">Recommended</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon yes" aria-label="Yes">✓</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon yes" aria-label="Yes">✓</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon yes" aria-label="Yes">✓</span>
+              </td>
+
+              <td>
+                <span class="comparison-icon yes" aria-label="Yes">✓</span>
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
 
     </div>
 
@@ -2792,30 +3226,47 @@
   </section>
 
   <footer>
+
     <div class="simple-footer">
+
       <div class="footer-main">
+
         <div class="footer-brand">
+
           <a href="#top" class="footer-logo" aria-label="MindVeda home">
+
             <svg class="footer-logo-mark" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+
               <path d="M17 3C11 3 6.5 8 6.5 14C6.5 20 11.5 24.5 17.5 23.8C13.2 21.6 10.2 17.8 10.2 13.2C10.2 8.6 13.2 4.6 17 3Z" fill="#E8A33D"/>
+
               <circle cx="19.5" cy="6.5" r="1.4" fill="#E8A33D"/>
+
             </svg>
+
             <span class="footer-logo-word">MindVeda</span>
+
           </a>
 
           <p class="footer-tagline">
             A 21-night guided sleep reset for Indian professionals, whose body is tired but whose brain won't switch off at bedtime, delivered through WhatsApp.
           </p>
+
         </div>
 
         <nav class="footer-links" aria-label="Footer navigation">
+
           <a href="#">Privacy Policy</a>
+
           <a href="#">Refund Policy</a>
+
           <a href="#">Contact</a>
+
         </nav>
+
       </div>
 
       <div class="footer-bottom">
+
         <div class="footer-copyright">
           © 2026 MindVeda · Delhi, India
         </div>
@@ -2823,8 +3274,11 @@
         <div class="footer-disclaimer">
           For educational purposes only. Not a substitute for medical advice.
         </div>
+
       </div>
+
     </div>
+
   </footer>
 
   <script>
@@ -2844,7 +3298,6 @@
       io.observe(element);
     });
 
-
     const testimonialTrack = document.querySelector(".testimonial-track");
 
     document.addEventListener("visibilitychange", () => {
@@ -2858,7 +3311,6 @@
       }
 
     });
-
 
     const faqItems = document.querySelectorAll(".faq-item");
 
@@ -2892,11 +3344,9 @@
 
     });
 
-
     const menuBtn = document.getElementById("menuBtn");
 
     const mobileMenu = document.getElementById("mobileMenu");
-
 
     function closeMobileMenu() {
 
@@ -2910,7 +3360,6 @@
 
     }
 
-
     function openMobileMenu() {
 
       menuBtn.classList.add("active");
@@ -2922,7 +3371,6 @@
       menuBtn.setAttribute("aria-label", "Close menu");
 
     }
-
 
     menuBtn.addEventListener("click", (event) => {
 
@@ -2937,7 +3385,6 @@
       }
 
     });
-
 
     mobileMenu.querySelectorAll("a").forEach((link) => {
 
@@ -2958,7 +3405,6 @@
         closeMobileMenu();
 
       }
-
     });
 
     document.addEventListener("keydown", (event) => {
@@ -2981,7 +3427,6 @@
       }
 
     });
-
 
   </script>
 
