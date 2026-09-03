@@ -1155,7 +1155,7 @@ margin-bottom:52px;
 
 .how .section-head p{color:var(--text-soft)}
 .how .kicker{color:var(--marigold-deep)}
-.how .section-head h2{color:var(--text-dark)}
+.how .section-head h2{color:var(--text-dark);font-size:clamp(34px,4vw,58px)}
 
 .steps{
 display:grid;
@@ -1167,8 +1167,8 @@ gap:22px;
 background:var(--paper-dim);
 border:1px solid var(--line);
 border-radius:22px;
-padding:34px 30px 32px;
-min-height:252px;
+padding:40px 34px 38px;
+min-height:300px;
 box-shadow:0 12px 30px rgba(18,20,43,.035);
 transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
 }
@@ -2583,9 +2583,8 @@ Good. Press play, follow the exercise, then you're done for tonight. ▶️
 <div class="wrap">
 
 <div class="section-head reveal">
-<span class="kicker">The 21-night reset</span>
+<span class="kicker">Inside The Program</span>
 <h2>How MindVeda works</h2>
-<p>Three simple stages, delivered night by night — so you always know what to do next.</p>
 </div>
 
 <div class="steps">
@@ -2613,7 +2612,7 @@ Good. Press play, follow the exercise, then you're done for tonight. ▶️
 <div class="how-strip reveal">
 <div class="copy">
 <div>
-<h3>Built on practical principles from Cognitive Behavioural Therapy for Insomnia (CBT-I)</h3>
+<h3>Built on principles from Cognitive Behavioural Therapy for Insomnia (CBT-I)</h3>
 <p>MindVeda turns proven sleep principles into short, practical actions designed for the real-life 11pm-to-1am stretch — racing thoughts, deadlines, family expectations and a phone that never fully switches off.</p>
 </div>
 
@@ -3004,6 +3003,7 @@ setMobileMenu(false);
 menuBtn?.focus();
 }
 });
+
 
 window.addEventListener("resize",()=>{
 if(window.innerWidth>=860)setMobileMenu(false);
