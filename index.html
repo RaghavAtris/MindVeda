@@ -1148,6 +1148,11 @@ position:relative;
 z-index:1;
 }
 
+.how .section-head{
+max-width:720px;
+margin-bottom:52px;
+}
+
 .how .section-head p{color:var(--text-soft)}
 .how .kicker{color:var(--marigold-deep)}
 .how .section-head h2{color:var(--text-dark)}
@@ -1161,29 +1166,39 @@ gap:22px;
 .step-card{
 background:var(--paper-dim);
 border:1px solid var(--line);
-border-radius:20px;
-padding:32px 26px;
-box-shadow:0 12px 30px rgba(18,20,43,.04);
+border-radius:22px;
+padding:34px 30px 32px;
+min-height:252px;
+box-shadow:0 12px 30px rgba(18,20,43,.035);
+transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+
+.step-card:hover{
+transform:translateY(-4px);
+box-shadow:0 18px 38px rgba(18,20,43,.07);
+border-color:rgba(201,130,31,.22);
 }
 
 .step-num{
 font-size:15px;
 color:var(--marigold-deep);
-width:38px;
-height:38px;
+width:44px;
+height:44px;
 border:1px solid rgba(201,130,31,.35);
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-margin-bottom:22px;
+margin-bottom:28px;
+background:#FFFDF8;
 }
 
 .step-card h3{
-font-size:20px;
-margin-bottom:10px;
+font-size:21px;
+margin-bottom:11px;
 color:var(--text-dark);
-line-height:1.2;
+line-height:1.18;
+letter-spacing:-.03em;
 }
 
 .step-card p{
@@ -1194,88 +1209,73 @@ line-height:1.65;
 
 .how-strip{
 margin-top:64px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:0;
 border:1px solid var(--line);
-border-radius:22px;
+border-radius:24px;
 overflow:hidden;
 background:var(--paper-dim);
-}
-
-.how-strip img{
-width:100%;
-height:100%;
-min-height:280px;
-object-fit:cover;
+box-shadow:0 14px 36px rgba(18,20,43,.04);
+padding:40px;
 }
 
 .how-strip .copy{
-padding:44px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-gap:16px;
+display:grid;
+grid-template-columns:.9fr 1.1fr;
+gap:46px;
+align-items:center;
 }
 
 .how-strip .copy h3{
-font-size:25px;
+font-size:27px;
 color:var(--text-dark);
-line-height:1.15;
+line-height:1.08;
+letter-spacing:-.045em;
+max-width:430px;
 }
 
 .how-strip .copy p{
-font-size:15px;
+font-size:15.5px;
 color:var(--text-soft);
 line-height:1.65;
-}
-
-.tech-panel{
-background:var(--paper-dim);
-border:1px solid var(--line);
-border-radius:22px;
-padding:36px;
-}
-
-.tech-panel h3{
-font-size:22px;
-line-height:1.2;
+margin-top:14px;
+max-width:520px;
 }
 
 .tech-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:18px;
-margin-top:22px;
+gap:14px;
 }
 
 .tech-item{
 background:var(--paper);
 border:1px solid var(--line);
-border-radius:14px;
+border-radius:16px;
 padding:18px;
 display:flex;
-gap:12px;
+gap:13px;
 align-items:flex-start;
+min-height:104px;
 }
 
 .tech-item .ico{
 flex:none;
-width:36px;
-height:36px;
-border-radius:9px;
-background:var(--marigold);
+width:38px;
+height:38px;
+border-radius:50%;
+background:var(--ink);
 display:flex;
 align-items:center;
 justify-content:center;
-color:#241505;
+color:var(--marigold);
 font-size:16px;
 }
 
 .tech-item h4{
 font-size:15px;
-font-weight:600;
-margin-bottom:3px;
+font-weight:700;
+margin-bottom:4px;
+color:var(--text-dark);
+line-height:1.25;
 }
 
 .tech-item p{
@@ -1790,10 +1790,6 @@ grid-template-columns:1fr;
 }
 
 @media(max-width:820px){
-.how-strip{
-grid-template-columns:1fr;
-}
-
 .faq-question{
 min-height:96px;
 }
@@ -2111,10 +2107,13 @@ padding:20px 0 96px;
 
 section{padding:72px 0}
 
-.tech-panel{padding:25px}
+.how-strip{
+padding:30px 25px;
+}
 
 .how-strip .copy{
-padding:30px 25px;
+grid-template-columns:1fr;
+gap:28px;
 }
 
 .footer-copyright{font-size:12px}
@@ -2155,6 +2154,7 @@ font-size:10.5px;
 @media(prefers-reduced-motion:reduce){
 .testimonial-track{animation:none}
 .testimonial-card{transition:none}
+.step-card{transition:none}
 .faq-answer{transition:none}
 }
 </style>
@@ -2584,8 +2584,8 @@ Good. Press play, follow the exercise, then you're done for tonight. ▶️
 
 <div class="section-head reveal">
 <span class="kicker">The 21-night reset</span>
-<h2>How MindVeda actually works</h2>
-<p>Three stages, delivered night by night — never dumped on you all at once.</p>
+<h2>How MindVeda works</h2>
+<p>Three simple stages, delivered night by night — so you always know what to do next.</p>
 </div>
 
 <div class="steps">
@@ -2593,54 +2593,28 @@ Good. Press play, follow the exercise, then you're done for tonight. ▶️
 <div class="step-card reveal">
 <div class="step-num">01</div>
 <h3>Take the 5-minute screening</h3>
-<p>A short set of questions on your sleep, stress and thought patterns — so night one is written for your specific kind of "wired."</p>
+<p>A short set of questions on your sleep, stress and thought patterns — so your 21-night reset starts with what is actually keeping you awake.</p>
 </div>
 
 <div class="step-card reveal">
 <div class="step-num">02</div>
 <h3>Get your night-by-night program</h3>
-<p>One message, one exercise, every evening for 21 nights — a short audio, a reframing prompt, or a wind-down ritual. Ten minutes, no more.</p>
+<p>Each evening, you get one focused lesson, exercise or guided audio through WhatsApp. Ten to fifteen minutes, then you're done.</p>
 </div>
 
 <div class="step-card reveal">
 <div class="step-num">03</div>
-<h3>Wake up without the 3am spiral</h3>
-<p>By the final week, you're not fighting your mind at night — you've built the habits that keep it quiet on its own.</p>
+<h3>Build habits that quiet your nights</h3>
+<p>Over 21 nights, you practise practical sleep strategies until bedtime feels less like a battle and more like something your body knows how to do.</p>
 </div>
 
 </div>
 
 <div class="how-strip reveal">
-<img alt="City skyline at night with lit windows" src="https://images.unsplash.com/photo-1666843527155-14ec5f016802?auto=format&fit=crop&w=900&q=80"/>
 <div class="copy">
-<h3>Built on Practical Principles from Cognitive Behavioural Therapy for Insomnia (CBT-I)</h3>
-<p>Written for the 11pm-to-1am stretch that Indian professionals actually live in — deadline anxiety, joint-family expectations, and a phone that never fully switches off. Not a Western sleep app with the currency changed.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<section style="background:var(--paper-dim);border-top:1px solid var(--line);">
-<div class="wrap">
-
-<div class="section-head reveal">
-<span class="kicker">Inside the program</span>
-<h2>What You Get And How It Fixes Your Sleep</h2>
-<p>MindVeda is built around practical principles from Cognitive Behavioural Therapy for Insomnia (CBT-I)</p>
-</div>
-
-<div class="tech-panel reveal">
-
-<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
 <div>
-<h3>We specialise in anxiety-driven insomnia</h3>
-
-</div>
-
-<a class="btn btn-marigold" href="https://superprofile.bio/vp/MindVeda" rel="noopener noreferrer" target="_blank">
-Build my program
-</a>
+<h3>Built on practical principles from Cognitive Behavioural Therapy for Insomnia (CBT-I)</h3>
+<p>MindVeda turns proven sleep principles into short, practical actions designed for the real-life 11pm-to-1am stretch — racing thoughts, deadlines, family expectations and a phone that never fully switches off.</p>
 </div>
 
 <div class="tech-grid">
@@ -2649,7 +2623,7 @@ Build my program
 <div class="ico">✎</div>
 <div>
 <h4>Park the Thoughts</h4>
-<p>Get the unfinished conversations, tasks and worries out of your head before they follow you into bed.</p>
+<p>Get unfinished conversations, tasks and worries out of your head before they follow you into bed.</p>
 </div>
 </div>
 
@@ -2657,7 +2631,7 @@ Build my program
 <div class="ico">⏱</div>
 <div>
 <h4>The Worry Window</h4>
-<p>A short window earlier in the evening to deal with what's on your mind, so you don't carry it into bed.</p>
+<p>Deal with what's on your mind earlier in the evening instead of carrying it into bed.</p>
 </div>
 </div>
 
@@ -2665,7 +2639,7 @@ Build my program
 <div class="ico">☾</div>
 <div>
 <h4>Stop Fighting Sleep</h4>
-<p>Learn what to do when you're awake instead of lying there trying harder, checking the time and getting more frustrated.</p>
+<p>Learn what to do when you're awake instead of checking the time and trying harder to sleep.</p>
 </div>
 </div>
 
@@ -2673,7 +2647,7 @@ Build my program
 <div class="ico">◐</div>
 <div>
 <h4>Let Your Body Catch Up</h4>
-<p>A short guided audio to release physical tension the mind has been holding onto. </p>
+<p>Use a short guided audio to release physical tension and help your body wind down.</p>
 </div>
 </div>
 
@@ -3034,6 +3008,7 @@ menuBtn?.focus();
 window.addEventListener("resize",()=>{
 if(window.innerWidth>=860)setMobileMenu(false);
 });
+
 
 </script>
 </body>
