@@ -234,6 +234,9 @@ transform:rotate(-45deg);
 }
 .mobile-menu{display:none}
 @media(max-width:859px){
+.nav-inner{
+padding:14px 20px;
+}
 .nav-links,.nav-cta{display:none}
 .menu-btn{display:flex}
 .mobile-menu{
@@ -2357,6 +2360,7 @@ Get Started Tonight - ₹999
 </div>
 </footer>
 <script>
+    
 const revealElements=document.querySelectorAll(".reveal");
 const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(reducedMotion||!("IntersectionObserver" in window)){
@@ -2425,6 +2429,7 @@ menuBtn?.focus();
 window.addEventListener("resize",()=>{
 if(window.innerWidth>=860)setMobileMenu(false);
 });
+
 </script>
 </body>
 </html>
