@@ -545,36 +545,24 @@ color:var(--text-dark);
 }
 .testimonials-heading p{
 max-width:620px;
-margin-top:22px;
+margin-top:20px;
 font-size:17px;
-line-height:1.7;
+line-height:1.65;
 color:var(--text-soft);
 }
 .testimonial-window{
 width:100%;
-overflow:hidden;
+overflow:visible;
 position:relative;
-mask-image:linear-gradient(to right,transparent 0,black 4%,black 96%,transparent 100%);
--webkit-mask-image:linear-gradient(to right,transparent 0,black 4%,black 96%,transparent 100%);
 }
 .testimonial-track{
---testimonial-gap:24px;
-display:flex;
-align-items:flex-start;
-gap:var(--testimonial-gap);
-width:max-content;
-animation:testimonialScroll 42s linear infinite;
-will-change:transform;
-}
-.testimonial-window:hover .testimonial-track{
-animation-play-state:paused;
-}
-@keyframes testimonialScroll{
-from{transform:translateX(0)}
-to{transform:translateX(calc(-50% - (var(--testimonial-gap) / 2)))}
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+align-items:stretch;
+gap:24px;
+width:100%;
 }
 .testimonial-card{
-flex:0 0 clamp(330px,31vw,370px);
 background:#F6F6F4;
 border:1px solid rgba(18,20,43,.08);
 border-radius:24px;
@@ -584,14 +572,16 @@ flex-direction:column;
 box-shadow:0 10px 30px rgba(18,20,43,.035);
 transition:transform .3s ease,box-shadow .3s ease;
 position:relative;
+min-height:0;
 }
 .testimonial-card:hover{
 transform:translateY(-4px);
 box-shadow:0 18px 40px rgba(18,20,43,.08);
 }
-.testimonial-card.card-short{min-height:365px}
-.testimonial-card.card-medium{min-height:430px}
-.testimonial-card.card-tall{min-height:500px}
+.testimonial-card:nth-child(2),
+.testimonial-card:nth-child(5){
+background:#F2F4EF;
+}
 .testimonial-quote{
 font-family:Georgia,serif;
 font-size:82px;
@@ -623,17 +613,10 @@ white-space:pre-line;
 .testimonial-source{
 margin-top:auto;
 padding-top:28px;
-display:flex;
-align-items:center;
-gap:14px;
+display:block;
 }
 .testimonial-source .source-dot{
-width:58px;
-height:58px;
-border-radius:50%;
-object-fit:cover;
-border:2px solid rgba(18,20,43,.08);
-flex:none;
+display:none;
 }
 .testimonial-source .source-text{
 font-size:12.5px;
@@ -644,21 +627,15 @@ font-weight:500;
 .testimonial-source .source-text strong{
 display:block;
 color:var(--text-dark);
-font-size:17px;
+font-size:16px;
 font-weight:800;
+margin-bottom:2px;
 }
-.testimonial-card:nth-child(2),
-.testimonial-card:nth-child(5),
-.testimonial-card:nth-child(8),
-.testimonial-card:nth-child(11){
-background:#F2F4EF;
+.testimonial-source .source-text strong::after{
+content:"";
 }
 .testimonial-footer{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-top:30px;
-gap:20px;
+display:none;
 }
 .why{
 display:grid;
@@ -1878,6 +1855,76 @@ margin-bottom:28px;
 .step-card{transition:none}
 .faq-answer{transition:none}
 }
+
+@media(max-width:1100px){
+.testimonial-track{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+}
+@media(max-width:700px){
+.testimonials-section{
+padding-top:64px;
+padding-bottom:64px;
+}
+.testimonials-heading{
+margin-bottom:34px;
+}
+.testimonials-heading h2{
+font-size:clamp(36px,11vw,50px);
+line-height:1;
+}
+.testimonials-heading p{
+font-size:15px;
+line-height:1.6;
+}
+.testimonial-window{
+overflow-x:auto;
+overflow-y:hidden;
+width:calc(100vw - 20px);
+margin-left:-10px;
+padding:0 10px 14px;
+scroll-snap-type:x mandatory;
+-webkit-overflow-scrolling:touch;
+scrollbar-width:none;
+}
+.testimonial-window::-webkit-scrollbar{
+display:none;
+}
+.testimonial-track{
+display:flex;
+grid-template-columns:none;
+gap:14px;
+width:max-content;
+}
+.testimonial-card{
+flex:0 0 min(84vw,360px);
+width:min(84vw,360px);
+padding:26px 24px 24px;
+border-radius:20px;
+scroll-snap-align:start;
+}
+.testimonial-quote{
+font-size:72px;
+height:44px;
+margin-bottom:24px;
+}
+.testimonial-card h4{
+font-size:21px;
+margin-bottom:14px;
+}
+.testimonial-card p{
+font-size:15.5px;
+line-height:1.62;
+max-width:none;
+}
+.testimonial-source{
+padding-top:22px;
+}
+.testimonial-source .source-text strong{
+font-size:15.5px;
+}
+}
+
 </style>
 </head>
 <body>
@@ -1947,27 +1994,20 @@ margin-bottom:28px;
 <div class="wrap">
 <div class="testimonials-heading reveal">
 <span class="kicker">Testimonials</span>
-<h2>MindVeda customer reviews</h2>
+<h2>MindVeda Customer Reviews</h2>
+
 </div>
 <div class="testimonial-window">
 <div class="testimonial-track">
-<article class="testimonial-card card-tall">
+<article class="testimonial-card">
 <div class="testimonial-quote">“</div>
-<h4>I'm finding it highly effective</h4>
-<p>I started having serious sleep issues after a major health problem, and my doctor suggested I work on my sleep habits properly. I don't really have the time to see someone regularly in person, so MindVeda has honestly been a big help.
+<h4>Really, actually works</h4>
+<p>I found MindVeda at a point where I hadn't been sleeping properly for weeks. I mean that literally. Some nights I was just lying there for hours, completely tired but unable to switch my brain off.
 
-The program has been easy to follow so far and has helped me get my sleep back to something more normal. I still have the occasional bad night, but I'm not lying awake struggling with it the way I was before.</p>
-<div class="testimonial-source"><img alt="" src="user-pfp-default.svg"/><div class="source-text"><strong>Rohit Malhotra</strong>Consultant, Bengaluru</div></div>
+The first week... I didn't think much was changing. But then during the second week, I started actually falling asleep without fighting with my thoughts for so long. By the third week, I had more good nights than bad ones.</p>
+<div class="testimonial-source"><div class="source-text"><strong>Manish Mehta</strong>Finance Lead, Hyderabad</div></div>
 </article>
-<article class="testimonial-card card-medium">
-<div class="testimonial-quote">“</div>
-<h4>Great Program</h4>
-<p>Great program. I've slept badly for many years, so honestly I was skeptical in the beginning. But over the 21 nights, my whole perspective around sleep started changing.
-
-I used to lie in bed thinking about why I wasn't sleeping and how tired I would be the next day. Now I don't make such a big issue out of one bad night, and most nights I sleep much more naturally.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Sourav kumar</strong>Product Manager, Gurugram</div></div>
-</article>
-<article class="testimonial-card card-short">
+<article class="testimonial-card">
 <div class="testimonial-quote">“</div>
 <h4>I'm impressed</h4>
 <p>I'm impressed by how useful MindVeda has been so far. I was skeptical when I first signed up because I've tried many things that claim they will improve your sleep.
@@ -1975,85 +2015,42 @@ I used to lie in bed thinking about why I wasn't sleeping and how tired I would 
 My main issue was overthinking at night. I used to sleep only around 3–5 hours on bad nights and keep checking how little sleep I was going to get.
 
 I'm three weeks into the program now and my sleep is much more consistent. More importantly, I'm not panicking about bedtime anymore.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Neha Sharma</strong>Architect, Mumbai</div></div>
+<div class="testimonial-source"><div class="source-text"><strong>Neha Sharma</strong>Architect, Mumbai</div></div>
 </article>
-<article class="testimonial-card card-medium">
-<div class="testimonial-quote">“</div>
-<h4>Really, actually works</h4>
-<p>I found MindVeda at a point where I hadn't been sleeping properly for weeks. I mean that literally. Some nights I was just lying there for hours, completely tired but unable to switch my brain off.
-
-The first week... I didn't think much was changing. But then during the second week, I started actually falling asleep without fighting with my thoughts for so long. By the third week, I had more good nights than bad ones.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Manish Mehta</strong>Finance Lead, Hyderabad</div></div>
-</article>
-<article class="testimonial-card card-tall">
-<div class="testimonial-quote">“</div>
-<h4>I stopped fighting with my own sleep</h4>
-<p>MindVeda has genuinely been a game-changer for my sleep.
-
-It does take some time to get into it, but the routines helped me understand what was actually keeping me awake at night. My biggest problem was overthinking, and now I have something to do with those thoughts instead of just lying there and spiralling.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Kavya Verma</strong>Designer, Pune</div></div>
-</article>
-<article class="testimonial-card card-short">
+<article class="testimonial-card">
 <div class="testimonial-quote">“</div>
 <h4>I'm a believer!</h4>
 <p>MindVeda has quietly changed my nights. I like that it's not just telling you to relax or meditate. It actually gives you things to do when your mind is racing.
 
 I've realised that a lot of my sleep problems were being made worse by how much I worried about not sleeping. The program helped me notice that pattern and stop feeding into it.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Sneha Gupta</strong>Founder, Chennai</div></div>
+<div class="testimonial-source"><div class="source-text"><strong>Sneha Gupta</strong>Founder, Chennai</div></div>
 </article>
-<article class="testimonial-card card-tall">
+<article class="testimonial-card">
 <div class="testimonial-quote">“</div>
-<h4>I'm finding it highly effective</h4>
-<p>I started having serious sleep issues after a major health problem, and my doctor suggested I work on my sleep habits properly. I don't really have the time to see someone regularly in person, so MindVeda has honestly been a big help.
+<h4>I stopped fighting with my own sleep</h4>
+<p>MindVeda has genuinely been a game-changer for my sleep.
 
-The program has been easy to follow so far and has helped me get my sleep back to something more normal. I still have the occasional bad night, but I'm not lying awake struggling with it the way I was before.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Aditya Singh</strong>Consultant, Bengaluru</div></div>
+It does take some time to get into it, but the routines helped me understand what was actually keeping me awake at night. My biggest problem was overthinking, and now I have something to do with those thoughts instead of just lying there and spiralling.</p>
+<div class="testimonial-source"><div class="source-text"><strong>Kavya Verma</strong>Designer, Pune</div></div>
 </article>
-<article class="testimonial-card card-medium">
+<article class="testimonial-card">
 <div class="testimonial-quote">“</div>
 <h4>Great Program</h4>
 <p>Great program. I've slept badly for many years, so honestly I was skeptical in the beginning. But over the 21 nights, my whole perspective around sleep started changing.
 
 I used to lie in bed thinking about why I wasn't sleeping and how tired I would be the next day. Now I don't make such a big issue out of one bad night, and most nights I sleep much more naturally.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Karan Malik</strong>Product Manager, Gurugram</div></div>
+<div class="testimonial-source"><div class="source-text"><strong>Sourav kumar</strong>Product Manager, Gurugram</div></div>
 </article>
-<article class="testimonial-card card-short">
+<article class="testimonial-card">
 <div class="testimonial-quote">“</div>
-<h4>I'm impressed</h4>
-<p>I'm impressed by how useful MindVeda has been so far. I was skeptical when I first signed up because I've tried many things that claim they will improve your sleep.
+<h4>I'm finding it highly effective</h4>
+<p>I started having serious sleep issues after a major health problem, and my doctor suggested I work on my sleep habits properly. I don't really have the time to see someone regularly in person, so MindVeda has honestly been a big help.
 
-My main issue was overthinking at night. I used to sleep only around 3–5 hours on bad nights and keep checking how little sleep I was going to get.
-
-I'm three weeks into the program now and my sleep is much more consistent. More importantly, I'm not panicking about bedtime anymore.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Neha Sharma</strong>Architect, Mumbai</div></div>
-</article>
-<article class="testimonial-card card-medium">
-<div class="testimonial-quote">“</div>
-<h4>Really, actually works</h4>
-<p>I found MindVeda at a point where I hadn't been sleeping properly for weeks. I mean that literally. Some nights I was just lying there for hours, completely tired but unable to switch my brain off.
-
-The first week... I didn't think much was changing. But then during the second week, I started actually falling asleep without fighting with my thoughts for so long. By the third week, I had more good nights than bad ones.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Manish Mehta</strong>Finance Lead, Hyderabad</div></div>
-</article>
-<article class="testimonial-card card-tall">
-<div class="testimonial-quote">“</div>
-<h4>I stopped fighting with my own sleep</h4>
-<p>MindVeda has genuinely been a game-changer for my sleep.
-
-It does take some time to get into it, but the routines helped me understand what was actually keeping me awake at night. My biggest problem was overthinking, and now I have something to do with those thoughts instead of just lying there and spiralling.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Kavya Verma</strong>Designer, Pune</div></div>
-</article>
-<article class="testimonial-card card-short">
-<div class="testimonial-quote">“</div>
-<h4>I'm a believer!</h4>
-<p>MindVeda has quietly changed my nights. I like that it's not just telling you to relax or meditate. It actually gives you things to do when your mind is racing.
-
-I've realised that a lot of my sleep problems were being made worse by how much I worried about not sleeping. The program helped me notice that pattern and stop feeding into it.</p>
-<div class="testimonial-source"><img alt="" class="source-dot" src="user-pfp-default.svg"/><div class="source-text"><strong>Sneha Gupta</strong>Founder, Chennai</div></div>
+The program has been easy to follow so far and has helped me get my sleep back to something more normal. I still have the occasional bad night, but I'm not lying awake struggling with it the way I was before.</p>
+<div class="testimonial-source"><div class="source-text"><strong>Rohit Malhotra</strong>Consultant, Bengaluru</div></div>
 </article>
 </div>
 </div>
-<div class="testimonial-footer"></div>
 </div>
 </section>
 <section id="why">
@@ -2375,15 +2372,6 @@ observer.unobserve(entry.target);
 },{threshold:.12});
 revealElements.forEach(element=>io.observe(element));
 }
-const testimonialTrack=document.querySelector(".testimonial-track");
-document.addEventListener("visibilitychange",()=>{
-if(!testimonialTrack)return;
-if(document.hidden){
-testimonialTrack.style.animationPlayState="paused";
-}else{
-testimonialTrack.style.animationPlayState="";
-}
-});
 const faqList=document.querySelector(".faq-list");
 faqList?.addEventListener("click",event=>{
 const question=event.target.closest(".faq-question");
@@ -2431,5 +2419,7 @@ if(window.innerWidth>=860)setMobileMenu(false);
 });
 
 </script>
+
 </body>
+
 </html>
