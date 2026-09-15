@@ -423,6 +423,73 @@ gap:18px;
 margin-top:34px;
 flex-wrap:wrap
 }
+.hero-actions .btn span{
+font-weight:800;
+margin-left:4px
+}
+
+.hero-assurance{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+gap:10px 18px;
+margin-top:16px;
+color:rgba(247,242,230,.58);
+font-size:12px;
+font-weight:600
+}
+
+.hero-assurance span{
+display:inline-flex;
+align-items:center;
+gap:5px
+}
+
+.testimonials-intro{
+margin-top:18px;
+max-width:620px;
+font-size:17px;
+line-height:1.6;
+color:var(--text-soft)
+}
+
+.testimonial-card:nth-child(1),
+.testimonial-card:nth-child(2){
+border-color:rgba(232,163,61,.22);
+box-shadow:0 16px 42px rgba(18,20,43,.06)
+}
+
+.testimonial-source .source-text strong::after{
+content:"Customer";
+display:inline-flex;
+margin-left:8px;
+padding:3px 7px;
+border-radius:100px;
+background:#ECEAE4;
+color:#706B79;
+font-size:9px;
+font-weight:800;
+letter-spacing:.06em;
+text-transform:uppercase;
+vertical-align:middle
+}
+
+.value-cta-note{
+max-width:430px;
+line-height:1.5
+}
+
+@media(max-width:700px){
+.hero-assurance{
+gap:8px 14px;
+font-size:11px
+}
+
+.testimonials-intro{
+font-size:15px
+}
+}
+
 
 .hero-trust{
 display:flex;
@@ -2665,13 +2732,16 @@ transition:none
 <p class="lede">A 21-night guided sleep program for Indian professionals who are exhausted at bedtime but can't switch their minds off. Delivered through WhatsApp.</p>
 
 <div class="hero-actions">
-<a class="btn btn-marigold" href="https://superprofile.bio/vp/MindVeda" rel="noopener noreferrer" target="_blank">Get Started Tonight</a>
+<a class="btn btn-marigold" href="https://superprofile.bio/vp/MindVeda" rel="noopener noreferrer" target="_blank">Get Started Tonight <span></span></a>
+</div>
+<div class="hero-assurance">
+
 </div>
 
 <div class="hero-trust">
 <div>
-<div class="num">450+</div>
-<div class="lbl">Indian Professionals Sleeping Better</div>
+<div class="num">30 Days</div>
+<div class="lbl">Full refund if you see no visible improvement.</div>
 </div>
 
 <div>
@@ -2727,8 +2797,8 @@ transition:none
 <div class="wrap">
 
 <div class="testimonials-heading reveal">
-<span class="kicker">Testimonials</span>
-<h2>Real People. Real Results.</h2>
+<span class="kicker">6 Customer Stories</span>
+<h2>Actual MindVeda Customer Reviews</h2>
 </div>
 
 <div class="testimonial-window">
@@ -2736,7 +2806,7 @@ transition:none
 
 <article class="testimonial-card">
 <div class="testimonial-quote">“</div>
-<h4>Really, actually works</h4>
+<h4>By week 2, I stopped fighting my thoughts.</h4>
 <p>I found MindVeda at a point where I hadn't been sleeping properly for weeks. I mean that literally. Some nights I was just lying there for hours, completely tired but unable to switch my brain off.
 
 The first week... I didn't think much was changing. But then during the second week, I started actually falling asleep without fighting with my thoughts for so long. By the third week, I had more good nights than bad ones.</p>
@@ -2747,7 +2817,7 @@ The first week... I didn't think much was changing. But then during the second w
 
 <article class="testimonial-card">
 <div class="testimonial-quote">“</div>
-<h4>It gave me something to actually do.</h4>
+<h4>I stopped panicking about bedtime.</h4>
 <p>I'm impressed by how useful MindVeda has been so far. I was skeptical when I first signed up because I've tried many things that claim they will improve your sleep.
 
 My main issue was overthinking at night. I used to sleep only around 3–5 hours on bad nights and keep checking how little sleep I was going to get.
@@ -2760,7 +2830,7 @@ I'm three weeks into the program now and my sleep is much more consistent. More 
 
 <article class="testimonial-card">
 <div class="testimonial-quote">“</div>
-<h4>I'm a believer!</h4>
+<h4>It gives you something practical to do when your mind races.</h4>
 <p>MindVeda has quietly changed my nights. I like that it's not just telling you to relax or meditate. It actually gives you things to do when your mind is racing.
 
 I've realised that a lot of my sleep problems were being made worse by how much I worried about not sleeping. The program helped me notice that pattern and stop feeding into it.</p>
@@ -2771,8 +2841,8 @@ I've realised that a lot of my sleep problems were being made worse by how much 
 
 <article class="testimonial-card">
 <div class="testimonial-quote">“</div>
-<h4>I stopped fighting with my own sleep</h4>
-<p>MindVeda has genuinely been a game-changer for my sleep.
+<h4>I'm sleeping better than I have in years.</h4>
+<p>MindVeda has genuinely been a game changer for my sleep.
 
 It does take some time to get into it, but the routines helped me understand what was actually keeping me awake at night. My biggest problem was overthinking, and now I have something to do with those thoughts instead of just lying there and spiralling.</p>
 <div class="testimonial-source">
@@ -2782,7 +2852,7 @@ It does take some time to get into it, but the routines helped me understand wha
 
 <article class="testimonial-card">
 <div class="testimonial-quote">“</div>
-<h4>I wasn't expecting much at first.</h4>
+<h4>I'm finally getting good sleep.</h4>
 <p>Great program. I've slept badly for many years, so honestly I was skeptical in the beginning. But over the 21 nights, my whole perspective around sleep started changing.
 
 I used to lie in bed thinking about why I wasn't sleeping and how tired I would be the next day. Now I don't make such a big issue out of one bad night, and most nights I sleep much more naturally.</p>
@@ -2793,7 +2863,7 @@ I used to lie in bed thinking about why I wasn't sleeping and how tired I would 
 
 <article class="testimonial-card">
 <div class="testimonial-quote">“</div>
-<h4>I'm finding it highly effective</h4>
+<h4>It helped me get my sleep back to something more normal.</h4>
 <p>I started having serious sleep issues after a major health problem, and my doctor suggested I work on my sleep habits properly. I don't really have the time to see someone regularly in person, so MindVeda has honestly been a big help.
 
 The program has been easy to follow so far and has helped me get my sleep back to something more normal. I still have the occasional bad night, but I'm not lying awake struggling with it the way I was before.</p>
@@ -2828,6 +2898,7 @@ The program has been easy to follow so far and has helped me get my sleep back t
 <path d="M92 215 C150 215 145 105 235 105 C260 105 270 105 295 105" stroke="#8B78E8"></path>
 <path d="M92 215 C160 215 160 175 235 175 C260 175 270 175 295 175" stroke="#9FC8FF"></path>
 <path d="M92 215 C160 215 160 255 235 255 C260 255 270 255 295 255" stroke="#A3E6B9"></path>
+<path d="M92 215 C145 215 135 325 235 325 C260 325 270 325 295 325" stroke="#A3E6B9"></path>
 <path d="M92 215 C145 215 135 395 235 395 C260 395 270 395 295 395" stroke="#F4D17E"></path>
 </svg>
 
@@ -2835,9 +2906,10 @@ The program has been easy to follow so far and has helped me get my sleep back t
 
 <div class="why-copy reveal">
 <span class="kicker">The Real Problem</span>
-<h2>What's Actually Keeping You Awake</h2>
-<p>Insomnia is often a symptom of deeper challenges like anxiety, stress, or other things going on in your life.</p>
-<p>That’s why cutting coffee, melatonin gummies and meditation aren’t enough. MindVeda addresses the root cause of your sleep issues.</p>
+<h2>What's Actually Keeping You Awake?</h2>
+<p>You’ve tried cutting caffeine. You’ve tried melatonin gummies. You’ve tried forcing yourself to sit and meditate.</p>
+<p>Yet Your brain is still racing with work stress and tomorrow’s endless to-do list.You cannot force your mind to just "turn off" while watching the clock.</p>
+<p>MindVeda meets you directly on WhatsApp to stop this midnight overthinking.</p>
 </div>
 
 </div>
@@ -2849,7 +2921,7 @@ The program has been easy to follow so far and has helped me get my sleep back t
 <div class="mindveda-heading reveal">
 <span class="kicker">What Is MindVeda?</span>
 <h2>You Don't Need Another Sleep App</h2>
-<p>Every morning, you learn one specific change to make. Every night, you practise it. Over 21 nights, you build a different response to bedtime so your mind and habits stop working against sleep.</p>
+<p>Every morning, you learn one specific change to make. Every night, you practise it. Over 21 nights, you build a calmer, more consistent response to bedtime without adding another app to your life.</p>
 </div>
 
 <div class="mindveda-timeline reveal">
@@ -3010,7 +3082,7 @@ For the next 2 minutes, write down anything your mind is carrying.
 <span class="value-cta-price">₹999</span>
 </a>
 
-<div class="value-cta-note">One-time payment · No subscription</div>
+<div class="value-cta-note">One-time payment · No subscription · 30-day full refund if you see no visible improvement</div>
 
 </div>
 </div>
@@ -3050,8 +3122,8 @@ For the next 2 minutes, write down anything your mind is carrying.
 <div class="copy">
 
 <div>
-<h3>Built on principles from Cognitive Behavioural Therapy for Insomnia (CBT-I)</h3>
-<p>MindVeda turns established sleep principles into short, practical actions for the moments sleep usually falls apart: racing thoughts, tomorrow's deadlines, unfinished conversations and a phone that won't stay out of reach.</p>
+<h3>Built around established CBT-I sleep principles</h3>
+<p>MindVeda turns established sleep principles into short, practical actions for the moments sleep usually falls apart: racing thoughts, tomorrow’s deadlines, unfinished conversations and the urge to keep checking the clock.</p>
 </div>
 
 <div class="tech-grid">
@@ -3272,7 +3344,7 @@ For the next 2 minutes, write down anything your mind is carrying.
 
 <h2>Your brain already knows how to sleep. It just forgot how to switch off.</h2>
 
-<p>You've spent enough nights staring at the ceiling. You don't need more willpower. You need a system that works with your anxious brain.</p>
+<p>You’ve spent enough nights staring at the ceiling. You don’t need another collection of sleep tips. You need a simple system you can actually follow for the next 21 nights.</p>
 
 <div class="final-actions">
 
@@ -3282,12 +3354,12 @@ For the next 2 minutes, write down anything your mind is carrying.
 <path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.4C8.4 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm5.6 14.3c-.2.6-1.2 1.2-1.9 1.3-.5.1-1.1.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.3.1.7-.1 1.3z"></path>
 </svg>
 
-Get Started Tonight
+Get Started Tonight - ₹999
 
 </a>
 </div>
 
-<p class="price-note">Join 450+ Indians already sleeping better.</p>
+<p class="price-note">₹999 once. No subscription. If you see no visible improvement, you get a full refund within 30 days.</p>
 
 </div>
 </section>
@@ -3321,7 +3393,7 @@ Get Started Tonight
 
 <div class="footer-bottom">
 <div class="footer-copyright">© 2026 MindVeda · Delhi, India</div>
-<div class="footer-disclaimer">For educational purposes only. Not a substitute for medical advice.</div>
+<div class="footer-disclaimer">MindVeda is educational and is not a medical treatment or clinical therapy. It is not a substitute for professional medical advice.</div>
 </div>
 
 </div>
@@ -3404,7 +3476,5 @@ if(window.innerWidth>=860)setMobileMenu(false)
 });
 
 </script>
-    
 </body>
-    
 </html>
