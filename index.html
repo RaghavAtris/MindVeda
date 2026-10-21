@@ -2683,6 +2683,128 @@ transition:none
 transition:none
 }
 }
+
+
+.mindveda-before-after{
+display:grid;
+grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr);
+align-items:center;
+gap:22px;
+max-width:1000px;
+margin:58px auto 0;
+position:relative;
+z-index:1
+}
+.before-after-card{
+min-width:0;
+overflow:hidden;
+border:1px solid rgba(247,242,230,.14);
+border-radius:24px;
+background:rgba(22,25,30,.92);
+box-shadow:0 28px 70px rgba(0,0,0,.28)
+}
+.before-after-image{
+position:relative;
+height:280px;
+overflow:hidden;
+background:#20242b
+}
+.before-after-image img{
+width:100%;
+height:100%;
+object-fit:cover
+}
+.before-card .before-after-image img{
+filter:saturate(.78) brightness(.86)
+}
+.after-card .before-after-image img{
+filter:saturate(1.02) brightness(1.02)
+}
+.before-after-label{
+position:absolute;
+left:16px;
+top:16px;
+padding:7px 11px;
+border-radius:100px;
+background:rgba(13,15,18,.82);
+color:#fff;
+font-size:10px;
+font-weight:800;
+letter-spacing:.12em
+}
+.after-card .before-after-label{
+background:var(--marigold);
+color:#241505
+}
+.before-after-copy{
+padding:24px 25px 27px
+}
+.before-after-status{
+display:inline-block;
+color:var(--marigold);
+font-size:11px;
+font-weight:800;
+letter-spacing:.08em;
+text-transform:uppercase;
+margin-bottom:12px
+}
+.before-after-copy h3{
+color:var(--paper);
+font-size:23px;
+font-weight:600;
+line-height:1.2;
+letter-spacing:-.035em
+}
+.before-after-copy p{
+margin-top:11px;
+color:rgba(247,242,230,.68);
+font-size:14px;
+line-height:1.65
+}
+.before-after-arrow{
+display:flex;
+align-items:center;
+justify-content:center;
+width:44px;
+height:44px;
+border:1px solid rgba(232,163,61,.35);
+border-radius:50%;
+color:var(--marigold);
+font-size:25px
+}
+.before-after-note{
+grid-column:1/-1;
+margin-top:0;
+text-align:center;
+color:rgba(247,242,230,.42);
+font-size:11px;
+line-height:1.5
+}
+@media(max-width:760px){
+.mindveda-before-after{
+grid-template-columns:1fr;
+gap:16px;
+max-width:460px;
+margin-top:40px
+}
+.before-after-image{
+height:230px
+}
+.before-after-copy{
+padding:21px
+}
+.before-after-copy h3{
+font-size:21px
+}
+.before-after-arrow{
+margin:0 auto;
+transform:rotate(90deg)
+}
+.before-after-note{
+margin-top:4px
+}
+}
+
 </style>
 </head>
 
@@ -2942,52 +3064,32 @@ The program has been easy to follow so far and has helped me get my sleep back t
 
 </div>
 
-<div class="mindveda-phone-stage reveal">
-<div class="mindveda-phone">
-
-<div class="mindveda-phone-notch"></div>
-
-<div class="mindveda-wa-head">
-<div class="mindveda-wa-avatar">☾</div>
-<div>
-<div class="who">MindVeda</div>
-<div class="sub">Night 1 of 21 · online</div>
+<div class="mindveda-before-after reveal">
+<div class="before-after-card before-card">
+<div class="before-after-image">
+<img src="5.png" alt="Before: exhausted after a demanding day" loading="lazy"/>
+<span class="before-after-label">BEFORE</span>
+</div>
+<div class="before-after-copy">
+<h3>Your body is exhausted. Your brain is racing.</h3>
+<p>The workday officially ended hours ago, but you're still drafting emails, replaying conversations, and calculating deadlines in your head at 01:00 AM.
+</p>
+</div>
+</div>
+<div class="before-after-arrow" aria-hidden="true">→</div>
+<div class="before-after-card after-card">
+<div class="before-after-image">
+<img src="4.png" alt="After: resting peacefully in bed" loading="lazy"/>
+<span class="before-after-label">AFTER</span>
+</div>
+<div class="before-after-copy">
+<h3>Shut down your corporate brain in 15 minutes.</h3>
+<p>Get science-backed behavioral triggers delivered straight to your WhatsApp. Sleep deeply tonight so you can wake up sharp, energized, and ready tomorrow.
+</p>
 </div>
 </div>
 
-<div class="mindveda-wa-body">
-<div class="mindveda-wa-date">Today</div>
-
-<div class="mindveda-bubble in">Welcome to Day 1<span class="time">8:00 AM</span></div>
-
-<div class="mindveda-bubble in">🎧 Listen to today's 60 seconds lesson<span class="time">8:00 AM</span></div>
-
-<div class="mindveda-bubble out">Got it. I'll listen.<span class="time">8:01 AM</span></div>
-
-<div class="mindveda-bubble in">Introducing the Brain Dump. Get a
-    notebook or plain sheet of paper
-    and a pen
-<span class="time">10:00 PM</span></div>
-
-<div class="mindveda-bubble out">Yes. Let's do it.<span class="time">10:01 PM</span></div>
-
-<div class="mindveda-bubble in">Sit somewhere comfortable before getting into bed.
-For the next 2 minutes, write down anything your mind is carrying. 
-
-<span class="time">10:01 PM</span></div>
-
-<div class="mindveda-bubble in">Tasks you haven't finished. Tomorrow's responsibilities. Worries. Don't organize it. Don't solve it. Just empty it.
-<span class="time">10:02 PM</span></div>
-
-<div class="mindveda-bubble out">Okay, Done.<span class="time">10:05 PM</span></div>
 </div>
-
-
-<div class="mindveda-wa-input">Message</div>
-
-</div>
-</div>
-
 </div>
 </section>
 
@@ -3058,7 +3160,7 @@ For the next 2 minutes, write down anything your mind is carrying.
 </div>
 
 <div class="value-row">
-<span>21 Nights of Step-by-Step Guidance</span>
+<span>21 Nights. Step-by-step</span>
 <strong>Included</strong>
 </div>
 
@@ -3388,7 +3490,6 @@ Get Started Tonight - ₹1499
 <a href="#start">Refund Policy</a>
 <a href="#start">Contact</a>
 </nav>
-
 </div>
 
 <div class="footer-bottom">
@@ -3398,7 +3499,6 @@ Get Started Tonight - ₹1499
 
 </div>
 </footer>
-
 <script>
     
 const revealElements=document.querySelectorAll(".reveal");
